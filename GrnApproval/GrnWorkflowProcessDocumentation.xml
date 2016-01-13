@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.2.22" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="GrnWorkflowProcess">
+        <topicDocumentations>
+            <topicDocumentation name="GrnWorkflowProcess">
+                <descriptions>
+                    <description locale="en">GrnWorkflowProcess</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT15107785706398">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT15107785706483">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15107785706554">
+                <labels>
+                    <label locale="en">UserTask</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf10"/>
+            <topicDocumentation name="sf11"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>
