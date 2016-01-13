@@ -63,4 +63,8 @@
     <source.uri>GrnWorkflowProcess/Services.Externals.UpdBpmWfReadyFlag.reference</source.uri>
     <target.uri>UpdBpmWfReadyFlag</target.uri>
   </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.Externals.ReadBpmWfReadyFlag.reference</source.uri>
+    <target.uri>ReadBpmWfReadyFlag</target.uri>
+  </wire>
 </composite>

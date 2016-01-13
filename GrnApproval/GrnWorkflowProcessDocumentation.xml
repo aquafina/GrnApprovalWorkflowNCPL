@@ -8,6 +8,14 @@
                     <description locale="en">GrnWorkflowProcess</description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT1510859787598">
+                <labels>
+                    <label locale="en">STUpdBpmWfReadyFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -21,9 +29,9 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
-            <topicDocumentation name="ACT1510859787598">
+            <topicDocumentation name="ACT1510899077625">
                 <labels>
-                    <label locale="en">STUpdBpmWfReadyFlag</label>
+                    <label locale="en">STReadBpmWfReadyFlag</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -31,6 +39,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
+            <topicDocumentation name="sf25"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
