@@ -12,6 +12,9 @@
                 <labels>
                     <label locale="en">Start</label>
                 </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
             </topicDocumentation>
             <topicDocumentation name="EVT15107785706483">
                 <labels>
