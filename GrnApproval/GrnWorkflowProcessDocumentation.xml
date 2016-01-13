@@ -24,6 +24,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15109813308980">
+                <labels>
+                    <label locale="en">STReadReceiptData</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -40,14 +48,6 @@
             <topicDocumentation name="GTW15109006511018">
                 <labels>
                     <label locale="en">IsReceiptReadyForApproval</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15109813308980">
-                <labels>
-                    <label locale="en">STReadReceiptData</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
