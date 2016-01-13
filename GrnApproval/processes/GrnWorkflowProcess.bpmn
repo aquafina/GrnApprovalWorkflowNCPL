@@ -279,7 +279,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="708" y="109"/>
+                        <ns5:Position x="882" y="102"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -292,6 +292,20 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
+        <exclusiveGateway gatewayDirection="Unspecified" name="IsReceiptReadyForApproval" id="GTW15109006511018">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="664" y="106"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </exclusiveGateway>
         <sequenceFlow sourceRef="EVT15107785706398" targetRef="ACT1510859787598" name="sf10" id="sf10">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -316,7 +330,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT1510899077625" targetRef="EVT15107785706483" name="sf25" id="sf25">
+        <sequenceFlow sourceRef="ACT1510899077625" targetRef="GTW15109006511018" name="sf25" id="sf25">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -324,6 +338,19 @@
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
                         <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
                         <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="GTW15109006511018" targetRef="EVT15107785706483" name="sf26" id="sf26">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="" name="userName"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>

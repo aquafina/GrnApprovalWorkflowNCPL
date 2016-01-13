@@ -37,9 +37,25 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW15109006511018">
+                <labels>
+                    <label locale="en">IsReceiptReadyForApproval</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
+            <topicDocumentation name="sf26">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
         </topicDocumentations>
     </component>
 </processDocumentation>
