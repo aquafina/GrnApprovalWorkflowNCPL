@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="ReadReceiptDataInput" type="ReadReceiptDataInput"/>
+   <xs:complexType name="ReadReceiptDataInput">
+      <xs:sequence>
+         <xs:element name="shid" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ReadReceiptDataOutputCollection" type="ReadReceiptDataOutputCollection"/>
+   <xs:complexType name="ReadReceiptDataOutputCollection">
+      <xs:sequence>
+         <xs:element name="ReadReceiptDataOutput" type="ReadReceiptDataOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ReadReceiptDataOutput">
+      <xs:sequence>
+         <xs:element name="GRNNo" type="xs:decimal" nillable="true"/>
+         <xs:element name="fu_user_name" type="xs:string" nillable="true"/>
+         <xs:element name="rt_transaction_id" type="xs:decimal" nillable="true"/>
+         <xs:element name="dc_no" type="xs:string" nillable="true"/>
+         <xs:element name="dc_date" type="xs:dateTime" nillable="true"/>
+         <xs:element name="igp_no" type="xs:string" nillable="true"/>
+         <xs:element name="igp_date" type="xs:string" nillable="true"/>
+         <xs:element name="no_of_cartons" type="xs:decimal" nillable="true"/>
+         <xs:element name="builty_no" type="xs:string" nillable="true"/>
+         <xs:element name="sh_packing_slip" type="xs:string" nillable="true"/>
+         <xs:element name="sh_waybill_airbill_num" type="xs:string" nillable="true"/>
+         <xs:element name="GRN_DATE" type="xs:dateTime" nillable="true"/>
+         <xs:element name="PO_NUM" type="xs:string" nillable="true"/>
+         <xs:element name="veh_no" type="xs:string" nillable="true"/>
+         <xs:element name="pvsa_vendor_site_code" type="xs:string" nillable="true"/>
+         <xs:element name="sh_creation_date" type="xs:dateTime" nillable="true"/>
+         <xs:element name="DESCRIPTION" type="xs:string" nillable="true"/>
+         <xs:element name="UOM" type="xs:string" nillable="true"/>
+         <xs:element name="carrier" type="xs:string" nillable="true"/>
+         <xs:element name="Item_Code" type="xs:string" nillable="true"/>
+         <xs:element name="desc" type="xs:string" nillable="true"/>
+         <xs:element name="ITMID" type="xs:decimal" nillable="true"/>
+         <xs:element name="ORGID" type="xs:decimal" nillable="true"/>
+         <xs:element name="QuantityReceived" type="xs:decimal" nillable="true"/>
+         <xs:element name="primary_uom_code" type="xs:string" nillable="true"/>
+         <xs:element name="DEPTLINE" type="xs:string" nillable="true"/>
+         <xs:element name="gatepass_no" type="xs:string" nillable="true"/>
+         <xs:element name="sl_po_header_id" type="xs:decimal" nillable="true"/>
+         <xs:element name="remarks" type="xs:string" nillable="true"/>
+         <xs:element name="sl_po_line_id" type="xs:decimal" nillable="true"/>
+         <xs:element name="SupplierName" type="xs:string" nillable="true"/>
+         <xs:element name="dept" type="xs:string" nillable="true"/>
+         <xs:element name="rt_comments" type="xs:string" nillable="true"/>
+         <xs:element name="sl_shipment_line_id" type="xs:decimal" nillable="true"/>
+         <xs:element name="rt" type="xs:string" nillable="true"/>
+         <xs:element name="sh" type="xs:string" nillable="true"/>
+         <xs:element name="ha" type="xs:string" nillable="true"/>
+         <xs:element name="sl" type="xs:string" nillable="true"/>
+         <xs:element name="plla" type="xs:string" nillable="true"/>
+         <xs:element name="sib" type="xs:string" nillable="true"/>
+         <xs:element name="pvsa" type="xs:string" nillable="true"/>
+         <xs:element name="fu" type="xs:string" nillable="true"/>
+         <xs:element name="sh_receipt_num" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
