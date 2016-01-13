@@ -12,6 +12,8 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders"
           location="PollRcvShipmentHeaders.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdBpmWfReadyFlag"
+          location="UpdBpmWfReadyFlag.wsdl" importType="wsdl"/>
   <service name="PollRcvShipmentHeaders"
            ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
@@ -28,6 +30,17 @@
   <component name="GrnWorkflowProcess">
     <implementation.bpmn src="processes/GrnWorkflowProcess.bpmn"/>
   </component>
+  <reference name="UpdBpmWfReadyFlag" ui:wsdlLocation="UpdBpmWfReadyFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdBpmWfReadyFlag#wsdl.interface(UpdBpmWfReadyFlag_ptt)"/>
+    <binding.jca config="UpdBpmWfReadyFlag_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>PollRcvShipmentHeaders</source.uri>
     <target.uri>GrnWorkflowProcess/References.Externals.PollRcvShipmentHeaders.service</target.uri>
