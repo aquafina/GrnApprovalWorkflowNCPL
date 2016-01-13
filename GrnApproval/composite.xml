@@ -10,8 +10,26 @@
            xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders"
+          location="PollRcvShipmentHeaders.wsdl" importType="wsdl"/>
+  <service name="PollRcvShipmentHeaders"
+           ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
+    <binding.jca config="PollRcvShipmentHeaders_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">2147483647</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </service>
   <property name="productVersion" type="xs:string" many="false">11.1.1.7.8</property>
   <component name="GrnWorkflowProcess">
     <implementation.bpmn src="processes/GrnWorkflowProcess.bpmn"/>
   </component>
+  <wire>
+    <source.uri>PollRcvShipmentHeaders</source.uri>
+    <target.uri>GrnWorkflowProcess/References.Externals.PollRcvShipmentHeaders.service</target.uri>
+  </wire>
 </composite>
