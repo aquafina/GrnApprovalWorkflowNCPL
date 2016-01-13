@@ -16,4 +16,8 @@
              ui:wsdlLocation="ReadBpmWfReadyFlag.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ReadBpmWfReadyFlag#wsdl.interface(ReadBpmWfReadyFlag_ptt)"/>
   </reference>
+  <reference name="Services.Externals.ReadReceiptData.reference"
+             ui:wsdlLocation="ReadReceiptData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ReadReceiptData#wsdl.interface(ReadReceiptData_ptt)"/>
+  </reference>
 </componentType>

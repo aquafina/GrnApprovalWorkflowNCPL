@@ -16,6 +16,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT1510899077625">
+                <labels>
+                    <label locale="en">STReadBpmWfReadyFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -29,17 +37,17 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
-            <topicDocumentation name="ACT1510899077625">
+            <topicDocumentation name="GTW15109006511018">
                 <labels>
-                    <label locale="en">STReadBpmWfReadyFlag</label>
+                    <label locale="en">IsReceiptReadyForApproval</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="GTW15109006511018">
+            <topicDocumentation name="ACT15109693984622">
                 <labels>
-                    <label locale="en">IsReceiptReadyForApproval</label>
+                    <label locale="en">STReadReceipt</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -56,6 +64,7 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="sf8"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

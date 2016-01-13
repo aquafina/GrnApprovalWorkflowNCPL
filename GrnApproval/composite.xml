@@ -80,4 +80,8 @@
     <source.uri>GrnWorkflowProcess/Services.Externals.ReadBpmWfReadyFlag.reference</source.uri>
     <target.uri>ReadBpmWfReadyFlag</target.uri>
   </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.Externals.ReadReceiptData.reference</source.uri>
+    <target.uri>ReadReceiptData</target.uri>
+  </wire>
 </composite>
