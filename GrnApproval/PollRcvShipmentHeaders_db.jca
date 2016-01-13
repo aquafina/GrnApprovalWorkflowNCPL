@@ -1,0 +1,21 @@
+<adapter-config name="PollRcvShipmentHeaders" adapter="Database Adapter" wsdlLocation="PollRcvShipmentHeaders.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
+  <endpoint-activation portType="PollRcvShipmentHeaders_ptt" operation="receive">
+    <activation-spec className="oracle.tip.adapter.db.DBActivationSpec">
+      <property name="DescriptorName" value="PollRcvShipmentHeaders.RcvShipmentHeaders"/>
+      <property name="QueryName" value="PollRcvShipmentHeadersSelect"/>
+      <property name="MappingsMetaDataURL" value="PollRcvShipmentHeaders-or-mappings.xml"/>
+      <property name="PollingStrategy" value="LogicalDeletePollingStrategy"/>
+      <property name="MarkReadColumn" value="ATTRIBUTE9"/>
+      <property name="MarkReadValue" value="Yes"/>
+      <property name="MarkUnreadValue" value="No"/>
+      <property name="PollingInterval" value="5"/>
+      <property name="MaxRaiseSize" value="1"/>
+      <property name="MaxTransactionSize" value="10"/>
+      <property name="NumberOfThreads" value="1"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>
