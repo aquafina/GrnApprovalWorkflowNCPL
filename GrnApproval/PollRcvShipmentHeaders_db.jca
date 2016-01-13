@@ -9,7 +9,6 @@
       <property name="PollingStrategy" value="LogicalDeletePollingStrategy"/>
       <property name="MarkReadColumn" value="ATTRIBUTE9"/>
       <property name="MarkReadValue" value="Yes"/>
-      <property name="MarkUnreadValue" value="No"/>
       <property name="PollingInterval" value="5"/>
       <property name="MaxRaiseSize" value="1"/>
       <property name="MaxTransactionSize" value="10"/>
