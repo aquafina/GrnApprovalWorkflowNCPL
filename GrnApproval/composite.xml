@@ -45,4 +45,8 @@
     <source.uri>PollRcvShipmentHeaders</source.uri>
     <target.uri>GrnWorkflowProcess/References.Externals.PollRcvShipmentHeaders.service</target.uri>
   </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.Externals.UpdBpmWfReadyFlag.reference</source.uri>
+    <target.uri>UpdBpmWfReadyFlag</target.uri>
+  </wire>
 </composite>

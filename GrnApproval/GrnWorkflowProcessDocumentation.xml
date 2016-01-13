@@ -21,7 +21,16 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
+            <topicDocumentation name="ACT1510859787598">
+                <labels>
+                    <label locale="en">STUpdBpmWfReadyFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
+            <topicDocumentation name="sf5"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

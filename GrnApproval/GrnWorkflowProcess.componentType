@@ -8,4 +8,8 @@
            ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
   </service>
+  <reference name="Services.Externals.UpdBpmWfReadyFlag.reference"
+             ui:wsdlLocation="UpdBpmWfReadyFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdBpmWfReadyFlag#wsdl.interface(UpdBpmWfReadyFlag_ptt)"/>
+  </reference>
 </componentType>

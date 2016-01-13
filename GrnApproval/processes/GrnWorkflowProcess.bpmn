@@ -22,6 +22,9 @@
                     <ns5:Conversation id="CONVERSATION151084239909" type="use_interface">
                         <ns5:UseInterfaceConversationDefinition reference="References.Externals.PollRcvShipmentHeaders"/>
                     </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION151086028896" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.Externals.UpdBpmWfReadyFlag"/>
+                    </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
                     <ns5:AppLinkName/>
@@ -46,6 +49,39 @@
                 </extensionElements>
             </lane>
         </laneSet>
+        <serviceTask implementation="Services.Externals.UpdBpmWfReadyFlag" operationRef="updBpmWfReadyFlag" isForCompensation="false" name="STUpdBpmWfReadyFlag" id="ACT1510859787598">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="257" y="110"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION151086028896">
+                        <ns5:ServiceCallConversationalDefinition operation="updBpmWfReadyFlag"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="inputParameters" id="inputParameters">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/UpdBpmWfReadyFlag" element="InputParameters" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <inputSet id="ACT1510859787598_uniqueInputSet">
+                    <dataInputRefs>inputParameters</dataInputRefs>
+                </inputSet>
+            </ioSpecification>
+        </serviceTask>
         <startEvent isInterrupting="false" name="Start" id="EVT15107785706398">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -85,7 +121,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="348" y="108"/>
+                        <ns5:Position x="450" y="108"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -98,7 +134,19 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
-        <sequenceFlow sourceRef="EVT15107785706398" targetRef="EVT15107785706483" name="sf10" id="sf10">
+        <sequenceFlow sourceRef="EVT15107785706398" targetRef="ACT1510859787598" name="sf10" id="sf10">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="ACT1510859787598" targetRef="EVT15107785706483" name="sf5" id="sf5">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
