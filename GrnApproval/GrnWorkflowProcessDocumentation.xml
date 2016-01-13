@@ -45,9 +45,9 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT15109693984622">
+            <topicDocumentation name="ACT15109813308980">
                 <labels>
-                    <label locale="en">STReadReceipt</label>
+                    <label locale="en">STReadReceiptData</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -56,7 +56,7 @@
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
-            <topicDocumentation name="sf26">
+            <topicDocumentation name="sf11">
                 <labels>
                     <label locale="en"></label>
                 </labels>
@@ -64,7 +64,8 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="sf8"/>
+            <topicDocumentation name="sf13"/>
+            <topicDocumentation name="sf16"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
