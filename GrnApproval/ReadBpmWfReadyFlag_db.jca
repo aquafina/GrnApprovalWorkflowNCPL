@@ -1,0 +1,13 @@
+<adapter-config name="ReadBpmWfReadyFlag" adapter="Database Adapter" wsdlLocation="ReadBpmWfReadyFlag.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
+  <endpoint-interaction portType="ReadBpmWfReadyFlag_ptt" operation="ReadBpmWfReadyFlag">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select attribute10 from rcv_shipment_headers where shipment_header_id = #shid"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+    <input/>
+    <output/>
+  </endpoint-interaction>
+
+</adapter-config>
