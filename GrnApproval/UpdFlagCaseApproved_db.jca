@@ -1,0 +1,12 @@
+<adapter-config name="UpdFlagCaseApproved" adapter="Database Adapter" wsdlLocation="UpdFlagCaseApproved.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
+  <endpoint-interaction portType="UpdFlagCaseApproved_ptt" operation="UpdFlagCaseApproved">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="update rcv_shipment_headers set attribute10 = 'BPM_WORKFLOW_APPROVED' where shipment_header_id = #SHID"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+    <input/>
+  </endpoint-interaction>
+
+</adapter-config>
