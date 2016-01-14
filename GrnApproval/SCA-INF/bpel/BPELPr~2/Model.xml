@@ -43,7 +43,7 @@
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessUpdateFlag_CaseApproved.wsdl) -->
     <receive name="receiveInput" partnerLink="bpelprocessupdateflag_caseapproved_client" portType="client:BPELProcessUpdateFlag_CaseApproved" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
-    <assign name="Transform1" id="BpAss0">
+    <assign name="TransformInputUpdFlagCaseApproved" id="BpAss0">
       <bpelx:annotation>
         <bpelx:pattern>transformation</bpelx:pattern>
       </bpelx:annotation>
