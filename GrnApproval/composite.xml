@@ -120,4 +120,8 @@
     <source.uri>BPELProcessUpdateFlag_CaseApproved/UpdFlagCaseApproved</source.uri>
     <target.uri>UpdFlagCaseApproved</target.uri>
   </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessUpdateFlag_CaseApproved.Bpelprocessupdateflag_caseapproved_client.reference</source.uri>
+    <target.uri>BPELProcessUpdateFlag_CaseApproved/bpelprocessupdateflag_caseapproved_client</target.uri>
+  </wire>
 </composite>

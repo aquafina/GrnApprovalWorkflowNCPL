@@ -61,6 +61,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15117359670550">
+                <labels>
+                    <label locale="en">STUpdFlagCaseApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15117490959648">
+                <labels>
+                    <label locale="en">IsApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -75,6 +91,16 @@
             <topicDocumentation name="sf13"/>
             <topicDocumentation name="sf16"/>
             <topicDocumentation name="sf12"/>
+            <topicDocumentation name="sf14"/>
+            <topicDocumentation name="sf15">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf18"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
