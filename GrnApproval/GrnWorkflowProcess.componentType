@@ -20,4 +20,9 @@
              ui:wsdlLocation="ReadReceiptData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ReadReceiptData#wsdl.interface(ReadReceiptData_ptt)"/>
   </reference>
+  <reference name="HumanTasks.GrnApproverTask.reference"
+             ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                    callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+  </reference>
 </componentType>

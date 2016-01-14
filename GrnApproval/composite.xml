@@ -18,6 +18,9 @@
           location="ReadBpmWfReadyFlag.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ReadReceiptData"
           location="ReadReceiptData.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
+          location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
+          importType="wsdl"/>
   <service name="PollRcvShipmentHeaders"
            ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
@@ -33,6 +36,9 @@
   <property name="productVersion" type="xs:string" many="false">11.1.1.7.8</property>
   <component name="GrnWorkflowProcess">
     <implementation.bpmn src="processes/GrnWorkflowProcess.bpmn"/>
+  </component>
+  <component name="GrnApproverTask">
+    <implementation.workflow src="GrnApproverTask.task"/>
   </component>
   <reference name="UpdBpmWfReadyFlag" ui:wsdlLocation="UpdBpmWfReadyFlag.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdBpmWfReadyFlag#wsdl.interface(UpdBpmWfReadyFlag_ptt)"/>
@@ -83,5 +89,9 @@
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.ReadReceiptData.reference</source.uri>
     <target.uri>ReadReceiptData</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/HumanTasks.GrnApproverTask.reference</source.uri>
+    <target.uri>GrnApproverTask/TaskService</target.uri>
   </wire>
 </composite>

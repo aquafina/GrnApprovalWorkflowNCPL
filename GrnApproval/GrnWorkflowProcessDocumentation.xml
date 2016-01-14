@@ -53,6 +53,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15115580161186">
+                <labels>
+                    <label locale="en">GrnApproverTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -66,6 +74,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf13"/>
             <topicDocumentation name="sf16"/>
+            <topicDocumentation name="sf12"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
