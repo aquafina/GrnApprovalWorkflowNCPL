@@ -10,7 +10,10 @@
         </ns1:applicationRole>
         <ns1:applicationRole id="GrnApproval.Role" isProcessRole="true">
             <ns5:name>GrnApproval.Role</ns5:name>
-            <ns1:processRole id="Role" name="Role"/>
+            <ns1:member type="USER">
+                <ns1:name>usman</ns1:name>
+            </ns1:member>
+            <ns1:processRole id="Role" name="GrnApprovers"/>
         </ns1:applicationRole>
     </ns1:applicationRoles>
     <ns1:applicationRoleOrgUnitCalendarAssociations/>
