@@ -42,12 +42,12 @@
             </ns5:OracleExtensions>
         </extensionElements>
         <laneSet>
-            <lane name="Role" id="lane1">
+            <lane name="GrnApprovers" id="lane1">
                 <extensionElements>
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
                             <ns5:Position x="0" y="0"/>
-                            <ns5:Size width="200" height="0"/>
+                            <ns5:Size width="273" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -331,6 +331,7 @@
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
                     </ns5:FeatureSet>
                     <ns5:HumanTask humanTaskReference="HumanTasks.GrnApproverTask"/>
                     <ns5:LogHandlers/>
@@ -430,7 +431,7 @@
                     </to>
                 </assignment>
             </dataOutputAssociation>
-            <resourceRole name="Role" id="lane1"/>
+            <resourceRole name="GrnApprovers" id="lane1"/>
         </userTask>
         <startEvent isInterrupting="false" name="Start" id="EVT15107785706398">
             <extensionElements>
