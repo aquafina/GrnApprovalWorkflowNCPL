@@ -29,4 +29,8 @@
              ui:wsdlLocation="BPELProcessUpdateFlag_CaseApproved.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateFlag_CaseApproved#wsdl.interface(BPELProcessUpdateFlag_CaseApproved)"/>
   </reference>
+  <reference name="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client.reference"
+             ui:wsdlLocation="BPELProcessUpdFlag_CaseDisapproved.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved#wsdl.interface(BPELProcessUpdFlag_CaseDisapproved)"/>
+  </reference>
 </componentType>

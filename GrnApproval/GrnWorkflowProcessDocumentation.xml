@@ -40,6 +40,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15117359670550">
+                <labels>
+                    <label locale="en">STUpdFlagCaseApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -61,17 +69,17 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT15117359670550">
+            <topicDocumentation name="GTW15117490959648">
                 <labels>
-                    <label locale="en">STUpdFlagCaseApproved</label>
+                    <label locale="en">IsApproved</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="GTW15117490959648">
+            <topicDocumentation name="ACT1511783642045">
                 <labels>
-                    <label locale="en">IsApproved</label>
+                    <label locale="en">STUpdCaseDisapproved</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -101,6 +109,7 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf18"/>
+            <topicDocumentation name="sf33"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

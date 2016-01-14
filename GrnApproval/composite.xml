@@ -25,6 +25,10 @@
           location="BPELProcessUpdateFlag_CaseApproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseApproved"
           location="UpdFlagCaseApproved.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved"
+          location="BPELProcessUpdFlag_CaseDisapproved.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved"
+          location="UpdFlagCaseDisapproved.wsdl" importType="wsdl"/>
   <service name="PollRcvShipmentHeaders"
            ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
@@ -46,6 +50,12 @@
   </component>
   <component name="BPELProcessUpdateFlag_CaseApproved" version="1.1">
     <implementation.bpel src="BPELProcessUpdateFlag_CaseApproved.bpel"/>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BPELProcessUpdFlag_CaseDisapproved" version="1.1">
+    <implementation.bpel src="BPELProcessUpdFlag_CaseDisapproved.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
@@ -96,6 +106,18 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="UpdFlagCaseDisapproved"
+             ui:wsdlLocation="UpdFlagCaseDisapproved.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved#wsdl.interface(UpdFlagCaseDisapproved_ptt)"/>
+    <binding.jca config="UpdFlagCaseDisapproved_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>PollRcvShipmentHeaders</source.uri>
     <target.uri>GrnWorkflowProcess/References.Externals.PollRcvShipmentHeaders.service</target.uri>
@@ -123,5 +145,13 @@
   <wire>
     <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessUpdateFlag_CaseApproved.Bpelprocessupdateflag_caseapproved_client.reference</source.uri>
     <target.uri>BPELProcessUpdateFlag_CaseApproved/bpelprocessupdateflag_caseapproved_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BPELProcessUpdFlag_CaseDisapproved/UpdFlagCaseDisapproved</source.uri>
+    <target.uri>UpdFlagCaseDisapproved</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client.reference</source.uri>
+    <target.uri>BPELProcessUpdFlag_CaseDisapproved/bpelprocessupdflag_casedisapproved_client</target.uri>
   </wire>
 </composite>
