@@ -15,6 +15,7 @@
    <xs:complexType name="ReadReceiptDataOutput">
       <xs:sequence>
          <xs:element name="GRNNo" type="xs:decimal" nillable="true"/>
+         <xs:element name="ORGANIZATION_NAME" type="xs:string" nillable="true"/>
          <xs:element name="USER_NAME" type="xs:string" nillable="true"/>
          <xs:element name="TRANSACTION_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="SHIPMENT_HEADER_ID" type="xs:decimal" nillable="true"/>

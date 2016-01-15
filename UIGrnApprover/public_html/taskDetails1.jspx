@@ -351,6 +351,10 @@
                         <f:validator binding="#{row.bindings.USER_NAME.validator}"/>
                       </af:inputText>
                     </af:column>
+                    <af:column id="c41">
+                      <af:outputText value="#{row.ORGANIZATION_NAME}"
+                                     id="ot22"/>
+                    </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.label}"

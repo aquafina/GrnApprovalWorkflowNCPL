@@ -321,6 +321,7 @@
           <Item Value="COMMENTS"/>
           <Item Value="SHIPMENT_LINE_ID"/>
           <Item Value="NOTE_TO_RECEIVER"/>
+          <Item Value="ORGANIZATION_NAME"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
