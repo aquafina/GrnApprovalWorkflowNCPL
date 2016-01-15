@@ -301,7 +301,7 @@
                                     disabled="#{!bindings.Delete.enabled}"
                                     visible="#{actionAvailable.updateAvailable}"
                                     id="cb2" rendered="false"/>
-                  <af:panelFormLayout id="pfl10">
+                  <af:panelFormLayout id="pfl10" rows="5" maxColumns="3">
                     <f:facet name="footer"/>
                     <af:inputText value="#{bindings.GRNNo.inputValue}"
                                   label="#{bindings.GRNNo.hints.label}"
@@ -311,6 +311,80 @@
                                   shortDesc="#{bindings.GRNNo.hints.tooltip}"
                                   id="it36">
                       <f:validator binding="#{bindings.GRNNo.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ORGANIZATION_NAME.inputValue}"
+                                  label="#{bindings.ORGANIZATION_NAME.hints.label}"
+                                  required="#{bindings.ORGANIZATION_NAME.hints.mandatory}"
+                                  columns="#{bindings.ORGANIZATION_NAME.hints.displayWidth}"
+                                  maximumLength="#{bindings.ORGANIZATION_NAME.hints.precision}"
+                                  shortDesc="#{bindings.ORGANIZATION_NAME.hints.tooltip}"
+                                  id="it37">
+                      <f:validator binding="#{bindings.ORGANIZATION_NAME.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.DC_NO.inputValue}"
+                                  label="#{bindings.DC_NO.hints.label}"
+                                  required="#{bindings.DC_NO.hints.mandatory}"
+                                  columns="#{bindings.DC_NO.hints.displayWidth}"
+                                  maximumLength="#{bindings.DC_NO.hints.precision}"
+                                  shortDesc="#{bindings.DC_NO.hints.tooltip}"
+                                  id="it38">
+                      <f:validator binding="#{bindings.DC_NO.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.DC_DATE.inputValue}"
+                                  label="#{bindings.DC_DATE.hints.label}"
+                                  required="#{bindings.DC_DATE.hints.mandatory}"
+                                  columns="#{bindings.DC_DATE.hints.displayWidth}"
+                                  maximumLength="#{bindings.DC_DATE.hints.precision}"
+                                  shortDesc="#{bindings.DC_DATE.hints.tooltip}"
+                                  id="it39">
+                      <f:validator binding="#{bindings.DC_DATE.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.DC_DATE.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.PACKING_SLIP.inputValue}"
+                                  label="#{bindings.PACKING_SLIP.hints.label}"
+                                  required="#{bindings.PACKING_SLIP.hints.mandatory}"
+                                  columns="#{bindings.PACKING_SLIP.hints.displayWidth}"
+                                  maximumLength="#{bindings.PACKING_SLIP.hints.precision}"
+                                  shortDesc="#{bindings.PACKING_SLIP.hints.tooltip}"
+                                  id="it40">
+                      <f:validator binding="#{bindings.PACKING_SLIP.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.BUILTY_NO.inputValue}"
+                                  label="#{bindings.BUILTY_NO.hints.label}"
+                                  required="#{bindings.BUILTY_NO.hints.mandatory}"
+                                  columns="#{bindings.BUILTY_NO.hints.displayWidth}"
+                                  maximumLength="#{bindings.BUILTY_NO.hints.precision}"
+                                  shortDesc="#{bindings.BUILTY_NO.hints.tooltip}"
+                                  id="it41">
+                      <f:validator binding="#{bindings.BUILTY_NO.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.GRN_DATE.inputValue}"
+                                  label="#{bindings.GRN_DATE.hints.label}"
+                                  required="#{bindings.GRN_DATE.hints.mandatory}"
+                                  columns="#{bindings.GRN_DATE.hints.displayWidth}"
+                                  maximumLength="#{bindings.GRN_DATE.hints.precision}"
+                                  shortDesc="#{bindings.GRN_DATE.hints.tooltip}"
+                                  id="it42">
+                      <f:validator binding="#{bindings.GRN_DATE.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.GRN_DATE.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.SupplierName.inputValue}"
+                                  label="#{bindings.SupplierName.hints.label}"
+                                  required="#{bindings.SupplierName.hints.mandatory}"
+                                  columns="#{bindings.SupplierName.hints.displayWidth}"
+                                  maximumLength="#{bindings.SupplierName.hints.precision}"
+                                  shortDesc="#{bindings.SupplierName.hints.tooltip}"
+                                  id="it43">
+                      <f:validator binding="#{bindings.SupplierName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.CARRIER.inputValue}"
+                                  label="#{bindings.CARRIER.hints.label}"
+                                  required="#{bindings.CARRIER.hints.mandatory}"
+                                  columns="#{bindings.CARRIER.hints.displayWidth}"
+                                  maximumLength="#{bindings.CARRIER.hints.precision}"
+                                  shortDesc="#{bindings.CARRIER.hints.tooltip}"
+                                  id="it44">
+                      <f:validator binding="#{bindings.CARRIER.validator}"/>
                     </af:inputText>
                   </af:panelFormLayout>
                   <af:table value="#{bindings.ReadReceiptDataOutput.collectionModel}"
@@ -350,10 +424,6 @@
                                     id="it6">
                         <f:validator binding="#{row.bindings.USER_NAME.validator}"/>
                       </af:inputText>
-                    </af:column>
-                    <af:column id="c41">
-                      <af:outputText value="#{row.ORGANIZATION_NAME}"
-                                     id="ot22"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.name}"
                                sortable="false"

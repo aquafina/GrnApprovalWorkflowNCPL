@@ -616,5 +616,48 @@
         <Item Value="GRNNo"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="ORGANIZATION_NAME">
+      <AttrNames>
+        <Item Value="ORGANIZATION_NAME"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="DC_NO">
+      <AttrNames>
+        <Item Value="DC_NO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="DC_DATE">
+      <AttrNames>
+        <Item Value="DC_DATE"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="PACKING_SLIP">
+      <AttrNames>
+        <Item Value="PACKING_SLIP"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="BUILTY_NO">
+      <AttrNames>
+        <Item Value="BUILTY_NO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="GRN_DATE">
+      <AttrNames>
+        <Item Value="GRN_DATE"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="SupplierName">
+      <AttrNames>
+        <Item Value="SupplierName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="CARRIER">
+      <AttrNames>
+        <Item Value="CARRIER"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
