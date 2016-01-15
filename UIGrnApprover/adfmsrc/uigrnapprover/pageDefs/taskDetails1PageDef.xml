@@ -659,5 +659,33 @@
         <Item Value="CARRIER"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="NO_OF_CARTONS">
+      <AttrNames>
+        <Item Value="NO_OF_CARTONS"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="VENDOR_SITE_CODE">
+      <AttrNames>
+        <Item Value="VENDOR_SITE_CODE"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator"
+                     id="WAYBILL_AIRBILL_NUM">
+      <AttrNames>
+        <Item Value="WAYBILL_AIRBILL_NUM"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="VEH_NO">
+      <AttrNames>
+        <Item Value="VEH_NO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="IGP_NO">
+      <AttrNames>
+        <Item Value="IGP_NO"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

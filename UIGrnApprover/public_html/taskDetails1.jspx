@@ -303,17 +303,8 @@
                                     id="cb2" rendered="false"/>
                   <af:panelFormLayout id="pfl10" rows="5" maxColumns="3">
                     <f:facet name="footer"/>
-                    <af:inputText value="#{bindings.GRNNo.inputValue}"
-                                  label="#{bindings.GRNNo.hints.label}"
-                                  required="#{bindings.GRNNo.hints.mandatory}"
-                                  columns="#{bindings.GRNNo.hints.displayWidth}"
-                                  maximumLength="#{bindings.GRNNo.hints.precision}"
-                                  shortDesc="#{bindings.GRNNo.hints.tooltip}"
-                                  id="it36">
-                      <f:validator binding="#{bindings.GRNNo.validator}"/>
-                    </af:inputText>
                     <af:inputText value="#{bindings.ORGANIZATION_NAME.inputValue}"
-                                  label="#{bindings.ORGANIZATION_NAME.hints.label}"
+                                  label="Inventory Org:"
                                   required="#{bindings.ORGANIZATION_NAME.hints.mandatory}"
                                   columns="#{bindings.ORGANIZATION_NAME.hints.displayWidth}"
                                   maximumLength="#{bindings.ORGANIZATION_NAME.hints.precision}"
@@ -322,7 +313,7 @@
                       <f:validator binding="#{bindings.ORGANIZATION_NAME.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.DC_NO.inputValue}"
-                                  label="#{bindings.DC_NO.hints.label}"
+                                  label="DC No.:"
                                   required="#{bindings.DC_NO.hints.mandatory}"
                                   columns="#{bindings.DC_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.DC_NO.hints.precision}"
@@ -331,7 +322,7 @@
                       <f:validator binding="#{bindings.DC_NO.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.DC_DATE.inputValue}"
-                                  label="#{bindings.DC_DATE.hints.label}"
+                                  label="DC Date:"
                                   required="#{bindings.DC_DATE.hints.mandatory}"
                                   columns="#{bindings.DC_DATE.hints.displayWidth}"
                                   maximumLength="#{bindings.DC_DATE.hints.precision}"
@@ -341,7 +332,7 @@
                       <af:convertDateTime pattern="#{bindings.DC_DATE.format}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.PACKING_SLIP.inputValue}"
-                                  label="#{bindings.PACKING_SLIP.hints.label}"
+                                  label="Packing Slip:"
                                   required="#{bindings.PACKING_SLIP.hints.mandatory}"
                                   columns="#{bindings.PACKING_SLIP.hints.displayWidth}"
                                   maximumLength="#{bindings.PACKING_SLIP.hints.precision}"
@@ -350,7 +341,7 @@
                       <f:validator binding="#{bindings.PACKING_SLIP.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.BUILTY_NO.inputValue}"
-                                  label="#{bindings.BUILTY_NO.hints.label}"
+                                  label="Builty No.:"
                                   required="#{bindings.BUILTY_NO.hints.mandatory}"
                                   columns="#{bindings.BUILTY_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.BUILTY_NO.hints.precision}"
@@ -359,7 +350,7 @@
                       <f:validator binding="#{bindings.BUILTY_NO.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.GRN_DATE.inputValue}"
-                                  label="#{bindings.GRN_DATE.hints.label}"
+                                  label="G.R.N Date:"
                                   required="#{bindings.GRN_DATE.hints.mandatory}"
                                   columns="#{bindings.GRN_DATE.hints.displayWidth}"
                                   maximumLength="#{bindings.GRN_DATE.hints.precision}"
@@ -369,7 +360,7 @@
                       <af:convertDateTime pattern="#{bindings.GRN_DATE.format}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.SupplierName.inputValue}"
-                                  label="#{bindings.SupplierName.hints.label}"
+                                  label="Supplier Name:"
                                   required="#{bindings.SupplierName.hints.mandatory}"
                                   columns="#{bindings.SupplierName.hints.displayWidth}"
                                   maximumLength="#{bindings.SupplierName.hints.precision}"
@@ -378,13 +369,67 @@
                       <f:validator binding="#{bindings.SupplierName.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.CARRIER.inputValue}"
-                                  label="#{bindings.CARRIER.hints.label}"
+                                  label="Carrier:"
                                   required="#{bindings.CARRIER.hints.mandatory}"
                                   columns="#{bindings.CARRIER.hints.displayWidth}"
                                   maximumLength="#{bindings.CARRIER.hints.precision}"
                                   shortDesc="#{bindings.CARRIER.hints.tooltip}"
                                   id="it44">
                       <f:validator binding="#{bindings.CARRIER.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.NO_OF_CARTONS.inputValue}"
+                                  label="No.Of Cartoons:"
+                                  required="#{bindings.NO_OF_CARTONS.hints.mandatory}"
+                                  columns="#{bindings.NO_OF_CARTONS.hints.displayWidth}"
+                                  maximumLength="#{bindings.NO_OF_CARTONS.hints.precision}"
+                                  shortDesc="#{bindings.NO_OF_CARTONS.hints.tooltip}"
+                                  id="it45">
+                      <f:validator binding="#{bindings.NO_OF_CARTONS.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.GRNNo.inputValue}"
+                                  label="G.R.N No:"
+                                  required="#{bindings.GRNNo.hints.mandatory}"
+                                  columns="#{bindings.GRNNo.hints.displayWidth}"
+                                  maximumLength="#{bindings.GRNNo.hints.precision}"
+                                  shortDesc="#{bindings.GRNNo.hints.tooltip}"
+                                  id="it36">
+                      <f:validator binding="#{bindings.GRNNo.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.VENDOR_SITE_CODE.inputValue}"
+                                  label="Category:"
+                                  required="#{bindings.VENDOR_SITE_CODE.hints.mandatory}"
+                                  columns="#{bindings.VENDOR_SITE_CODE.hints.displayWidth}"
+                                  maximumLength="#{bindings.VENDOR_SITE_CODE.hints.precision}"
+                                  shortDesc="#{bindings.VENDOR_SITE_CODE.hints.tooltip}"
+                                  id="it46">
+                      <f:validator binding="#{bindings.VENDOR_SITE_CODE.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.WAYBILL_AIRBILL_NUM.inputValue}"
+                                  label="A/W Bill No.:"
+                                  required="#{bindings.WAYBILL_AIRBILL_NUM.hints.mandatory}"
+                                  columns="#{bindings.WAYBILL_AIRBILL_NUM.hints.displayWidth}"
+                                  maximumLength="#{bindings.WAYBILL_AIRBILL_NUM.hints.precision}"
+                                  shortDesc="#{bindings.WAYBILL_AIRBILL_NUM.hints.tooltip}"
+                                  id="it47">
+                      <f:validator binding="#{bindings.WAYBILL_AIRBILL_NUM.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.VEH_NO.inputValue}"
+                                  label="Vehicle No.:"
+                                  required="#{bindings.VEH_NO.hints.mandatory}"
+                                  columns="#{bindings.VEH_NO.hints.displayWidth}"
+                                  maximumLength="#{bindings.VEH_NO.hints.precision}"
+                                  shortDesc="#{bindings.VEH_NO.hints.tooltip}"
+                                  id="it48">
+                      <f:validator binding="#{bindings.VEH_NO.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.IGP_NO.inputValue}"
+                                  label="I.G.P No.:"
+                                  required="#{bindings.IGP_NO.hints.mandatory}"
+                                  columns="#{bindings.IGP_NO.hints.displayWidth}"
+                                  maximumLength="#{bindings.IGP_NO.hints.precision}"
+                                  shortDesc="#{bindings.IGP_NO.hints.tooltip}"
+                                  id="it49">
+                      <f:validator binding="#{bindings.IGP_NO.validator}"/>
                     </af:inputText>
                   </af:panelFormLayout>
                   <af:table value="#{bindings.ReadReceiptDataOutput.collectionModel}"
@@ -400,7 +445,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GRNNo.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GRNNo.label}"
-                               id="c39">
+                               id="c39" rendered="false">
                       <af:inputText value="#{row.bindings.GRNNo.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.GRNNo.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.GRNNo.mandatory}"
@@ -428,7 +473,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.label}"
-                               id="c30">
+                               id="c30" rendered="false">
                       <af:inputText value="#{row.bindings.TRANSACTION_ID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.TRANSACTION_ID.mandatory}"
@@ -442,7 +487,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_HEADER_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_HEADER_ID.label}"
-                               id="c6">
+                               id="c6" rendered="false">
                       <af:inputText value="#{row.bindings.SHIPMENT_HEADER_ID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_HEADER_ID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_HEADER_ID.mandatory}"
@@ -456,7 +501,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.DC_NO.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.DC_NO.label}"
-                               id="c40">
+                               id="c40" rendered="false">
                       <af:inputText value="#{row.bindings.DC_NO.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.DC_NO.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.DC_NO.mandatory}"
@@ -470,7 +515,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.DC_DATE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.DC_DATE.label}"
-                               id="c38">
+                               id="c38" rendered="false">
                       <af:inputDate value="#{row.bindings.DC_DATE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.DC_DATE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.DC_DATE.mandatory}"
@@ -483,7 +528,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.IGP_NO.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.IGP_NO.label}"
-                               id="c2">
+                               id="c2" rendered="false">
                       <af:inputText value="#{row.bindings.IGP_NO.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.IGP_NO.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.IGP_NO.mandatory}"
@@ -511,7 +556,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.NO_OF_CARTONS.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.NO_OF_CARTONS.label}"
-                               id="c16">
+                               id="c16" rendered="false">
                       <af:inputText value="#{row.bindings.NO_OF_CARTONS.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.NO_OF_CARTONS.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.NO_OF_CARTONS.mandatory}"
@@ -525,7 +570,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.BUILTY_NO.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.BUILTY_NO.label}"
-                               id="c27">
+                               id="c27" rendered="false">
                       <af:inputText value="#{row.bindings.BUILTY_NO.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.BUILTY_NO.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.BUILTY_NO.mandatory}"
@@ -539,7 +584,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PACKING_SLIP.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.PACKING_SLIP.label}"
-                               id="c35">
+                               id="c35" rendered="false">
                       <af:inputText value="#{row.bindings.PACKING_SLIP.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.PACKING_SLIP.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.PACKING_SLIP.mandatory}"
@@ -553,7 +598,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.WAYBILL_AIRBILL_NUM.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.WAYBILL_AIRBILL_NUM.label}"
-                               id="c31">
+                               id="c31" rendered="false">
                       <af:inputText value="#{row.bindings.WAYBILL_AIRBILL_NUM.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.WAYBILL_AIRBILL_NUM.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.WAYBILL_AIRBILL_NUM.mandatory}"
@@ -567,7 +612,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GRN_DATE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GRN_DATE.label}"
-                               id="c23">
+                               id="c23" rendered="false">
                       <af:inputDate value="#{row.bindings.GRN_DATE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.GRN_DATE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.GRN_DATE.mandatory}"
@@ -594,7 +639,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.VEH_NO.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.VEH_NO.label}"
-                               id="c36">
+                               id="c36" rendered="false">
                       <af:inputText value="#{row.bindings.VEH_NO.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.VEH_NO.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.VEH_NO.mandatory}"
@@ -608,7 +653,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.VENDOR_SITE_CODE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.VENDOR_SITE_CODE.label}"
-                               id="c14">
+                               id="c14" rendered="false">
                       <af:inputText value="#{row.bindings.VENDOR_SITE_CODE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.VENDOR_SITE_CODE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.VENDOR_SITE_CODE.mandatory}"
@@ -663,7 +708,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.CARRIER.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.CARRIER.label}"
-                               id="c22">
+                               id="c22" rendered="false">
                       <af:inputText value="#{row.bindings.CARRIER.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.CARRIER.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.CARRIER.mandatory}"
@@ -705,7 +750,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.ITMID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.ITMID.label}"
-                               id="c25">
+                               id="c25" rendered="false">
                       <af:inputText value="#{row.bindings.ITMID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.ITMID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.ITMID.mandatory}"
@@ -719,7 +764,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.ORGID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.ORGID.label}"
-                               id="c13">
+                               id="c13" rendered="false">
                       <af:inputText value="#{row.bindings.ORGID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.ORGID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.ORGID.mandatory}"
@@ -789,7 +834,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PO_HEADER_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.PO_HEADER_ID.label}"
-                               id="c32">
+                               id="c32" rendered="false">
                       <af:inputText value="#{row.bindings.PO_HEADER_ID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.PO_HEADER_ID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.PO_HEADER_ID.mandatory}"
@@ -817,7 +862,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PO_LINE_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.PO_LINE_ID.label}"
-                               id="c15">
+                               id="c15" rendered="false">
                       <af:inputText value="#{row.bindings.PO_LINE_ID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.PO_LINE_ID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.PO_LINE_ID.mandatory}"
@@ -831,7 +876,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.SupplierName.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.SupplierName.label}"
-                               id="c29">
+                               id="c29" rendered="false">
                       <af:inputText value="#{row.bindings.SupplierName.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.SupplierName.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.SupplierName.mandatory}"
@@ -873,7 +918,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_LINE_ID.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_LINE_ID.label}"
-                               id="c28">
+                               id="c28" rendered="false">
                       <af:inputText value="#{row.bindings.SHIPMENT_LINE_ID.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_LINE_ID.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.SHIPMENT_LINE_ID.mandatory}"
