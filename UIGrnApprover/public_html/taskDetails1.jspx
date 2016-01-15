@@ -10,6 +10,7 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1" title="#{bindings.title.inputValue}">
+      <af:messages id="m1"/>
       <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
       <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
       <af:form id="f1" usesUpload="true">
@@ -157,7 +158,8 @@
                                    text="#{resources.DETAILS}"
                                    shortDesc="#{resources.TASK_HEADER}"
                                    icon="/hw_images/singleapprover_35x35.png"
-                                   disclosed="#{actionAvailable.discloseHeader}">
+                                   disclosed="#{actionAvailable.discloseHeader}"
+                                   rendered="false">
                 <f:facet name="context">
                   <af:commandImageLink icon="/hw_images/info.png" id="button"
                                        clientComponent="true"
@@ -287,18 +289,30 @@
               <af:showDetailHeader size="2" id="apCntHd"
                                    text="#{resources.CONTENTS}"
                                    disclosed="#{actionAvailable.discloseContents}">
-                <af:panelGroupLayout id="plPnl76" layout="horizontal"
+                <af:panelGroupLayout id="plPnl76" layout="vertical"
                                      shortDesc="#{resources.CONTENTS}">
                   <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
                                     text="CreateInsert"
                                     disabled="#{!bindings.CreateInsert.enabled}"
                                     visible="#{actionAvailable.updateAvailable}"
-                                    id="cb1"/>
+                                    id="cb1" rendered="false"/>
                   <af:commandButton actionListener="#{bindings.Delete.execute}"
                                     text="Delete"
                                     disabled="#{!bindings.Delete.enabled}"
                                     visible="#{actionAvailable.updateAvailable}"
-                                    id="cb2"/>
+                                    id="cb2" rendered="false"/>
+                  <af:panelFormLayout id="pfl10">
+                    <f:facet name="footer"/>
+                    <af:inputText value="#{bindings.GRNNo.inputValue}"
+                                  label="#{bindings.GRNNo.hints.label}"
+                                  required="#{bindings.GRNNo.hints.mandatory}"
+                                  columns="#{bindings.GRNNo.hints.displayWidth}"
+                                  maximumLength="#{bindings.GRNNo.hints.precision}"
+                                  shortDesc="#{bindings.GRNNo.hints.tooltip}"
+                                  id="it36">
+                      <f:validator binding="#{bindings.GRNNo.validator}"/>
+                    </af:inputText>
+                  </af:panelFormLayout>
                   <af:table value="#{bindings.ReadReceiptDataOutput.collectionModel}"
                             var="row"
                             rows="#{bindings.ReadReceiptDataOutput.rangeSize}"
@@ -307,7 +321,8 @@
                             rowBandingInterval="0"
                             selectedRowKeys="#{bindings.ReadReceiptDataOutput.collectionModel.selectedRow}"
                             selectionListener="#{bindings.ReadReceiptDataOutput.collectionModel.makeCurrent}"
-                            rowSelection="single" id="t3">
+                            rowSelection="single" id="t3"
+                            partialTriggers="::cb1 ::cb2" width="100%">
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GRNNo.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GRNNo.label}"

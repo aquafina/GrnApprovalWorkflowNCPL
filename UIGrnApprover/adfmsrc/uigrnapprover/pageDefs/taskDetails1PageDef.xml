@@ -610,5 +610,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="GRNNo">
+      <AttrNames>
+        <Item Value="GRNNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
