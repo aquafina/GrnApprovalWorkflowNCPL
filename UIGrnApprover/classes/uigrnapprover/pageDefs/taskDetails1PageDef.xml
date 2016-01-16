@@ -322,6 +322,9 @@
           <Item Value="SHIPMENT_LINE_ID"/>
           <Item Value="NOTE_TO_RECEIVER"/>
           <Item Value="ORGANIZATION_NAME"/>
+          <Item Value="SEGMENT3"/>
+          <Item Value="QUANTITY_REJECT"/>
+          <Item Value="QUANTITY_ACCEPT"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -685,6 +688,16 @@
     <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="IGP_NO">
       <AttrNames>
         <Item Value="IGP_NO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="REMARKS">
+      <AttrNames>
+        <Item Value="REMARKS"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="USER_NAME">
+      <AttrNames>
+        <Item Value="USER_NAME"/>
       </AttrNames>
     </attributeValues>
   </bindings>

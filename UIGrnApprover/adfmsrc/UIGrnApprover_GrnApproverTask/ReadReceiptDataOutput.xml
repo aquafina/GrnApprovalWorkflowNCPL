@@ -640,6 +640,9 @@
   <Attribute Name="NOTE_TO_RECEIVER" IsUpdateable="0" Type="java.lang.String">
     <Properties>
       <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="QUANTITY_ACCEPT"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="NOTETORECEIVER"/>
@@ -667,6 +670,59 @@
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
         <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="SEGMENT3" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="GRNNo"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="SEGMENT 3"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="SEGMENT3"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="QUANTITY_ACCEPT" IsUpdateable="0"
+             Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="QUANTITY_REJECT"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="QUANTITYACCEPT"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="QUANTITY_ACCEPT"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="QUANTITY_REJECT" IsUpdateable="0"
+             Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="QUANTITYREJECT"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="QUANTITY_REJECT"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
       </CustomProperties>
     </Properties>
   </Attribute>
