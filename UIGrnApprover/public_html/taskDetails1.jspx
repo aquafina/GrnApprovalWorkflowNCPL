@@ -12,7 +12,7 @@
     <af:document id="d1" title="#{bindings.title.inputValue}">
       <af:messages id="m1"/>
       <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
-      <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+      <af:resource type="javascript" source="/jsLibs/commonBPM.js"/> 
       <af:form id="f1" usesUpload="true">
         <af:panelGroupLayout layout="vertical"
                              inlineStyle="padding:5px;;padding:10px"
@@ -153,7 +153,8 @@
             </f:facet>
             <f:facet name="context">
               <af:image source="/images/Logo.png"
-                        shortDesc="Nishat Chunian Logo" id="i3"/>
+                        shortDesc="Nishat Chunian Logo" id="i3"
+                        inlineStyle="padding:5px;"/>
             </f:facet>
             <af:panelGroupLayout layout="vertical" id="pgl10">
               <f:facet name="separator">
@@ -291,7 +292,9 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
               </af:showDetailHeader>
-              <af:panelHeader text="---G.R.N Document" id="ph2">
+              <af:panelHeader text="---G.R.N Document" id="ph2"
+                              messageType="confirmation"
+                              inlineStyle="background-color:#EBEBEB;">
                 <f:facet name="context"/>
                 <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
@@ -311,17 +314,21 @@
                                     visible="#{actionAvailable.updateAvailable}"
                                     id="cb2" rendered="false"/>
                   <af:panelFormLayout id="pfl10" rows="5" maxColumns="3"
-                                      inlineStyle="background-color:white;width:50%">
+                                      inlineStyle="background-color:#EBEBEB;width:50%;">
                     <f:facet name="footer">
-                      <af:inputText value="#{bindings.REMARKS.inputValue}"
-                                    label="#{bindings.REMARKS.hints.label}"
-                                    required="#{bindings.REMARKS.hints.mandatory}"
-                                    columns="40"
-                                    maximumLength="#{bindings.REMARKS.hints.precision}"
-                                    shortDesc="#{bindings.REMARKS.hints.tooltip}"
-                                    id="it50" rows="4">
-                        <f:validator binding="#{bindings.REMARKS.validator}"/>
-                      </af:inputText>
+                      <af:group id="g6">
+                        <af:panelGroupLayout id="pgl24">
+                          <af:inputText value="#{bindings.REMARKS.inputValue}"
+                                        label="#{bindings.REMARKS.hints.label}"
+                                        required="#{bindings.REMARKS.hints.mandatory}"
+                                        columns="40"
+                                        maximumLength="#{bindings.REMARKS.hints.precision}"
+                                        shortDesc="#{bindings.REMARKS.hints.tooltip}"
+                                        id="it50" rows="4">
+                            <f:validator binding="#{bindings.REMARKS.validator}"/>
+                          </af:inputText>
+                        </af:panelGroupLayout>
+                      </af:group>
                     </f:facet>
                     <af:inputText value="#{bindings.ORGANIZATION_NAME.inputValue}"
                                   label="Inventory Org:"
@@ -574,6 +581,71 @@
                         <f:validator binding="#{row.bindings.PO_NUM.validator}"/>
                       </af:inputText>
                     </af:column>
+                    <af:column id="c41" headerText="Demand#">
+                      <af:outputText value="#{row.SEGMENT3}" id="ot23"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.Item_Code.name}"
+                               sortable="false"
+                               headerText="#{bindings.ReadReceiptDataOutput.hints.Item_Code.label}"
+                               id="c3">
+                      <af:inputText value="#{row.bindings.Item_Code.inputValue}"
+                                    label="#{bindings.ReadReceiptDataOutput.hints.Item_Code.label}"
+                                    required="#{bindings.ReadReceiptDataOutput.hints.Item_Code.mandatory}"
+                                    columns="#{bindings.ReadReceiptDataOutput.hints.Item_Code.displayWidth}"
+                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.Item_Code.precision}"
+                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.Item_Code.tooltip}"
+                                    id="it16">
+                        <f:validator binding="#{row.bindings.Item_Code.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.desc.name}"
+                               sortable="false"
+                               headerText="#{bindings.ReadReceiptDataOutput.hints.desc.label}"
+                               id="c5">
+                      <af:inputText value="#{row.bindings.desc.inputValue}"
+                                    label="#{bindings.ReadReceiptDataOutput.hints.desc.label}"
+                                    required="#{bindings.ReadReceiptDataOutput.hints.desc.mandatory}"
+                                    columns="#{bindings.ReadReceiptDataOutput.hints.desc.displayWidth}"
+                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.desc.precision}"
+                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.desc.tooltip}"
+                                    id="it24">
+                        <f:validator binding="#{row.bindings.desc.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.UOM.name}"
+                               sortable="false"
+                               headerText="#{bindings.ReadReceiptDataOutput.hints.UOM.label}"
+                               id="c12">
+                      <af:inputText value="#{row.bindings.UOM.inputValue}"
+                                    label="#{bindings.ReadReceiptDataOutput.hints.UOM.label}"
+                                    required="#{bindings.ReadReceiptDataOutput.hints.UOM.mandatory}"
+                                    columns="#{bindings.ReadReceiptDataOutput.hints.UOM.displayWidth}"
+                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.UOM.precision}"
+                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.UOM.tooltip}"
+                                    id="it2">
+                        <f:validator binding="#{row.bindings.UOM.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.name}"
+                               sortable="false"
+                               headerText="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.label}"
+                               id="c9">
+                      <af:inputText value="#{row.bindings.QuantityReceived.inputValue}"
+                                    label="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.label}"
+                                    required="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.mandatory}"
+                                    columns="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.displayWidth}"
+                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.precision}"
+                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.tooltip}"
+                                    id="it22">
+                        <f:validator binding="#{row.bindings.QuantityReceived.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column id="c42" headerText="Quantity Rejected">
+                      <af:outputText value="#{row.QUANTITY_REJECT}" id="ot24"/>
+                    </af:column>
+                    <af:column id="c43" headerText="Quantity Accepted">
+                      <af:outputText value="#{row.QUANTITY_ACCEPT}" id="ot25"/>
+                    </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.IGP_DATE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.IGP_DATE.label}"
@@ -688,7 +760,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.CREATION_DATE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.CREATION_DATE.label}"
-                               id="c17">
+                               id="c17" rendered="false">
                       <af:inputDate value="#{row.bindings.CREATION_DATE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.CREATION_DATE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.CREATION_DATE.mandatory}"
@@ -712,20 +784,6 @@
                         <f:validator binding="#{row.bindings.DESCRIPTION.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.UOM.name}"
-                               sortable="false"
-                               headerText="#{bindings.ReadReceiptDataOutput.hints.UOM.label}"
-                               id="c12">
-                      <af:inputText value="#{row.bindings.UOM.inputValue}"
-                                    label="#{bindings.ReadReceiptDataOutput.hints.UOM.label}"
-                                    required="#{bindings.ReadReceiptDataOutput.hints.UOM.mandatory}"
-                                    columns="#{bindings.ReadReceiptDataOutput.hints.UOM.displayWidth}"
-                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.UOM.precision}"
-                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.UOM.tooltip}"
-                                    id="it2">
-                        <f:validator binding="#{row.bindings.UOM.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.CARRIER.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.CARRIER.label}"
@@ -738,34 +796,6 @@
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.CARRIER.tooltip}"
                                     id="it27">
                         <f:validator binding="#{row.bindings.CARRIER.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.Item_Code.name}"
-                               sortable="false"
-                               headerText="#{bindings.ReadReceiptDataOutput.hints.Item_Code.label}"
-                               id="c3">
-                      <af:inputText value="#{row.bindings.Item_Code.inputValue}"
-                                    label="#{bindings.ReadReceiptDataOutput.hints.Item_Code.label}"
-                                    required="#{bindings.ReadReceiptDataOutput.hints.Item_Code.mandatory}"
-                                    columns="#{bindings.ReadReceiptDataOutput.hints.Item_Code.displayWidth}"
-                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.Item_Code.precision}"
-                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.Item_Code.tooltip}"
-                                    id="it16">
-                        <f:validator binding="#{row.bindings.Item_Code.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.desc.name}"
-                               sortable="false"
-                               headerText="#{bindings.ReadReceiptDataOutput.hints.desc.label}"
-                               id="c5">
-                      <af:inputText value="#{row.bindings.desc.inputValue}"
-                                    label="#{bindings.ReadReceiptDataOutput.hints.desc.label}"
-                                    required="#{bindings.ReadReceiptDataOutput.hints.desc.mandatory}"
-                                    columns="#{bindings.ReadReceiptDataOutput.hints.desc.displayWidth}"
-                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.desc.precision}"
-                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.desc.tooltip}"
-                                    id="it24">
-                        <f:validator binding="#{row.bindings.desc.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.ITMID.name}"
@@ -796,24 +826,10 @@
                         <f:validator binding="#{row.bindings.ORGID.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.name}"
-                               sortable="false"
-                               headerText="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.label}"
-                               id="c9">
-                      <af:inputText value="#{row.bindings.QuantityReceived.inputValue}"
-                                    label="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.label}"
-                                    required="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.mandatory}"
-                                    columns="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.displayWidth}"
-                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.precision}"
-                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.tooltip}"
-                                    id="it22">
-                        <f:validator binding="#{row.bindings.QuantityReceived.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PRIMARY_UOM_CODE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.PRIMARY_UOM_CODE.label}"
-                               id="c20">
+                               id="c20" rendered="false">
                       <af:inputText value="#{row.bindings.PRIMARY_UOM_CODE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.PRIMARY_UOM_CODE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.PRIMARY_UOM_CODE.mandatory}"
@@ -827,7 +843,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.DEPTLINE.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.DEPTLINE.label}"
-                               id="c18">
+                               id="c18" rendered="false">
                       <af:inputText value="#{row.bindings.DEPTLINE.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.DEPTLINE.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.DEPTLINE.mandatory}"
@@ -841,7 +857,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GATEPASS_NO.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GATEPASS_NO.label}"
-                               id="c24">
+                               id="c24" rendered="false">
                       <af:inputText value="#{row.bindings.GATEPASS_NO.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.GATEPASS_NO.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.GATEPASS_NO.mandatory}"
@@ -966,8 +982,8 @@
                     </af:column>
                   </af:table>
                   <af:panelGroupLayout id="pgl23" halign="right"
-                                       layout="horizontal" valign="top">
-                    <af:panelGroupLayout id="pgl25">
+                                       layout="vertical" valign="top">
+                    <af:panelGroupLayout id="pgl25" layout="vertical">
                       <af:inputText value="#{bindings.USER_NAME.inputValue}"
                                     label="Prepared By: "
                                     required="#{bindings.USER_NAME.hints.mandatory}"

@@ -3,7 +3,7 @@
   <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="ReadReceiptData_ptt" operation="ReadReceiptData">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value="SELECT * FROM XX_RECEIPT_DATA WHERE SHIPMENT_HEADER_ID = #SHID"/>
+      <property name="SqlString" value="select prha.segment3,RD.*  ,(SELECT QUANTITY FROM RCV_TRANSACTIONS WHERE SHIPMENT_HEADER_ID=RD.SHIPMENT_HEADER_ID AND TRANSACTION_TYPE = 'ACCEPT' AND   RD.TRANSACTION_ID = parent_TRANSACTION_ID) quantity_accept ,(SELECT QUANTITY FROM RCV_TRANSACTIONS WHERE SHIPMENT_HEADER_ID=RD.SHIPMENT_HEADER_ID AND TRANSACTION_TYPE = 'REJECT' AND   RD.TRANSACTION_ID = parent_TRANSACTION_ID ) quantity_REJECT from XX_RECEIPT_DATA RD          ,po_headers_all pha         ,po_distributions_all pda         ,po_req_distributions_all prda         ,po_requisition_lines_all prla         ,po_requisition_headers_all prha where RD.shipment_header_id =#SHID and     rd.po_header_id = pha.po_header_id and     pha.po_header_id = pda.po_header_id and     pda.req_distribution_id = prda.distribution_id(+) and     prda.requisition_line_id = prla.REQUISITION_LINE_ID(+) and     prla.requisition_header_id = prha.requisition_header_id(+)"/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>
