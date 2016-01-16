@@ -17,7 +17,7 @@
         <af:panelGroupLayout layout="vertical"
                              inlineStyle="padding:5px;;padding:10px"
                              id="pgl6">
-          <af:panelHeader text="---" id="ph1"
+          <af:panelHeader text=" " id="ph1"
                           inlineStyle="background-color:Lime; background-color:#EBEBEB">
             <f:facet name="info"/>
             <f:facet name="legend"/>
@@ -151,7 +151,10 @@
                                      visible="#{param.enableNavigationButton != null}"/>
               </af:toolbar>
             </f:facet>
-            <f:facet name="context"/>
+            <f:facet name="context">
+              <af:image source="/images/Logo.png"
+                        shortDesc="Nishat Chunian Logo" id="i3"/>
+            </f:facet>
             <af:panelGroupLayout layout="vertical" id="pgl10">
               <f:facet name="separator">
                 <af:spacer width="15" height="15" id="s16"/>
@@ -288,7 +291,7 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
               </af:showDetailHeader>
-              <af:panelHeader text="G.R.N Document - Nishat Chunian Limited" id="ph2">
+              <af:panelHeader text="---G.R.N Document" id="ph2">
                 <f:facet name="context"/>
                 <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
