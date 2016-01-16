@@ -687,5 +687,15 @@
         <Item Value="IGP_NO"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="REMARKS">
+      <AttrNames>
+        <Item Value="REMARKS"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputIterator" id="USER_NAME">
+      <AttrNames>
+        <Item Value="USER_NAME"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

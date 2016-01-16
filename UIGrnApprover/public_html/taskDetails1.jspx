@@ -14,9 +14,11 @@
       <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
       <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
       <af:form id="f1" usesUpload="true">
-        <af:panelGroupLayout layout="vertical" inlineStyle="padding: 5px;"
+        <af:panelGroupLayout layout="vertical"
+                             inlineStyle="padding:5px;;padding:10px"
                              id="pgl6">
-          <af:panelHeader text="#{bindings.title.inputValue}" id="ph1">
+          <af:panelHeader text="---" id="ph1"
+                          inlineStyle="background-color:Lime; background-color:#EBEBEB">
             <f:facet name="info"/>
             <f:facet name="legend"/>
             <f:facet name="menuBar"/>
@@ -286,11 +288,15 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
               </af:showDetailHeader>
-              <af:showDetailHeader size="2" id="apCntHd"
-                                   text="#{resources.CONTENTS}"
-                                   disclosed="#{actionAvailable.discloseContents}">
+              <af:panelHeader text="G.R.N Document - Nishat Chunian Limited" id="ph2">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
                 <af:panelGroupLayout id="plPnl76" layout="vertical"
-                                     shortDesc="#{resources.CONTENTS}">
+                                     shortDesc="#{resources.CONTENTS}"
+                                     halign="center">
                   <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
                                     text="CreateInsert"
                                     disabled="#{!bindings.CreateInsert.enabled}"
@@ -301,8 +307,19 @@
                                     disabled="#{!bindings.Delete.enabled}"
                                     visible="#{actionAvailable.updateAvailable}"
                                     id="cb2" rendered="false"/>
-                  <af:panelFormLayout id="pfl10" rows="5" maxColumns="3">
-                    <f:facet name="footer"/>
+                  <af:panelFormLayout id="pfl10" rows="5" maxColumns="3"
+                                      inlineStyle="background-color:white;width:50%">
+                    <f:facet name="footer">
+                      <af:inputText value="#{bindings.REMARKS.inputValue}"
+                                    label="#{bindings.REMARKS.hints.label}"
+                                    required="#{bindings.REMARKS.hints.mandatory}"
+                                    columns="40"
+                                    maximumLength="#{bindings.REMARKS.hints.precision}"
+                                    shortDesc="#{bindings.REMARKS.hints.tooltip}"
+                                    id="it50" rows="4">
+                        <f:validator binding="#{bindings.REMARKS.validator}"/>
+                      </af:inputText>
+                    </f:facet>
                     <af:inputText value="#{bindings.ORGANIZATION_NAME.inputValue}"
                                   label="Inventory Org:"
                                   required="#{bindings.ORGANIZATION_NAME.hints.mandatory}"
@@ -441,7 +458,8 @@
                             selectedRowKeys="#{bindings.ReadReceiptDataOutput.collectionModel.selectedRow}"
                             selectionListener="#{bindings.ReadReceiptDataOutput.collectionModel.makeCurrent}"
                             rowSelection="single" id="t3"
-                            partialTriggers="::cb1 ::cb2" width="100%">
+                            partialTriggers="::cb1 ::cb2" width="100%"
+                            inlineStyle="margin-top:10px">
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GRNNo.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GRNNo.label}"
@@ -459,7 +477,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.USER_NAME.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.USER_NAME.label}"
-                               id="c19">
+                               id="c19" rendered="false">
                       <af:inputText value="#{row.bindings.USER_NAME.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.USER_NAME.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.USER_NAME.mandatory}"
@@ -537,6 +555,20 @@
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.IGP_NO.tooltip}"
                                     id="it7">
                         <f:validator binding="#{row.bindings.IGP_NO.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.name}"
+                               sortable="false"
+                               headerText="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.label}"
+                               id="c37">
+                      <af:inputText value="#{row.bindings.PO_NUM.inputValue}"
+                                    label="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.label}"
+                                    required="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.mandatory}"
+                                    columns="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.displayWidth}"
+                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.precision}"
+                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.tooltip}"
+                                    id="it9">
+                        <f:validator binding="#{row.bindings.PO_NUM.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.IGP_DATE.name}"
@@ -621,20 +653,6 @@
                         <f:validator binding="#{row.bindings.GRN_DATE.validator}"/>
                         <af:convertDateTime pattern="#{bindings.ReadReceiptDataOutput.hints.GRN_DATE.format}"/>
                       </af:inputDate>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.name}"
-                               sortable="false"
-                               headerText="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.label}"
-                               id="c37">
-                      <af:inputText value="#{row.bindings.PO_NUM.inputValue}"
-                                    label="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.label}"
-                                    required="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.mandatory}"
-                                    columns="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.displayWidth}"
-                                    maximumLength="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.precision}"
-                                    shortDesc="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.tooltip}"
-                                    id="it9">
-                        <f:validator binding="#{row.bindings.PO_NUM.validator}"/>
-                      </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.VEH_NO.name}"
                                sortable="false"
@@ -848,7 +866,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.REMARKS.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.REMARKS.label}"
-                               id="c4">
+                               id="c4" rendered="false">
                       <af:inputText value="#{row.bindings.REMARKS.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.REMARKS.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.REMARKS.mandatory}"
@@ -890,7 +908,7 @@
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.DEPT.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.DEPT.label}"
-                               id="c10">
+                               id="c10" rendered="false">
                       <af:inputText value="#{row.bindings.DEPT.inputValue}"
                                     label="#{bindings.ReadReceiptDataOutput.hints.DEPT.label}"
                                     required="#{bindings.ReadReceiptDataOutput.hints.DEPT.mandatory}"
@@ -944,8 +962,22 @@
                       </af:inputText>
                     </af:column>
                   </af:table>
+                  <af:panelGroupLayout id="pgl23" halign="right"
+                                       layout="horizontal" valign="top">
+                    <af:panelGroupLayout id="pgl25">
+                      <af:inputText value="#{bindings.USER_NAME.inputValue}"
+                                    label="Prepared By: "
+                                    required="#{bindings.USER_NAME.hints.mandatory}"
+                                    columns="#{bindings.USER_NAME.hints.displayWidth}"
+                                    maximumLength="#{bindings.USER_NAME.hints.precision}"
+                                    shortDesc="#{bindings.USER_NAME.hints.tooltip}"
+                                    id="it51">
+                        <f:validator binding="#{bindings.USER_NAME.validator}"/>
+                      </af:inputText>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
                 </af:panelGroupLayout>
-              </af:showDetailHeader>
+              </af:panelHeader>
               <af:switcher facetName="#{actionAvailable.showHistory}" id="s29">
                 <f:facet name="true">
                   <af:showDetailHeader size="2" id="histHd"
@@ -1101,7 +1133,8 @@
                     <af:showDetailHeader size="2" id="attHd"
                                          text="#{resources.ATTACHMENTS}"
                                          disclosed="#{actionAvailable.discloseCommentsAttach}"
-                                         contentStyle="padding: 5px;">
+                                         contentStyle="padding: 5px;"
+                                         rendered="false">
                       <f:facet name="info"/>
                       <f:facet name="legend"/>
                       <f:facet name="menuBar"/>
@@ -1688,6 +1721,8 @@
                   </f:facet>
                 </af:switcher>
               </af:popup>
+              <af:outputText value="Developed By:Usman Riaz" id="ot22"
+                             inlineStyle="font-weight:bold; font-size:9.0px;color:#D1D1D1"/>
             </af:panelGroupLayout>
           </af:panelHeader>
           <f:facet name="separator"/>
