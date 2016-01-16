@@ -1,74 +1,36 @@
-<<<<<<< HEAD
-Jan 16, 2016 10:33:58 AM oracle.mds
+Jan 16, 2016 6:00:59 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Jan 16, 2016 10:33:58 AM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Jan 16, 2016 6:00:59 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Jan 16, 2016 10:33:58 AM oracle.mds
+Jan 16, 2016 6:00:59 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Jan 16, 2016 10:33:58 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Jan 16, 2016 6:00:59 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Jan 16, 2016 10:33:59 AM com.collaxa.cube.CubeLogger info
+Jan 16, 2016 6:00:59 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELProcessUpdFlag_CaseDisapproved.bpel" ...
-Jan 16, 2016 10:33:59 AM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Jan 16, 2016 6:00:59 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Jan 16, 2016 10:33:59 AM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Jan 16, 2016 6:00:59 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Jan 16, 2016 10:33:59 AM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELProcessUpdFlag_CaseDisapproved" in 30.3 milliseconds [nodes 7=0+7, 230.9 nodes/sec]
-Jan 16, 2016 10:34:01 AM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELProcessUpdFlag_CaseDisapproved" in 1.969 seconds
-Jan 16, 2016 10:34:01 AM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.5 milliseconds
-
-Jan 16, 2016 10:34:01 AM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELProcessUpdFlag_CaseDisapproved" in 4.1 milliseconds
-
-Jan 16, 2016 10:34:01 AM com.collaxa.cube.CubeLogger info
-INFO: validating "BPELProcessUpdateFlag_CaseApproved.bpel" ...
-Jan 16, 2016 10:34:01 AM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELProcessUpdateFlag_CaseApproved" in 6.2 milliseconds [nodes 7=0+7, 1,134.1 nodes/sec]
-Jan 16, 2016 10:34:03 AM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELProcessUpdateFlag_CaseApproved" in 1.574 seconds
-Jan 16, 2016 10:34:03 AM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.5 milliseconds
-
-Jan 16, 2016 10:34:03 AM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELProcessUpdateFlag_CaseApproved" in 3.1 milliseconds
-=======
-Jan 16, 2016 5:53:16 PM oracle.mds
-NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Jan 16, 2016 5:53:17 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
-SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Jan 16, 2016 5:53:17 PM oracle.mds
-NOTIFICATION: Auditing is disabled for component MDS.
-Jan 16, 2016 5:53:17 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
-INFO: XMLSchema incremental build enabled.
-Jan 16, 2016 5:53:17 PM com.collaxa.cube.CubeLogger info
-INFO: validating "BPELProcessUpdFlag_CaseDisapproved.bpel" ...
-Jan 16, 2016 5:53:17 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
-WARNING: JRF is unable to determine the current application server platform.
-Jan 16, 2016 5:53:17 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
-WARNING: JRF is unable to determine the current application server platform.
-Jan 16, 2016 5:53:17 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELProcessUpdFlag_CaseDisapproved" in 32.0 milliseconds [nodes 7=0+7, 218.7 nodes/sec]
-Jan 16, 2016 5:53:19 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELProcessUpdFlag_CaseDisapproved" in 1.885 seconds
-Jan 16, 2016 5:53:19 PM com.collaxa.cube.CubeLogger info
+Jan 16, 2016 6:01:00 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELProcessUpdFlag_CaseDisapproved" in 33.9 milliseconds [nodes 7=0+7, 206.3 nodes/sec]
+Jan 16, 2016 6:01:02 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELProcessUpdFlag_CaseDisapproved" in 2.156 seconds
+Jan 16, 2016 6:01:02 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 0.6 milliseconds
 
-Jan 16, 2016 5:53:19 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELProcessUpdFlag_CaseDisapproved" in 4.2 milliseconds
+Jan 16, 2016 6:01:02 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELProcessUpdFlag_CaseDisapproved" in 28.4 milliseconds
 
-Jan 16, 2016 5:53:19 PM com.collaxa.cube.CubeLogger info
+Jan 16, 2016 6:01:02 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELProcessUpdateFlag_CaseApproved.bpel" ...
-Jan 16, 2016 5:53:19 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELProcessUpdateFlag_CaseApproved" in 6.7 milliseconds [nodes 7=0+7, 1,051.5 nodes/sec]
-Jan 16, 2016 5:53:21 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELProcessUpdateFlag_CaseApproved" in 1.880 seconds
-Jan 16, 2016 5:53:21 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.7 milliseconds
+Jan 16, 2016 6:01:02 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELProcessUpdateFlag_CaseApproved" in 10.4 milliseconds [nodes 7=0+7, 671.2 nodes/sec]
+Jan 16, 2016 6:01:04 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELProcessUpdateFlag_CaseApproved" in 1.780 seconds
+Jan 16, 2016 6:01:04 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.6 milliseconds
 
-Jan 16, 2016 5:53:21 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELProcessUpdateFlag_CaseApproved" in 4.3 milliseconds
->>>>>>> feature_UIformCustomization
+Jan 16, 2016 6:01:04 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELProcessUpdateFlag_CaseApproved" in 3.3 milliseconds
 
