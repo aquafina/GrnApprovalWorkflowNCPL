@@ -295,7 +295,20 @@
               <af:panelHeader text="---G.R.N Document" id="ph2"
                               messageType="confirmation"
                               inlineStyle="background-color:#EBEBEB;">
-                <f:facet name="context"/>
+                <f:facet name="context">
+                  <af:group id="g7">
+                    <af:inputText value="#{bindings.user_id.inputValue}"
+                                  label="#{bindings.user_id.hints.label}"
+                                  required="#{bindings.user_id.hints.mandatory}"
+                                  columns="#{bindings.user_id.hints.displayWidth}"
+                                  maximumLength="#{bindings.user_id.hints.precision}"
+                                  shortDesc="#{bindings.user_id.hints.tooltip}"
+                                  id="it52">
+                      <f:validator binding="#{bindings.user_id.validator}"/>
+                    </af:inputText>
+                    <af:outputText value="#{UserWLProfile.userID}" id="ot26"/>
+                  </af:group>
+                </f:facet>
                 <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
                 <f:facet name="legend"/>

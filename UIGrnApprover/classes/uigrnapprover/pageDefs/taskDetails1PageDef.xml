@@ -700,5 +700,11 @@
         <Item Value="USER_NAME"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReadReceiptDataOutputCollectionIterator"
+                     id="user_id">
+      <AttrNames>
+        <Item Value="user_id"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
