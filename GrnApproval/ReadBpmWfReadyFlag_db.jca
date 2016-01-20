@@ -3,7 +3,7 @@
   <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="ReadBpmWfReadyFlag_ptt" operation="ReadBpmWfReadyFlag">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value="select attribute10 from rcv_shipment_headers where shipment_header_id = #shid"/>
+      <property name="SqlString" value=" SELECT DECODE(COUNT(*) , '0' ,'READY','NOT_READY') attribute10  FROM RCV_SHIPMENT_LINES WHERE SHIPMENT_HEADER_ID = #shid AND ATTRIBUTE1 ='BPM_WORKFLOW_INS_REQ' "/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>

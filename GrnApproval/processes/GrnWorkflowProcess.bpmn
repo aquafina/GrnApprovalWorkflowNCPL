@@ -365,6 +365,13 @@
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
+                <dataOutput name="readReceiptDataOutputCollection" id="readReceiptDataOutputCollection">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" element="ReadReceiptDataOutputCollection" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
                 <dataOutput name="execData" id="execData">
                     <extensionElements>
                         <ns5:OracleExtensions>
@@ -378,6 +385,7 @@
                 </inputSet>
                 <outputSet id="ACT15115580161186_uniqueOutputSet">
                     <dataOutputRefs>outcome</dataOutputRefs>
+                    <dataOutputRefs>readReceiptDataOutputCollection</dataOutputRefs>
                     <dataOutputRefs>execData</dataOutputRefs>
                 </outputSet>
             </ioSpecification>
@@ -713,18 +721,6 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT1510899077625" targetRef="GTW15109006511018" name="sf25" id="sf25">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-        </sequenceFlow>
         <sequenceFlow sourceRef="GTW15109006511018" targetRef="ACT15109813308980" name="sf11" id="sf11">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -846,6 +842,20 @@
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
                         <ns5:StringFeature value="879,80" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="ACT1510899077625" targetRef="GTW15109006511018" name="sf23" id="sf23">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="522" y="80"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="522,80" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
