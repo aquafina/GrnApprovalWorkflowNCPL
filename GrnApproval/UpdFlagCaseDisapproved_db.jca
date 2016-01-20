@@ -3,7 +3,7 @@
   <connection-factory location="jndi/erptest7" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="UpdFlagCaseDisapproved_ptt" operation="UpdFlagCaseDisapproved">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value="update rcv_shipment_headers set attribute10 = 'BPM_WORKFLOW_DISAPPROVED' where shipment_header_id = #SHID"/>
+      <property name="SqlString" value="update rcv_shipment_lines set attribute1 = 'BPM_WORKFLOW_DISAPPROVED',attribute2 = 'BPM_LINE_PROCESSED' where shipment_header_id = #SHID"/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>
