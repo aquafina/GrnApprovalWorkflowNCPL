@@ -3,7 +3,7 @@
    <xs:element name="ReadReceiptDataInput" type="ReadReceiptDataInput"/>
    <xs:complexType name="ReadReceiptDataInput">
       <xs:sequence>
-         <xs:element name="SHID" type="xs:decimal" nillable="true"/>
+         <xs:element name="SHID" type="xs:string" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
    <xs:element name="ReadReceiptDataOutputCollection" type="ReadReceiptDataOutputCollection"/>
@@ -19,6 +19,7 @@
          <xs:element name="SEGMENT3" type="xs:string" nillable="true"/>
          <xs:element name="GRNNo" type="xs:decimal" nillable="true"/>
          <xs:element name="ORGANIZATION_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="ATTRIBUTE3" type="xs:string" nillable="true"/>
          <xs:element name="USER_NAME" type="xs:string" nillable="true"/>
          <xs:element name="TRANSACTION_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="SHIPMENT_HEADER_ID" type="xs:decimal" nillable="true"/>

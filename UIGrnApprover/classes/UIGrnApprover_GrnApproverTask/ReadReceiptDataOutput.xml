@@ -656,7 +656,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
-        <Property Name="nextSibling" Value="USER_NAME"/>
+        <Property Name="nextSibling" Value="ATTRIBUTE3"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="ORGANIZATIONNAME"/>
@@ -717,6 +717,24 @@
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
         <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="ATTRIBUTE3" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="USER_NAME"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="ATTRIBUTE 3"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="ATTRIBUTE3"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.lang.String"/>
       </CustomProperties>
     </Properties>
   </Attribute>

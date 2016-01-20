@@ -37,6 +37,9 @@
                                                id="ctb1">
                         <f:attribute name="DC_OPERATION_BINDING"
                                      value="bindings.APPROVE"/>
+                        <af:setPropertyListener from="#{UserWLProfile.userID}"
+                                                to="#{bindings.user_id.inputValue}"
+                                                type="action"/>
                       </af:commandToolbarButton>
                       <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
                                                text="#{wf:getResourceValue('REJECT', 'bindings.customActions')}"
@@ -47,6 +50,9 @@
                                                id="ctb2">
                         <f:attribute name="DC_OPERATION_BINDING"
                                      value="bindings.REJECT"/>
+                        <af:setPropertyListener from="#{UserWLProfile.userID}"
+                                                to="#{bindings.user_id.inputValue}"
+                                                type="action"/>
                       </af:commandToolbarButton>
                     </af:panelGroupLayout>
                   </f:facet>

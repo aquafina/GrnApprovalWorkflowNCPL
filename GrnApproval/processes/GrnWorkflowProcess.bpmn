@@ -37,6 +37,9 @@
                     <ns5:Conversation id="CONVERSATION151178385515" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client"/>
                     </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION151702853970" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELProcessUpdateApproverUserID.Bpelprocessupdateapproveruserid_client"/>
+                    </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
                     <ns5:AppLinkName/>
@@ -53,7 +56,7 @@
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
                             <ns5:Position x="0" y="0"/>
-                            <ns5:Size width="283" height="0"/>
+                            <ns5:Size width="363" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -225,7 +228,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="808" y="80"/>
+                        <ns5:Position x="810" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -444,13 +447,41 @@
                     </to>
                 </assignment>
             </dataOutputAssociation>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>readReceiptDataOutputCollection</sourceRef>
+                <targetRef>DOReceiptData</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('readReceiptDataOutputCollection')/ns:user_id
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOReceiptData')/ns:user_id
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
             <resourceRole name="GrnApprovers" id="lane1"/>
         </userTask>
         <serviceTask implementation="Services.BPEL.BPELProcessUpdateFlag_CaseApproved.Bpelprocessupdateflag_caseapproved_client" operationRef="process" isForCompensation="false" name="STUpdFlagCaseApproved" id="ACT15117359670550">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1191" y="31"/>
+                        <ns5:Position x="1222" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -521,7 +552,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1203" y="122"/>
+                        <ns5:Position x="1259" y="207"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -579,6 +610,98 @@
                         </extensionElements>
                     </from>
                     <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('rcvShipmentHeadersCollection')/ns:RcvShipmentHeaders[1]/ns:shipmentHeaderId
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+        </serviceTask>
+        <serviceTask implementation="Services.BPEL.BPELProcessUpdateApproverUserID.Bpelprocessupdateapproveruserid_client" operationRef="process" isForCompensation="false" name="STUpdateApproverUserID" id="ACT15170284613394">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1414" y="80"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION151702853970">
+                        <ns5:ServiceCallConversationalDefinition operation="process"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="readReceiptDataOutputCollection" id="readReceiptDataOutputCollection">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" element="ReadReceiptDataOutputCollection" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="processResponse" id="processResponse">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID" element="processResponse" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="ACT15170284613394_uniqueInputSet">
+                    <dataInputRefs>readReceiptDataOutputCollection</dataInputRefs>
+                </inputSet>
+                <outputSet id="ACT15170284613394_uniqueOutputSet">
+                    <dataOutputRefs>processResponse</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DOReceiptData</sourceRef>
+                <targetRef>readReceiptDataOutputCollection</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy_list"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('readReceiptDataOutputCollection')/ns:ReadReceiptDataOutput
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'3099'
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('readReceiptDataOutputCollection')/ns:user_id
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -655,7 +778,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1376" y="80"/>
+                        <ns5:Position x="1572" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -757,11 +880,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1426" y="177"/>
+                        <ns5:Positions x="1682" y="307"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1426,177" name="curve"/>
+                        <ns5:StringFeature value="1682,307" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -779,16 +902,14 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT15117359670550" targetRef="EVT15107785706483" name="sf14" id="sf14">
+        <sequenceFlow sourceRef="ACT15117359670550" targetRef="ACT15170284613394" name="sf14" id="sf14">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1243" y="26"/>
-                    </ns5:SequenceFlowAttributes>
+                    <ns5:SequenceFlowAttributes/>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1243,26" name="curve"/>
-                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -796,13 +917,11 @@
         <sequenceFlow sourceRef="GTW15117490959648" targetRef="ACT15117359670550" name="sf15" id="sf15">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1084" y="28"/>
-                    </ns5:SequenceFlowAttributes>
+                    <ns5:SequenceFlowAttributes/>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1084,28" name="curve"/>
-                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
                         <ns5:StringFeature value="" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
                     </ns5:FeatureSet>
@@ -820,11 +939,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1099" y="126"/>
+                        <ns5:Positions x="1072" y="210"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1099,126" name="curve"/>
+                        <ns5:StringFeature value="1072,210" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -834,11 +953,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1292" y="124"/>
+                        <ns5:Positions x="1433" y="207"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1292,124" name="curve"/>
+                        <ns5:StringFeature value="1433,207" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -847,13 +966,23 @@
         <sequenceFlow sourceRef="ACT15109813308980" targetRef="ACT15115580161186" name="sf21" id="sf21">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="879" y="80"/>
-                    </ns5:SequenceFlowAttributes>
+                    <ns5:SequenceFlowAttributes/>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="879,80" name="curve"/>
-                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="ACT15170284613394" targetRef="EVT15107785706483" name="sf22" id="sf22">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
