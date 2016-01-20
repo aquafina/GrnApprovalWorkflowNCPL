@@ -87,6 +87,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
+            <topicDocumentation name="sf25"/>
             <topicDocumentation name="sf11">
                 <labels>
                     <label locale="en"></label>
@@ -109,7 +110,6 @@
             <topicDocumentation name="sf18"/>
             <topicDocumentation name="sf33"/>
             <topicDocumentation name="sf21"/>
-            <topicDocumentation name="sf23"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
