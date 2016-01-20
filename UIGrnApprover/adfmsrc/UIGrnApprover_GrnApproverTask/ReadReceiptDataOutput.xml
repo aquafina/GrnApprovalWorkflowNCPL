@@ -3,7 +3,7 @@
           id="ReadReceiptDataOutput" Package="UIGrnApprover_GrnApproverTask"
           BeanClass="UIGrnApprover_GrnApproverTask.ReadReceiptDataOutput"
           isJavaBased="false">
-  <Attribute Name="GRNNo" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="GRNNo" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -21,7 +21,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="USER_NAME" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="USER_NAME" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -39,7 +39,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="TRANSACTION_ID" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="TRANSACTION_ID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -57,8 +57,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="SHIPMENT_HEADER_ID" IsUpdateable="0"
-             Type="java.math.BigDecimal">
+  <Attribute Name="SHIPMENT_HEADER_ID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -76,7 +75,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="DC_NO" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="DC_NO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -94,7 +93,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="DC_DATE" IsUpdateable="0" Type="java.sql.Timestamp">
+  <Attribute Name="DC_DATE" Type="java.sql.Timestamp">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -112,7 +111,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="IGP_NO" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="IGP_NO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -130,7 +129,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="IGP_DATE" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="IGP_DATE" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -148,7 +147,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="NO_OF_CARTONS" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="NO_OF_CARTONS" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -166,7 +165,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="BUILTY_NO" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="BUILTY_NO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -184,7 +183,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="PACKING_SLIP" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="PACKING_SLIP" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -202,8 +201,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="WAYBILL_AIRBILL_NUM" IsUpdateable="0"
-             Type="java.lang.String">
+  <Attribute Name="WAYBILL_AIRBILL_NUM" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -221,7 +219,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="GRN_DATE" IsUpdateable="0" Type="java.sql.Timestamp">
+  <Attribute Name="GRN_DATE" Type="java.sql.Timestamp">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -239,7 +237,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="PO_NUM" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="PO_NUM" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -257,7 +255,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="VEH_NO" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="VEH_NO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -275,7 +273,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="VENDOR_SITE_CODE" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="VENDOR_SITE_CODE" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -293,7 +291,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="CREATION_DATE" IsUpdateable="0" Type="java.sql.Timestamp">
+  <Attribute Name="CREATION_DATE" Type="java.sql.Timestamp">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -311,7 +309,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="DESCRIPTION" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="DESCRIPTION" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -329,7 +327,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="UOM" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="UOM" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -347,7 +345,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="CARRIER" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="CARRIER" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -365,7 +363,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="Item_Code" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="Item_Code" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -383,7 +381,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="desc" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="desc" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -401,7 +399,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="ITMID" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="ITMID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -419,7 +417,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="ORGID" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="ORGID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -437,8 +435,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="QuantityReceived" IsUpdateable="0"
-             Type="java.math.BigDecimal">
+  <Attribute Name="QuantityReceived" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -456,7 +453,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="PRIMARY_UOM_CODE" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="PRIMARY_UOM_CODE" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -474,7 +471,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="DEPTLINE" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="DEPTLINE" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -492,7 +489,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="GATEPASS_NO" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="GATEPASS_NO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -510,7 +507,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="PO_HEADER_ID" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="PO_HEADER_ID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -528,7 +525,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="REMARKS" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="REMARKS" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -546,7 +543,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="PO_LINE_ID" IsUpdateable="0" Type="java.math.BigDecimal">
+  <Attribute Name="PO_LINE_ID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -564,7 +561,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="SupplierName" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="SupplierName" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -582,7 +579,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="DEPT" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="DEPT" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -600,7 +597,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="COMMENTS" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="COMMENTS" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -618,8 +615,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="SHIPMENT_LINE_ID" IsUpdateable="0"
-             Type="java.math.BigDecimal">
+  <Attribute Name="SHIPMENT_LINE_ID" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -637,7 +633,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="NOTE_TO_RECEIVER" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="NOTE_TO_RECEIVER" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -655,7 +651,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="ORGANIZATION_NAME" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="ORGANIZATION_NAME" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -673,7 +669,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="SEGMENT3" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="SEGMENT3" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -691,8 +687,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="QUANTITY_ACCEPT" IsUpdateable="0"
-             Type="java.math.BigDecimal">
+  <Attribute Name="QUANTITY_ACCEPT" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
@@ -710,8 +705,7 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="QUANTITY_REJECT" IsUpdateable="0"
-             Type="java.math.BigDecimal">
+  <Attribute Name="QUANTITY_REJECT" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
         <Property Name="minOccurs" Value="1"/>

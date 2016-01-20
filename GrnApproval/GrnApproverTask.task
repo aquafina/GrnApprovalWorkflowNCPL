@@ -39,7 +39,7 @@
          <messageAttribute name="ReadReceiptDataOutputCollection"
                            attributeType="ELEMENT"
                            type="ns0:ReadReceiptDataOutputCollection"
-                           updatable="false" external="false"/>
+                           updatable="true" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>
       <bpelNoCallbacks>false</bpelNoCallbacks>
