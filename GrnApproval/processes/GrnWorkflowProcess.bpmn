@@ -67,7 +67,7 @@
                 </extensionElements>
             </lane>
         </laneSet>
-        <serviceTask implementation="Services.Externals.UpdBpmWfReadyFlag" operationRef="updBpmWfReadyFlag" isForCompensation="false" name="STUpdBpmWfReadyFlag" id="ACT1510859787598">
+        <serviceTask implementation="Services.Externals.UpdBpmWfReadyFlag" operationRef="updBpmWfReadyFlag" isForCompensation="false" name="UpdateLineReadyFlag" id="ACT1510859787598">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -128,7 +128,7 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.Externals.ReadBpmWfReadyFlag" operationRef="readBpmWfReadyFlag" isForCompensation="false" name="STReadBpmWfReadyFlag" id="ACT1510899077625">
+        <serviceTask implementation="Services.Externals.ReadBpmWfReadyFlag" operationRef="readBpmWfReadyFlag" isForCompensation="false" name="ReadOverallReadyStatus" id="ACT1510899077625">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -227,11 +227,11 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.Externals.ReadReceiptData" operationRef="readReceiptData" isForCompensation="false" name="STReadReceiptData" id="ACT15109813308980">
+        <serviceTask implementation="Services.Externals.ReadReceiptData" operationRef="readReceiptData" isForCompensation="false" name="ExtractReceiptData" id="ACT15109813308980">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="759" y="78"/>
+                        <ns5:Position x="810" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -481,7 +481,7 @@
             </dataOutputAssociation>
             <resourceRole name="GrnApprovers" id="lane1"/>
         </userTask>
-        <serviceTask implementation="Services.BPEL.BPELProcessUpdateFlag_CaseApproved.Bpelprocessupdateflag_caseapproved_client" operationRef="process" isForCompensation="false" name="STUpdFlagCaseApproved" id="ACT15117359670550">
+        <serviceTask implementation="Services.BPEL.BPELProcessUpdateFlag_CaseApproved.Bpelprocessupdateflag_caseapproved_client" operationRef="process" isForCompensation="false" name="UpdateLineApprovalFlag_CaseApproved" id="ACT15117359670550">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -552,7 +552,7 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client" operationRef="process" isForCompensation="false" name="STUpdCaseDisapproved" id="ACT1511783642045">
+        <serviceTask implementation="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client" operationRef="process" isForCompensation="false" name="UpdateLineApprovalFlag_CaseApproved" id="ACT1511783642045">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>

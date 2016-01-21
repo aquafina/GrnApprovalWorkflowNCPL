@@ -10,7 +10,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT1510859787598">
                 <labels>
-                    <label locale="en">STUpdBpmWfReadyFlag</label>
+                    <label locale="en">UpdateLineReadyFlag</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -18,7 +18,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT1510899077625">
                 <labels>
-                    <label locale="en">STReadBpmWfReadyFlag</label>
+                    <label locale="en">ReadOverallReadyStatus</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -26,7 +26,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15109813308980">
                 <labels>
-                    <label locale="en">STReadReceiptData</label>
+                    <label locale="en">ExtractReceiptData</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -42,7 +42,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15117359670550">
                 <labels>
-                    <label locale="en">STUpdFlagCaseApproved</label>
+                    <label locale="en">UpdateLineApprovalFlag_CaseApproved</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -50,7 +50,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT1511783642045">
                 <labels>
-                    <label locale="en">STUpdCaseDisapproved</label>
+                    <label locale="en">UpdateLineApprovalFlag_CaseApproved</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
