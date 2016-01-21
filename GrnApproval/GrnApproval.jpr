@@ -4,6 +4,11 @@
    <value n="BPELProcess1_ProcessName" v="BPELProcess1"/>
    <value n="BPELProcess1_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BPELProcess1_wsdl" v="BPELProcess1.wsdl"/>
+   <url n="BPELProcessSaveApprover_bpelFileURL" path="BPELProcessSaveApprover.bpel"/>
+   <value n="BPELProcessSaveApprover_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover"/>
+   <value n="BPELProcessSaveApprover_ProcessName" v="BPELProcessSaveApprover"/>
+   <value n="BPELProcessSaveApprover_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BPELProcessSaveApprover_wsdl" v="BPELProcessSaveApprover.wsdl"/>
    <url n="BPELProcessUpdateApproverUserID_bpelFileURL" path="BPELProcessUpdateApproverUserID.bpel"/>
    <value n="BPELProcessUpdateApproverUserID_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID"/>
    <value n="BPELProcessUpdateApproverUserID_ProcessName" v="BPELProcessUpdateApproverUserID"/>
@@ -80,7 +85,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -400,6 +405,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPELProcessUpdateApproverUserID"/>
+   <value n="ProcessName" v="BPELProcessSaveApprover"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_HEADER_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.APPROVER_ID:db_column_not_null">false</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_HEADER_ID:db_column_precision">0</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.HISTORY_ID:db_column_not_null">false</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.APPROVER_ID:db_column_precision">0</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_LINE_ID:db_column_precision">0</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY:db_table_type">TABLE</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.APPROVER_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.HISTORY_ID:db_column_precision">0</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.HISTORY_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_LINE_ID:db_column_not_null">false</entry>
+   <entry key="root_descriptor_alias">XX_RECEIPT_APPROVER_HISROTY</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY:db_column_3">HISTORY_ID</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY:db_column_2">APPROVER_ID</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_LINE_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY:db_column_1">SHIPMENT_LINE_ID</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY:db_column_0">SHIPMENT_HEADER_ID</entry>
+   <entry key="XX_RECEIPT_APPROVER_HISROTY.SHIPMENT_HEADER_ID:db_column_not_null">false</entry>
+</properties>
