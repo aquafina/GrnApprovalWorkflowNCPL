@@ -29,14 +29,14 @@
           location="BPELProcessUpdFlag_CaseDisapproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved"
           location="UpdFlagCaseDisapproved.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateApproverUserid"
-          location="UpdateApproverUserid.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID"
-          location="BPELProcessUpdateApproverUserID.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover"
           location="SaveApprover.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover"
           location="BPELProcessSaveApprover.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineProcessedFlag"
+          location="UpdateLineProcessedFlag.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag"
+          location="BPELProcessUpdateProcessLineFlag.wsdl" importType="wsdl"/>
   <service name="PollRcvShipmentHeaders"
            ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
@@ -68,14 +68,14 @@
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
-  <component name="BPELProcessUpdateApproverUserID" version="1.1">
-    <implementation.bpel src="BPELProcessUpdateApproverUserID.bpel"/>
+  <component name="BPELProcessSaveApprover" version="1.1">
+    <implementation.bpel src="BPELProcessSaveApprover.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
-  <component name="BPELProcessSaveApprover" version="1.1">
-    <implementation.bpel src="BPELProcessSaveApprover.bpel"/>
+  <component name="BPELProcessUpdateProcessLineFlag" version="1.1">
+    <implementation.bpel src="BPELProcessUpdateProcessLineFlag.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
@@ -138,10 +138,9 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
-  <reference name="UpdateApproverUserid"
-             ui:wsdlLocation="UpdateApproverUserid.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateApproverUserid#wsdl.interface(UpdateApproverUserid_ptt)"/>
-    <binding.jca config="UpdateApproverUserid_db.jca"/>
+  <reference name="SaveApprover" ui:wsdlLocation="SaveApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover#wsdl.interface(SaveApprover_ptt)"/>
+    <binding.jca config="SaveApprover_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -150,9 +149,10 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
-  <reference name="SaveApprover" ui:wsdlLocation="SaveApprover.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover#wsdl.interface(SaveApprover_ptt)"/>
-    <binding.jca config="SaveApprover_db.jca"/>
+  <reference name="UpdateLineProcessedFlag"
+             ui:wsdlLocation="UpdateLineProcessedFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineProcessedFlag#wsdl.interface(UpdateLineProcessedFlag_ptt)"/>
+    <binding.jca config="UpdateLineProcessedFlag_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -198,15 +198,19 @@
     <target.uri>BPELProcessUpdFlag_CaseDisapproved/bpelprocessupdflag_casedisapproved_client</target.uri>
   </wire>
   <wire>
-    <source.uri>BPELProcessUpdateApproverUserID/UpdateApproverUserid</source.uri>
-    <target.uri>UpdateApproverUserid</target.uri>
-  </wire>
-  <wire>
     <source.uri>BPELProcessSaveApprover/SaveApprover</source.uri>
     <target.uri>SaveApprover</target.uri>
   </wire>
   <wire>
     <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessSaveApprover.Bpelprocesssaveapprover_client.reference</source.uri>
     <target.uri>BPELProcessSaveApprover/bpelprocesssaveapprover_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BPELProcessUpdateProcessLineFlag/UpdateLineProcessedFlag</source.uri>
+    <target.uri>UpdateLineProcessedFlag</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessUpdateProcessLineFlag.Bpelprocessupdateprocesslineflag_client.reference</source.uri>
+    <target.uri>BPELProcessUpdateProcessLineFlag/bpelprocessupdateprocesslineflag_client</target.uri>
   </wire>
 </composite>

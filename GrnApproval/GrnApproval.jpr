@@ -19,6 +19,11 @@
    <value n="BPELProcessUpdateFlag_CaseApproved_ProcessName" v="BPELProcessUpdateFlag_CaseApproved"/>
    <value n="BPELProcessUpdateFlag_CaseApproved_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BPELProcessUpdateFlag_CaseApproved_wsdl" v="BPELProcessUpdateFlag_CaseApproved.wsdl"/>
+   <url n="BPELProcessUpdateProcessLineFlag_bpelFileURL" path="BPELProcessUpdateProcessLineFlag.bpel"/>
+   <value n="BPELProcessUpdateProcessLineFlag_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag"/>
+   <value n="BPELProcessUpdateProcessLineFlag_ProcessName" v="BPELProcessUpdateProcessLineFlag"/>
+   <value n="BPELProcessUpdateProcessLineFlag_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BPELProcessUpdateProcessLineFlag_wsdl" v="BPELProcessUpdateProcessLineFlag.wsdl"/>
    <url n="BPELProcessUpdFlag_CaseDisapproved_bpelFileURL" path="BPELProcessUpdFlag_CaseDisapproved.bpel"/>
    <value n="BPELProcessUpdFlag_CaseDisapproved_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved"/>
    <value n="BPELProcessUpdFlag_CaseDisapproved_ProcessName" v="BPELProcessUpdFlag_CaseDisapproved"/>
@@ -85,7 +90,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -405,6 +410,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPELProcessSaveApprover"/>
+   <value n="ProcessName" v="BPELProcessUpdateProcessLineFlag"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>
