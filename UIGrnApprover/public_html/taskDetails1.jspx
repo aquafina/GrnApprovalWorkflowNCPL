@@ -18,7 +18,7 @@
                              inlineStyle="padding:5px;;padding:10px"
                              id="pgl6">
           <af:panelHeader text=" " id="ph1"
-                          inlineStyle="background-color:Lime; background-color:#EBEBEB">
+                          inlineStyle=" background-color:#EBEBEB">
             <f:facet name="info"/>
             <f:facet name="legend"/>
             <f:facet name="menuBar"/>
@@ -333,7 +333,7 @@
                                     visible="#{actionAvailable.updateAvailable}"
                                     id="cb2" rendered="false"/>
                   <af:panelFormLayout id="pfl10" rows="5" maxColumns="3"
-                                      inlineStyle="background-color:#EBEBEB;width:50%;">
+                                      inlineStyle="background-color:#FAFAFA;width:60%;border:2px #EBEBEB solid;">
                     <f:facet name="footer">
                       <af:group id="g6">
                         <af:panelGroupLayout id="pgl24">
@@ -343,7 +343,7 @@
                                         columns="40"
                                         maximumLength="#{bindings.REMARKS.hints.precision}"
                                         shortDesc="#{bindings.REMARKS.hints.tooltip}"
-                                        id="it50" rows="4">
+                                        id="it50" rows="4" disabled="true">
                             <f:validator binding="#{bindings.REMARKS.validator}"/>
                           </af:inputText>
                         </af:panelGroupLayout>
@@ -355,7 +355,7 @@
                                   columns="#{bindings.ORGANIZATION_NAME.hints.displayWidth}"
                                   maximumLength="#{bindings.ORGANIZATION_NAME.hints.precision}"
                                   shortDesc="#{bindings.ORGANIZATION_NAME.hints.tooltip}"
-                                  id="it37">
+                                  id="it37" disabled="true">
                       <f:validator binding="#{bindings.ORGANIZATION_NAME.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.DC_NO.inputValue}"
@@ -364,7 +364,7 @@
                                   columns="#{bindings.DC_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.DC_NO.hints.precision}"
                                   shortDesc="#{bindings.DC_NO.hints.tooltip}"
-                                  id="it38">
+                                  id="it38" disabled="true">
                       <f:validator binding="#{bindings.DC_NO.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.DC_DATE.inputValue}"
@@ -373,7 +373,7 @@
                                   columns="#{bindings.DC_DATE.hints.displayWidth}"
                                   maximumLength="#{bindings.DC_DATE.hints.precision}"
                                   shortDesc="#{bindings.DC_DATE.hints.tooltip}"
-                                  id="it39">
+                                  id="it39" disabled="true">
                       <f:validator binding="#{bindings.DC_DATE.validator}"/>
                       <af:convertDateTime pattern="#{bindings.DC_DATE.format}"/>
                     </af:inputText>
@@ -383,7 +383,7 @@
                                   columns="#{bindings.PACKING_SLIP.hints.displayWidth}"
                                   maximumLength="#{bindings.PACKING_SLIP.hints.precision}"
                                   shortDesc="#{bindings.PACKING_SLIP.hints.tooltip}"
-                                  id="it40">
+                                  id="it40" disabled="true">
                       <f:validator binding="#{bindings.PACKING_SLIP.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.BUILTY_NO.inputValue}"
@@ -392,7 +392,7 @@
                                   columns="#{bindings.BUILTY_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.BUILTY_NO.hints.precision}"
                                   shortDesc="#{bindings.BUILTY_NO.hints.tooltip}"
-                                  id="it41">
+                                  id="it41" disabled="true">
                       <f:validator binding="#{bindings.BUILTY_NO.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.GRN_DATE.inputValue}"
@@ -401,7 +401,7 @@
                                   columns="#{bindings.GRN_DATE.hints.displayWidth}"
                                   maximumLength="#{bindings.GRN_DATE.hints.precision}"
                                   shortDesc="#{bindings.GRN_DATE.hints.tooltip}"
-                                  id="it42">
+                                  id="it42" disabled="true">
                       <f:validator binding="#{bindings.GRN_DATE.validator}"/>
                       <af:convertDateTime pattern="#{bindings.GRN_DATE.format}"/>
                     </af:inputText>
@@ -411,7 +411,7 @@
                                   columns="#{bindings.SupplierName.hints.displayWidth}"
                                   maximumLength="#{bindings.SupplierName.hints.precision}"
                                   shortDesc="#{bindings.SupplierName.hints.tooltip}"
-                                  id="it43">
+                                  id="it43" disabled="true">
                       <f:validator binding="#{bindings.SupplierName.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.CARRIER.inputValue}"
@@ -420,7 +420,7 @@
                                   columns="#{bindings.CARRIER.hints.displayWidth}"
                                   maximumLength="#{bindings.CARRIER.hints.precision}"
                                   shortDesc="#{bindings.CARRIER.hints.tooltip}"
-                                  id="it44">
+                                  id="it44" disabled="true">
                       <f:validator binding="#{bindings.CARRIER.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.NO_OF_CARTONS.inputValue}"
@@ -429,7 +429,7 @@
                                   columns="#{bindings.NO_OF_CARTONS.hints.displayWidth}"
                                   maximumLength="#{bindings.NO_OF_CARTONS.hints.precision}"
                                   shortDesc="#{bindings.NO_OF_CARTONS.hints.tooltip}"
-                                  id="it45">
+                                  id="it45" disabled="true">
                       <f:validator binding="#{bindings.NO_OF_CARTONS.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.GRNNo.inputValue}"
@@ -438,7 +438,7 @@
                                   columns="#{bindings.GRNNo.hints.displayWidth}"
                                   maximumLength="#{bindings.GRNNo.hints.precision}"
                                   shortDesc="#{bindings.GRNNo.hints.tooltip}"
-                                  id="it36">
+                                  id="it36" disabled="true">
                       <f:validator binding="#{bindings.GRNNo.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.VENDOR_SITE_CODE.inputValue}"
@@ -447,7 +447,7 @@
                                   columns="#{bindings.VENDOR_SITE_CODE.hints.displayWidth}"
                                   maximumLength="#{bindings.VENDOR_SITE_CODE.hints.precision}"
                                   shortDesc="#{bindings.VENDOR_SITE_CODE.hints.tooltip}"
-                                  id="it46">
+                                  id="it46" disabled="true">
                       <f:validator binding="#{bindings.VENDOR_SITE_CODE.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.WAYBILL_AIRBILL_NUM.inputValue}"
@@ -456,7 +456,7 @@
                                   columns="#{bindings.WAYBILL_AIRBILL_NUM.hints.displayWidth}"
                                   maximumLength="#{bindings.WAYBILL_AIRBILL_NUM.hints.precision}"
                                   shortDesc="#{bindings.WAYBILL_AIRBILL_NUM.hints.tooltip}"
-                                  id="it47">
+                                  id="it47" disabled="true">
                       <f:validator binding="#{bindings.WAYBILL_AIRBILL_NUM.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.VEH_NO.inputValue}"
@@ -465,7 +465,7 @@
                                   columns="#{bindings.VEH_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.VEH_NO.hints.precision}"
                                   shortDesc="#{bindings.VEH_NO.hints.tooltip}"
-                                  id="it48">
+                                  id="it48" disabled="true">
                       <f:validator binding="#{bindings.VEH_NO.validator}"/>
                     </af:inputText>
                     <af:inputText value="#{bindings.IGP_NO.inputValue}"
@@ -474,7 +474,7 @@
                                   columns="#{bindings.IGP_NO.hints.displayWidth}"
                                   maximumLength="#{bindings.IGP_NO.hints.precision}"
                                   shortDesc="#{bindings.IGP_NO.hints.tooltip}"
-                                  id="it49">
+                                  id="it49" disabled="true">
                       <f:validator binding="#{bindings.IGP_NO.validator}"/>
                     </af:inputText>
                   </af:panelFormLayout>
@@ -488,7 +488,7 @@
                             selectionListener="#{bindings.ReadReceiptDataOutput.collectionModel.makeCurrent}"
                             rowSelection="single" id="t3"
                             partialTriggers="::cb1 ::cb2" width="100%"
-                            inlineStyle="margin-top:10px">
+                            inlineStyle="margin-top:10px;background-color:#FAFAFA;border:2px #EBEBEB solid;">
                     <af:column sortProperty="#{bindings.ReadReceiptDataOutput.hints.GRNNo.name}"
                                sortable="false"
                                headerText="#{bindings.ReadReceiptDataOutput.hints.GRNNo.label}"
@@ -596,7 +596,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.PO_NUM.tooltip}"
-                                    id="it9">
+                                    id="it9" readOnly="true">
                         <f:validator binding="#{row.bindings.PO_NUM.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -613,7 +613,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.Item_Code.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.Item_Code.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.Item_Code.tooltip}"
-                                    id="it16">
+                                    id="it16" readOnly="true">
                         <f:validator binding="#{row.bindings.Item_Code.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -627,7 +627,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.desc.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.desc.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.desc.tooltip}"
-                                    id="it24">
+                                    id="it24" readOnly="true">
                         <f:validator binding="#{row.bindings.desc.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -641,7 +641,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.UOM.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.UOM.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.UOM.tooltip}"
-                                    id="it2">
+                                    id="it2" readOnly="true">
                         <f:validator binding="#{row.bindings.UOM.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -655,7 +655,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.QuantityReceived.tooltip}"
-                                    id="it22">
+                                    id="it22" readOnly="true">
                         <f:validator binding="#{row.bindings.QuantityReceived.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -799,7 +799,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.DESCRIPTION.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.DESCRIPTION.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.DESCRIPTION.tooltip}"
-                                    id="it29">
+                                    id="it29" readOnly="true">
                         <f:validator binding="#{row.bindings.DESCRIPTION.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -967,7 +967,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.COMMENTS.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.COMMENTS.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.COMMENTS.tooltip}"
-                                    id="it17">
+                                    id="it17" readOnly="true">
                         <f:validator binding="#{row.bindings.COMMENTS.validator}"/>
                       </af:inputText>
                     </af:column>
@@ -995,7 +995,7 @@
                                     columns="#{bindings.ReadReceiptDataOutput.hints.NOTE_TO_RECEIVER.displayWidth}"
                                     maximumLength="#{bindings.ReadReceiptDataOutput.hints.NOTE_TO_RECEIVER.precision}"
                                     shortDesc="#{bindings.ReadReceiptDataOutput.hints.NOTE_TO_RECEIVER.tooltip}"
-                                    id="it31">
+                                    id="it31" readOnly="true">
                         <f:validator binding="#{row.bindings.NOTE_TO_RECEIVER.validator}"/>
                       </af:inputText>
                     </af:column>
