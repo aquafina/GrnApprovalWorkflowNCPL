@@ -2,16 +2,6 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:component[@name='BPELProcessUpdateApproverUserID/bpelprocessupdateapproveruserid_client']</loc>
-      <line/>
-      <col/>
-      <file>E:\Development Workspace\BPM\GrnApprovalWorkflow\GrnApproval\composite.xml</file>
-      <name>E:\Development Workspace\BPM\GrnApprovalWorkflow\GrnApproval\composite.xml</name>
-      <fix/>
-      <msg>The service "bpelprocessupdateapproveruserid_client" exposed by component "BPELProcessUpdateApproverUserID" is not wired to/used by any other component.</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc/>
       <line/>
       <col/>

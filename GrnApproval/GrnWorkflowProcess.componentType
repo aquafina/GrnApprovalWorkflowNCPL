@@ -37,4 +37,8 @@
              ui:wsdlLocation="BPELProcessSaveApprover.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover#wsdl.interface(BPELProcessSaveApprover)"/>
   </reference>
+  <reference name="Services.BPEL.BPELProcessUpdateProcessLineFlag.Bpelprocessupdateprocesslineflag_client.reference"
+             ui:wsdlLocation="BPELProcessUpdateProcessLineFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag#wsdl.interface(BPELProcessUpdateProcessLineFlag)"/>
+  </reference>
 </componentType>

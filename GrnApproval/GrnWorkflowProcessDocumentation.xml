@@ -93,6 +93,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15178271507468">
+                <labels>
+                    <label locale="en">UpdateLineProcessedFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -119,6 +127,7 @@
             <topicDocumentation name="sf33"/>
             <topicDocumentation name="sf21"/>
             <topicDocumentation name="sf38"/>
+            <topicDocumentation name="sf65"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

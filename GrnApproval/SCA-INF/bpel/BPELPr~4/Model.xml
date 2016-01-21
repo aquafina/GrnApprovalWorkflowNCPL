@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <process name="BPELProcessUpdateApproverUserID" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateApproverUserID" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateApproverUserid" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
+=======
+<process name="BPELProcessSaveApprover" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
+>>>>>>> feature_update_line_prcessed_flag
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,8 +17,13 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
+<<<<<<< HEAD
     <partnerLink name="bpelprocessupdateapproveruserid_client" partnerLinkType="client:BPELProcessUpdateApproverUserID" myRole="BPELProcessUpdateApproverUserIDProvider"/>
     <partnerLink name="UpdateApproverUserid" partnerLinkType="ns1:UpdateApproverUserid_plt" partnerRole="UpdateApproverUserid_role"/>
+=======
+    <partnerLink name="bpelprocesssaveapprover_client" partnerLinkType="client:BPELProcessSaveApprover" myRole="BPELProcessSaveApproverProvider"/>
+    <partnerLink name="SaveApprover" partnerLinkType="ns1:SaveApprover_plt" partnerRole="SaveApprover_role"/>
+>>>>>>> feature_update_line_prcessed_flag
   </partnerLinks>
 
   <!-- 
@@ -25,11 +34,19 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
+<<<<<<< HEAD
     <variable name="inputVariable" messageType="client:BPELProcessUpdateApproverUserIDRequestMessage"/>
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:BPELProcessUpdateApproverUserIDResponseMessage"/>
     <variable name="InvokeUpdateUSERID_merge_InputVariable" messageType="ns1:RcvShipmentLinesCollection_msg"/>
+=======
+    <variable name="inputVariable" messageType="client:BPELProcessSaveApproverRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:BPELProcessSaveApproverResponseMessage"/>
+    <variable name="InvokeSaveApprover_merge_InputVariable" messageType="ns1:XxReceiptApproverHisrotyCollection_msg"/>
+>>>>>>> feature_update_line_prcessed_flag
   </variables>
 
   <!-- 
@@ -41,13 +58,19 @@
   -->
   <sequence name="main" id="BpSeq0">
 
+<<<<<<< HEAD
     <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessUpdateApproverUserID.wsdl) -->
     <receive name="receiveInput" partnerLink="bpelprocessupdateapproveruserid_client" portType="client:BPELProcessUpdateApproverUserID" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
+=======
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessSaveApprover.wsdl) -->
+    <receive name="receiveInput" partnerLink="bpelprocesssaveapprover_client" portType="client:BPELProcessSaveApprover" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
+>>>>>>> feature_update_line_prcessed_flag
     <assign name="Transform1" id="BpAss0">
       <bpelx:annotation>
         <bpelx:pattern>transformation</bpelx:pattern>
       </bpelx:annotation>
       <copy>
+<<<<<<< HEAD
         <from expression="ora:doXSLTransformForDoc('xsl/Transformation_2.xsl', $inputVariable.payload)"/>
         <to variable="InvokeUpdateUSERID_merge_InputVariable" part="RcvShipmentLinesCollection"/>
       </copy>
@@ -55,12 +78,25 @@
     <invoke name="InvokeUpdateUSERID" inputVariable="InvokeUpdateUSERID_merge_InputVariable" partnerLink="UpdateApproverUserid" portType="ns1:UpdateApproverUserid_ptt" operation="merge" bpelx:invokeAsDetail="no" id="BpInv0"/>
     <!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="bpelprocessupdateapproveruserid_client" portType="client:BPELProcessUpdateApproverUserID" operation="process" variable="outputVariable" id="BpRpl0"/>
+=======
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_3.xsl', $inputVariable.payload)"/>
+        <to variable="InvokeSaveApprover_merge_InputVariable" part="XxReceiptApproverHisrotyCollection"/>
+      </copy>
+    </assign>
+    <invoke name="InvokeSaveApprover" inputVariable="InvokeSaveApprover_merge_InputVariable" partnerLink="SaveApprover" portType="ns1:SaveApprover_ptt" operation="merge" bpelx:invokeAsDetail="no" id="BpInv0"/>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="bpelprocesssaveapprover_client" portType="client:BPELProcessSaveApprover" operation="process" variable="outputVariable" id="BpRpl0"/>
+>>>>>>> feature_update_line_prcessed_flag
   </sequence>
 </process><!--
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
+<<<<<<< HEAD
   Created: Wed Jan 20 18:04:42 PKT 2016
+=======
+  Created: Thu Jan 21 13:25:36 PKT 2016
+>>>>>>> feature_update_line_prcessed_flag
   Author:  kaka
   Type: BPEL 1.1 Process
   Purpose: Synchronous BPEL Process
