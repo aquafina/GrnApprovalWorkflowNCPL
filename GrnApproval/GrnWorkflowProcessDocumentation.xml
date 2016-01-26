@@ -64,6 +64,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15178271507468">
+                <labels>
+                    <label locale="en">UpdateLineProcessedFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -88,14 +96,6 @@
             <topicDocumentation name="GTW15117490959648">
                 <labels>
                     <label locale="en">IsApproved</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15178271507468">
-                <labels>
-                    <label locale="en">UpdateLineProcessedFlag</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
