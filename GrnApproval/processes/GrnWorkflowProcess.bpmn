@@ -71,7 +71,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="246" y="80"/>
+                        <ns5:Position x="366" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -132,7 +132,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="430" y="80"/>
+                        <ns5:Position x="550" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -231,7 +231,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="830" y="80"/>
+                        <ns5:Position x="950" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -330,7 +330,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1176" y="80"/>
+                        <ns5:Position x="1296" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -485,7 +485,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1506" y="80"/>
+                        <ns5:Position x="1626" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -556,7 +556,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1506" y="314"/>
+                        <ns5:Position x="1626" y="314"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -627,7 +627,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1716" y="80"/>
+                        <ns5:Position x="1836" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -719,7 +719,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1014" y="80"/>
+                        <ns5:Position x="1134" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -853,7 +853,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1836" y="80"/>
+                        <ns5:Position x="1956" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -866,11 +866,44 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
+        <intermediateCatchEvent name="RestABit" id="EVT15220101860256">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="220" y="80"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <timerEventDefinition>
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:OptionalTimerEventFeatures>
+                            <ns5:useCalendar>false</ns5:useCalendar>
+                            <ns5:outOfCalendarPolicy>NO_RESCHEDULE</ns5:outOfCalendarPolicy>
+                            <ns5:rescheduleRestrictionsPolicy>EACH_ENTRY_AS_DIFFERENT_EVENT</ns5:rescheduleRestrictionsPolicy>
+                        </ns5:OptionalTimerEventFeatures>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+                <timeCycle xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'PT10S'
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:Expression mode="xpath"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </timeCycle>
+            </timerEventDefinition>
+        </intermediateCatchEvent>
         <exclusiveGateway gatewayDirection="Unspecified" name="IsReceiptReadyForApproval" id="GTW15109006511018">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="638" y="80"/>
+                        <ns5:Position x="758" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -884,7 +917,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1296" y="80"/>
+                        <ns5:Position x="1416" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -894,7 +927,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </exclusiveGateway>
-        <sequenceFlow sourceRef="EVT15107785706398" targetRef="ACT1510859787598" name="sf10" id="sf10">
+        <sequenceFlow sourceRef="EVT15107785706398" targetRef="EVT15220101860256" name="sf10" id="sf10">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -955,11 +988,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1237" y="209"/>
+                        <ns5:Positions x="1357" y="209"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1237,209" name="curve"/>
+                        <ns5:StringFeature value="1357,209" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -1059,6 +1092,18 @@
             </extensionElements>
         </sequenceFlow>
         <sequenceFlow sourceRef="ACT15178271507468" targetRef="ACT15115580161186" name="sf65" id="sf65">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EVT15220101860256" targetRef="ACT1510859787598" name="sf24" id="sf24">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
