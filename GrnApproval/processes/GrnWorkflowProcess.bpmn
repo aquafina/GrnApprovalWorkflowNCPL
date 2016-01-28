@@ -890,7 +890,7 @@
                         </ns5:OptionalTimerEventFeatures>
                     </ns5:OracleExtensions>
                 </extensionElements>
-                <timeCycle xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'PT10S'
+                <timeCycle xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'PT1M10S'
                     <extensionElements>
                         <ns5:OracleExtensions>
                             <ns5:Expression mode="xpath"/>
