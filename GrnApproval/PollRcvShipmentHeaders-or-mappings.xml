@@ -12,6 +12,9 @@
          <querying>
             <queries>
                <query name="PollRcvShipmentHeadersSelect" xsi:type="read-all-query">
+                  <call xsi:type="sql-call">
+                     <sql>SELECT SHIPMENT_HEADER_ID FROM RCV_SHIPMENT_HEADERS WHERE ((ATTRIBUTE9 &lt;> 'Yes') OR (ATTRIBUTE9 IS NULL))SELECT SHIPMENT_HEADER_ID FROM RCV_SHIPMENT_HEADERS WHERE ((ATTRIBUTE9 &lt;> 'Yes') OR (ATTRIBUTE9 IS NULL))</sql>
+                  </call>
                   <reference-class>PollRcvShipmentHeaders.RcvShipmentHeaders</reference-class>
                   <lock-mode>none</lock-mode>
                   <container xsi:type="list-container-policy">

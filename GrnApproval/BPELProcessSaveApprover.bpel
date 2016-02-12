@@ -48,8 +48,8 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:BPELProcessSaveApproverResponseMessage"/>
-    <variable name="InvokeSaveApprover_merge_InputVariable"
-              messageType="ns1:XxReceiptApproverHisrotyCollection_msg"/>
+    <variable name="InvokeSaveAppr_VAR"
+              messageType="ns1:XxReceiptApproverHistoryCollection_msg"/>
   </variables>
 
   <!-- 
@@ -68,15 +68,15 @@
         <bpelx:pattern>transformation</bpelx:pattern>
       </bpelx:annotation>
       <copy>
-        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_3.xsl', $inputVariable.payload)"/>
-        <to variable="InvokeSaveApprover_merge_InputVariable"
-            part="XxReceiptApproverHisrotyCollection"/>
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_5.xsl', $inputVariable.payload)"/>
+        <to variable="InvokeSaveAppr_VAR"
+            part="XxReceiptApproverHistoryCollection"/>
       </copy>
     </assign>
-    <invoke name="InvokeSaveApprover"
-            inputVariable="InvokeSaveApprover_merge_InputVariable"
-            partnerLink="SaveApprover" portType="ns1:SaveApprover_ptt"
-            operation="merge" bpelx:invokeAsDetail="no"/>
+    <invoke name="InvokeSaveAppr"
+            inputVariable="InvokeSaveAppr_VAR" partnerLink="SaveApprover"
+            portType="ns1:SaveApprover_ptt" operation="merge"
+            bpelx:invokeAsDetail="no"/>
     <!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="bpelprocesssaveapprover_client" portType="client:BPELProcessSaveApprover" operation="process" variable="outputVariable"/>
   </sequence>

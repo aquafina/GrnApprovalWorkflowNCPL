@@ -3,16 +3,16 @@
    <name>SaveApprover-OR</name>
    <class-mapping-descriptors>
       <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
-         <class>SaveApprover.XxReceiptApproverHisroty</class>
-         <alias>XX_RECEIPT_APPROVER_HISROTY</alias>
+         <class>SaveApprover.XxReceiptApproverHistory</class>
+         <alias>XX_RECEIPT_APPROVER_HISTORY</alias>
          <primary-key>
-            <field table="XX_RECEIPT_APPROVER_HISROTY" name="HISTORY_ID" xsi:type="column"/>
+            <field table="XX_RECEIPT_APPROVER_HISTORY" name="HISTORY_ID" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
             <queries>
                <query name="SaveApproverSelect" xsi:type="read-all-query">
-                  <reference-class>SaveApprover.XxReceiptApproverHisroty</reference-class>
+                  <reference-class>SaveApprover.XxReceiptApproverHistory</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
                   </container>
@@ -22,22 +22,22 @@
          <attribute-mappings>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>shipmentHeaderId</attribute-name>
-               <field table="XX_RECEIPT_APPROVER_HISROTY" name="SHIPMENT_HEADER_ID" xsi:type="column"/>
+               <field table="XX_RECEIPT_APPROVER_HISTORY" name="SHIPMENT_HEADER_ID" xsi:type="column"/>
                <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>shipmentLineId</attribute-name>
-               <field table="XX_RECEIPT_APPROVER_HISROTY" name="SHIPMENT_LINE_ID" xsi:type="column"/>
+               <field table="XX_RECEIPT_APPROVER_HISTORY" name="SHIPMENT_LINE_ID" xsi:type="column"/>
                <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>approverId</attribute-name>
-               <field table="XX_RECEIPT_APPROVER_HISROTY" name="APPROVER_ID" xsi:type="column"/>
+               <field table="XX_RECEIPT_APPROVER_HISTORY" name="APPROVER_ID" xsi:type="column"/>
                <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>historyId</attribute-name>
-               <field table="XX_RECEIPT_APPROVER_HISROTY" name="HISTORY_ID" xsi:type="column"/>
+               <field table="XX_RECEIPT_APPROVER_HISTORY" name="HISTORY_ID" xsi:type="column"/>
                <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
@@ -54,7 +54,7 @@
          <instantiation/>
          <copying xsi:type="instantiation-copy-policy"/>
          <tables>
-            <table name="XX_RECEIPT_APPROVER_HISROTY"/>
+            <table name="XX_RECEIPT_APPROVER_HISTORY"/>
          </tables>
          <structure>structureName</structure>
       </class-mapping-descriptor>

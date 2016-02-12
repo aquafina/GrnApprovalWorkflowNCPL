@@ -10,12 +10,12 @@
             <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApprover" schemaLocation="xsd/SaveApprover_table.xsd"/>
         </schema>
     </wsdl:types>
-    <wsdl:message name="XxReceiptApproverHisrotyCollection_msg">
-        <wsdl:part name="XxReceiptApproverHisrotyCollection" element="top:XxReceiptApproverHisrotyCollection"/>
+    <wsdl:message name="XxReceiptApproverHistoryCollection_msg">
+        <wsdl:part name="XxReceiptApproverHistoryCollection" element="top:XxReceiptApproverHistoryCollection"/>
     </wsdl:message>
     <wsdl:portType name="SaveApprover_ptt">
         <wsdl:operation name="merge">
-            <wsdl:input message="tns:XxReceiptApproverHisrotyCollection_msg"/>
+            <wsdl:input message="tns:XxReceiptApproverHistoryCollection_msg"/>
         </wsdl:operation>
     </wsdl:portType>
 </wsdl:definitions>

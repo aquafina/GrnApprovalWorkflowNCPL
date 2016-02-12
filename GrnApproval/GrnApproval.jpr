@@ -90,7 +90,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -410,6 +410,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPELProcessUpdateProcessLineFlag"/>
+   <value n="ProcessName" v="BPELProcessSaveApprover"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>
