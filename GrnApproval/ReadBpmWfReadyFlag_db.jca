@@ -1,9 +1,9 @@
 <adapter-config name="ReadBpmWfReadyFlag" adapter="Database Adapter" wsdlLocation="ReadBpmWfReadyFlag.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/Erptest8" UIConnectionName="apps" adapterRef=""/>
+  <connection-factory location="eis/DB/Erptest5_test" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="ReadBpmWfReadyFlag_ptt" operation="ReadBpmWfReadyFlag">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value=" SELECT DECODE(COUNT(*) , '0' ,'READY','NOT_READY') attribute10  FROM RCV_SHIPMENT_LINES WHERE SHIPMENT_HEADER_ID = #shid AND ATTRIBUTE1 ='BPM_WORKFLOW_INS_REQ' "/>
+      <property name="SqlString" value=" SELECT DECODE(COUNT(*) , '0' ,'NOT_READY','READY') attribute10  FROM RCV_SHIPMENT_LINES WHERE SHIPMENT_HEADER_ID = #shid AND ATTRIBUTE1 ='BPM_WORKFLOW_READY' "/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>

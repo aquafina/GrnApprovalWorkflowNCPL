@@ -1,6 +1,6 @@
 <adapter-config name="UpdFlagCaseApproved" adapter="Database Adapter" wsdlLocation="UpdFlagCaseApproved.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/Erptest8" UIConnectionName="apps" adapterRef=""/>
+  <connection-factory location="eis/DB/Erptest5_test" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="UpdFlagCaseApproved_ptt" operation="UpdFlagCaseApproved">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
       <property name="SqlString" value="update rcv_shipment_lines set attribute1 = 'BPM_WORKFLOW_APPROVED'  where shipment_header_id = #SHID"/>
