@@ -28,9 +28,6 @@
                     <ns5:Conversation id="CONVERSATION151096980312" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.ReadReceiptData"/>
                     </ns5:Conversation>
-                    <ns5:Conversation id="CONVERSATION151178385515" type="service_call">
-                        <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client"/>
-                    </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION151772577197" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELProcessSaveApprover.Bpelprocesssaveapprover_client"/>
                     </ns5:Conversation>
@@ -42,6 +39,9 @@
                     </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION156457007741" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_UpdateLineApproved.Bp_updatelineapproved_client_ws"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION156460330533" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_UpdateLineDisApp.Bp_updatelinedisapp_client_ws2"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -552,7 +552,7 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client" operationRef="process" isForCompensation="false" name="UpdateLineApprovalFlag_CaseApproved" id="ACT1511783642045">
+        <serviceTask implementation="Services.BPEL.BP_UpdateLineDisApp.Bp_updatelinedisapp_client_ws2" operationRef="process" isForCompensation="false" name="UpdateLineApprovalFlag_CaseApproved" id="ACT1511783642045">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -566,29 +566,29 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION151178385515">
+                    <ns5:Conversational conversation="CONVERSATION156460330533">
                         <ns5:ServiceCallConversationalDefinition operation="process"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
                 </ns5:OracleExtensions>
             </extensionElements>
             <ioSpecification>
-                <dataInput name="rcvShipmentHeadersCollection" id="rcvShipmentHeadersCollection">
+                <dataInput name="readReceiptDataOutputCollection" id="readReceiptDataOutputCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" element="RcvShipmentHeadersCollection" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" element="ReadReceiptDataOutputCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
                 <dataOutput name="processResponse" id="processResponse">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved" element="processResponse" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp" element="processResponse" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
                 <inputSet id="ACT1511783642045_uniqueInputSet">
-                    <dataInputRefs>rcvShipmentHeadersCollection</dataInputRefs>
+                    <dataInputRefs>readReceiptDataOutputCollection</dataInputRefs>
                 </inputSet>
                 <outputSet id="ACT1511783642045_uniqueOutputSet">
                     <dataOutputRefs>processResponse</dataOutputRefs>
@@ -598,22 +598,22 @@
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <sourceRef>DOShipmentHeaderData</sourceRef>
-                <targetRef>rcvShipmentHeadersCollection</targetRef>
+                <sourceRef>DOReceiptData</sourceRef>
+                <targetRef>readReceiptDataOutputCollection</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
+                            <ns5:DataAssignment operation="copy_list"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOShipmentHeaderData')/ns:RcvShipmentHeaders[1]/ns:shipmentHeaderId
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('rcvShipmentHeadersCollection')/ns:RcvShipmentHeaders[1]/ns:shipmentHeaderId
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('readReceiptDataOutputCollection')/ns:ReadReceiptDataOutput
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>

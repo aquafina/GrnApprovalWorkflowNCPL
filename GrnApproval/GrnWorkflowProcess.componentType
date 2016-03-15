@@ -25,10 +25,6 @@
     <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
                     callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
   </reference>
-  <reference name="Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client.reference"
-             ui:wsdlLocation="BPELProcessUpdFlag_CaseDisapproved.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved#wsdl.interface(BPELProcessUpdFlag_CaseDisapproved)"/>
-  </reference>
   <reference name="Services.BPEL.BPELProcessSaveApprover.Bpelprocesssaveapprover_client.reference"
              ui:wsdlLocation="BPELProcessSaveApprover.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover#wsdl.interface(BPELProcessSaveApprover)"/>
@@ -40,5 +36,9 @@
   <reference name="Services.BPEL.BP_UpdateLineApproved.Bp_updatelineapproved_client_ws.reference"
              ui:wsdlLocation="BP_UpdateLineApproved.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved#wsdl.interface(BP_UpdateLineApproved)"/>
+  </reference>
+  <reference name="Services.BPEL.BP_UpdateLineDisApp.Bp_updatelinedisapp_client_ws2.reference"
+             ui:wsdlLocation="BP_UpdateLineDisApp.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp#wsdl.interface(BP_UpdateLineDisApp)"/>
   </reference>
 </componentType>

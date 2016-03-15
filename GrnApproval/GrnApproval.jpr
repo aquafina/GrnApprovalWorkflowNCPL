@@ -5,6 +5,11 @@
    <value n="BP_UpdateLineApproved_ProcessName" v="BP_UpdateLineApproved"/>
    <value n="BP_UpdateLineApproved_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BP_UpdateLineApproved_wsdl" v="BP_UpdateLineApproved.wsdl"/>
+   <url n="BP_UpdateLineDisApp_bpelFileURL" path="BP_UpdateLineDisApp.bpel"/>
+   <value n="BP_UpdateLineDisApp_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp"/>
+   <value n="BP_UpdateLineDisApp_ProcessName" v="BP_UpdateLineDisApp"/>
+   <value n="BP_UpdateLineDisApp_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BP_UpdateLineDisApp_wsdl" v="BP_UpdateLineDisApp.wsdl"/>
    <value n="BPELProcess1_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcess1"/>
    <value n="BPELProcess1_ProcessName" v="BPELProcess1"/>
    <value n="BPELProcess1_Template" v="BPEL_SYNC_PROCESS"/>
@@ -95,7 +100,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -415,6 +420,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BP_UpdateLineApproved"/>
+   <value n="ProcessName" v="BP_UpdateLineDisApp"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>

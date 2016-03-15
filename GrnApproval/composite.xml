@@ -37,6 +37,10 @@
           location="BP_UpdateLineApproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineAPPROVED"
           location="UpdateLineAPPROVED.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp"
+          location="BP_UpdateLineDisApp.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineDISAPPROVED"
+          location="UpdateLineDISAPPROVED.wsdl" importType="wsdl"/>
   <service name="BusinessEvent" ui:wsdlLocation="BusinessEvent.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/apps/GrnApprovalWorkflow/GrnApproval/BusinessEvent#wsdl.interface(DEQUEUE_ptt)"/>
     <binding.jca config="BusinessEvent_apps.jca"/>
@@ -68,6 +72,12 @@
   </component>
   <component name="BP_UpdateLineApproved" version="1.1">
     <implementation.bpel src="BP_UpdateLineApproved.bpel"/>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BP_UpdateLineDisApp" version="1.1">
+    <implementation.bpel src="BP_UpdateLineDisApp.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
@@ -153,6 +163,18 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="UpdateLineDISAPPROVED"
+             ui:wsdlLocation="UpdateLineDISAPPROVED.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineDISAPPROVED#wsdl.interface(UpdateLineDISAPPROVED_ptt)"/>
+    <binding.jca config="UpdateLineDISAPPROVED_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.UpdBpmWfReadyFlag.reference</source.uri>
     <target.uri>UpdBpmWfReadyFlag</target.uri>
@@ -172,10 +194,6 @@
   <wire>
     <source.uri>BPELProcessUpdFlag_CaseDisapproved/UpdFlagCaseDisapproved</source.uri>
     <target.uri>UpdFlagCaseDisapproved</target.uri>
-  </wire>
-  <wire>
-    <source.uri>GrnWorkflowProcess/Services.BPEL.BPELProcessUpdFlag_CaseDisapproved.Bpelprocessupdflag_casedisapproved_client.reference</source.uri>
-    <target.uri>BPELProcessUpdFlag_CaseDisapproved/bpelprocessupdflag_casedisapproved_client</target.uri>
   </wire>
   <wire>
     <source.uri>BPELProcessSaveApprover/SaveApprover</source.uri>
@@ -204,5 +222,13 @@
   <wire>
     <source.uri>BP_UpdateLineApproved/UpdateLineAPPROVED</source.uri>
     <target.uri>UpdateLineAPPROVED</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BP_UpdateLineDisApp.Bp_updatelinedisapp_client_ws2.reference</source.uri>
+    <target.uri>BP_UpdateLineDisApp/bp_updatelinedisapp_client_ws2</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BP_UpdateLineDisApp/UpdateLineDISAPPROVED</source.uri>
+    <target.uri>UpdateLineDISAPPROVED</target.uri>
   </wire>
 </composite>
