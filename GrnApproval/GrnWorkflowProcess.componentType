@@ -4,9 +4,9 @@
                xmlns="http://xmlns.oracle.com/sca/1.0"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:ui="http://xmlns.oracle.com/soa/designer/">
-  <service name="References.Externals.PollRcvShipmentHeaders.service"
-           ui:wsdlLocation="PollRcvShipmentHeaders.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/PollRcvShipmentHeaders#wsdl.interface(PollRcvShipmentHeaders_ptt)"/>
+  <service name="References.Externals.BusinessEvent.service"
+           ui:wsdlLocation="BusinessEvent.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/apps/GrnApprovalWorkflow/GrnApproval/BusinessEvent#wsdl.interface(DEQUEUE_ptt)"/>
   </service>
   <reference name="Services.Externals.UpdBpmWfReadyFlag.reference"
              ui:wsdlLocation="UpdBpmWfReadyFlag.wsdl">

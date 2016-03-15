@@ -3,7 +3,7 @@
   <connection-factory location="eis/DB/applive" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="ReadBpmWfReadyFlag_ptt" operation="ReadBpmWfReadyFlag">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value=" SELECT DECODE(COUNT(*) , '0' ,'NOT_READY','READY') attribute10  FROM RCV_SHIPMENT_LINES WHERE SHIPMENT_HEADER_ID = #shid AND ATTRIBUTE1 ='BPM_WORKFLOW_READY' "/>
+      <property name="SqlString" value="SELECT DECODE(COUNT(*) , '0' ,'READY','NOT_READY') attribute10  FROM RCV_SHIPMENT_LINES WHERE SHIPMENT_HEADER_ID = #shid AND ATTRIBUTE1 is null"/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>
