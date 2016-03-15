@@ -8,4 +8,8 @@
            ui:wsdlLocation="BP_UpdateLineApproved.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved#wsdl.interface(BP_UpdateLineApproved)"/>
   </service>
+  <reference name="UpdateLineAPPROVED"
+             ui:wsdlLocation="UpdateLineAPPROVED.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineAPPROVED#wsdl.interface(UpdateLineAPPROVED_ptt)"/>
+  </reference>
 </componentType>

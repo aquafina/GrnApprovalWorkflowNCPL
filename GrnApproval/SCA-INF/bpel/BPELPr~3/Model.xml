@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process name="BPELProcessUpdFlag_CaseDisapproved" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
+<process name="BPELProcessSaveApprover" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessSaveApprover" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,8 +13,8 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="bpelprocessupdflag_casedisapproved_client" partnerLinkType="client:BPELProcessUpdFlag_CaseDisapproved" myRole="BPELProcessUpdFlag_CaseDisapprovedProvider"/>
-    <partnerLink name="UpdFlagCaseDisapproved" partnerLinkType="ns1:UpdFlagCaseDisapproved_plt" partnerRole="UpdFlagCaseDisapproved_role"/>
+    <partnerLink name="bpelprocesssaveapprover_client" partnerLinkType="client:BPELProcessSaveApprover" myRole="BPELProcessSaveApproverProvider"/>
+    <partnerLink name="SaveApprover" partnerLinkType="ns1:SaveApprover_plt" partnerRole="SaveApprover_role"/>
   </partnerLinks>
 
   <!-- 
@@ -25,11 +25,11 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="client:BPELProcessUpdFlag_CaseDisapprovedRequestMessage"/>
+    <variable name="inputVariable" messageType="client:BPELProcessSaveApproverRequestMessage"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="client:BPELProcessUpdFlag_CaseDisapprovedResponseMessage"/>
-    <variable name="InvokeUpdFlagCaseDisapproved_input" messageType="ns1:UpdFlagCaseDisapprovedInput_msg"/>
+    <variable name="outputVariable" messageType="client:BPELProcessSaveApproverResponseMessage"/>
+    <variable name="InvokeSaveAppr_VAR" messageType="ns1:XxReceiptApproverHistoryCollection_msg"/>
   </variables>
 
   <!-- 
@@ -41,26 +41,26 @@
   -->
   <sequence name="main" id="BpSeq0">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessUpdFlag_CaseDisapproved.wsdl) -->
-    <receive name="receiveInput" partnerLink="bpelprocessupdflag_casedisapproved_client" portType="client:BPELProcessUpdFlag_CaseDisapproved" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessSaveApprover.wsdl) -->
+    <receive name="receiveInput" partnerLink="bpelprocesssaveapprover_client" portType="client:BPELProcessSaveApprover" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
     <assign name="Transform1" id="BpAss0">
       <bpelx:annotation>
         <bpelx:pattern>transformation</bpelx:pattern>
       </bpelx:annotation>
       <copy>
-        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_InputFlagCaseDisapproved.xsl', $inputVariable.payload)"/>
-        <to variable="InvokeUpdFlagCaseDisapproved_input" part="UpdFlagCaseDisapprovedInput_msg"/>
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_5.xsl', $inputVariable.payload)"/>
+        <to variable="InvokeSaveAppr_VAR" part="XxReceiptApproverHistoryCollection"/>
       </copy>
     </assign>
-    <invoke name="InvokeUpdFlagCaseDisapproved" inputVariable="InvokeUpdFlagCaseDisapproved_input" partnerLink="UpdFlagCaseDisapproved" portType="ns1:UpdFlagCaseDisapproved_ptt" operation="UpdFlagCaseDisapproved" bpelx:invokeAsDetail="no" id="BpInv0"/>
+    <invoke name="InvokeSaveAppr" inputVariable="InvokeSaveAppr_VAR" partnerLink="SaveApprover" portType="ns1:SaveApprover_ptt" operation="merge" bpelx:invokeAsDetail="no" id="BpInv0"/>
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="bpelprocessupdflag_casedisapproved_client" portType="client:BPELProcessUpdFlag_CaseDisapproved" operation="process" variable="outputVariable" id="BpRpl0"/>
+    <reply name="replyOutput" partnerLink="bpelprocesssaveapprover_client" portType="client:BPELProcessSaveApprover" operation="process" variable="outputVariable" id="BpRpl0"/>
   </sequence>
 </process><!--
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
-  Created: Thu Jan 14 16:15:05 PKT 2016
+  Created: Thu Jan 21 13:25:36 PKT 2016
   Author:  kaka
   Type: BPEL 1.1 Process
   Purpose: Synchronous BPEL Process

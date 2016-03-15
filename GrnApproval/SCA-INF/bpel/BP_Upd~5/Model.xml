@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process name="BPELProcessUpdateProcessLineFlag" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineProcessedFlag" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
+<process name="BP_UpdateLineApproved" targetNamespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineAPPROVED" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,8 +13,8 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="bpelprocessupdateprocesslineflag_client" partnerLinkType="client:BPELProcessUpdateProcessLineFlag" myRole="BPELProcessUpdateProcessLineFlagProvider"/>
-    <partnerLink name="UpdateLineProcessedFlag" partnerLinkType="ns1:UpdateLineProcessedFlag_plt" partnerRole="UpdateLineProcessedFlag_role"/>
+    <partnerLink name="bp_updatelineapproved_client_ws" partnerLinkType="client:BP_UpdateLineApproved" myRole="BP_UpdateLineApprovedProvider"/>
+    <partnerLink name="UpdateLineAPPROVED" partnerLinkType="ns1:UpdateLineAPPROVED_plt" partnerRole="UpdateLineAPPROVED_role"/>
   </partnerLinks>
 
   <!-- 
@@ -25,11 +25,11 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="client:BPELProcessUpdateProcessLineFlagRequestMessage"/>
+    <variable name="inputVariable" messageType="client:BP_UpdateLineApprovedRequestMessage"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="client:BPELProcessUpdateProcessLineFlagResponseMessage"/>
-    <variable name="InvokeUpdateLineProcessedFlag_merge_InputVariable" messageType="ns1:RcvShipmentLinesCollection_msg"/>
+    <variable name="outputVariable" messageType="client:BP_UpdateLineApprovedResponseMessage"/>
+    <variable name="Invoke_UpdateLineApp_update_InputVariable" messageType="ns1:RcvShipmentLinesCollection_msg"/>
   </variables>
 
   <!-- 
@@ -41,26 +41,26 @@
   -->
   <sequence name="main" id="BpSeq0">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELProcessUpdateProcessLineFlag.wsdl) -->
-    <receive name="receiveInput" partnerLink="bpelprocessupdateprocesslineflag_client" portType="client:BPELProcessUpdateProcessLineFlag" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BP_UpdateLineApproved.wsdl) -->
+    <receive name="receiveInput" partnerLink="bp_updatelineapproved_client_ws" portType="client:BP_UpdateLineApproved" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
     <assign name="Transform1" id="BpAss0">
       <bpelx:annotation>
         <bpelx:pattern>transformation</bpelx:pattern>
       </bpelx:annotation>
       <copy>
-        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_4.xsl', $inputVariable.payload)"/>
-        <to variable="InvokeUpdateLineProcessedFlag_merge_InputVariable" part="RcvShipmentLinesCollection"/>
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_6.xsl', $inputVariable.payload)"/>
+        <to variable="Invoke_UpdateLineApp_update_InputVariable" part="RcvShipmentLinesCollection"/>
       </copy>
     </assign>
-    <invoke name="InvokeUpdateLineProcessedFlag" inputVariable="InvokeUpdateLineProcessedFlag_merge_InputVariable" partnerLink="UpdateLineProcessedFlag" portType="ns1:UpdateLineProcessedFlag_ptt" operation="merge" bpelx:invokeAsDetail="no" id="BpInv0"/>
+    <invoke name="Invoke_UpdateLineApp" inputVariable="Invoke_UpdateLineApp_update_InputVariable" partnerLink="UpdateLineAPPROVED" portType="ns1:UpdateLineAPPROVED_ptt" operation="update" bpelx:invokeAsDetail="no" id="BpInv0"/>
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="bpelprocessupdateprocesslineflag_client" portType="client:BPELProcessUpdateProcessLineFlag" operation="process" variable="outputVariable" id="BpRpl0"/>
+    <reply name="replyOutput" partnerLink="bp_updatelineapproved_client_ws" portType="client:BP_UpdateLineApproved" operation="process" variable="outputVariable" id="BpRpl0"/>
   </sequence>
 </process><!--
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
-  Created: Thu Jan 21 16:15:35 PKT 2016
+  Created: Tue Mar 15 18:40:33 PKT 2016
   Author:  kaka
   Type: BPEL 1.1 Process
   Purpose: Synchronous BPEL Process

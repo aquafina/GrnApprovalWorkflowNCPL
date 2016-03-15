@@ -532,7 +532,7 @@
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
+                            <ns5:DataAssignment operation="copy_list"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                     <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput
