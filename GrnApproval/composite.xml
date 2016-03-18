@@ -31,8 +31,6 @@
           location="UpdateLineProcessedFlag.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag"
           location="BPELProcessUpdateProcessLineFlag.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/apps/GrnApprovalWorkflow/GrnApproval/BusinessEvent"
-          location="BusinessEvent.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineApproved"
           location="BP_UpdateLineApproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineAPPROVED"
@@ -41,9 +39,18 @@
           location="BP_UpdateLineDisApp.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdateLineDISAPPROVED"
           location="UpdateLineDISAPPROVED.wsdl" importType="wsdl"/>
-  <service name="BusinessEvent" ui:wsdlLocation="BusinessEvent.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/apps/GrnApprovalWorkflow/GrnApproval/BusinessEvent#wsdl.interface(DEQUEUE_ptt)"/>
-    <binding.jca config="BusinessEvent_apps.jca"/>
+  <import namespace="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient"
+          location="ProcessClient.wsdl" importType="wsdl"/>
+  <service name="ProcessClient" ui:wsdlLocation="ProcessClient.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
+    <binding.ws port="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.endpoint(ProcessClient/process_client_pt)">
+      <property name="weblogic.wsee.wsat.transaction.flowOption"
+                type="xs:string" many="false">NEVER</property>
+    </binding.ws>
+    <callback>
+      <binding.ws port="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.endpoint(ProcessClient/callback_ptt_iceman_pt)"/>
+    </callback>
   </service>
   <property name="productVersion" type="xs:string" many="false">11.1.1.7.8</property>
   <component name="GrnWorkflowProcess">
@@ -212,10 +219,6 @@
     <target.uri>BPELProcessUpdateProcessLineFlag/bpelprocessupdateprocesslineflag_client</target.uri>
   </wire>
   <wire>
-    <source.uri>BusinessEvent</source.uri>
-    <target.uri>GrnWorkflowProcess/References.Externals.BusinessEvent.service</target.uri>
-  </wire>
-  <wire>
     <source.uri>GrnWorkflowProcess/Services.BPEL.BP_UpdateLineApproved.Bp_updatelineapproved_client_ws.reference</source.uri>
     <target.uri>BP_UpdateLineApproved/bp_updatelineapproved_client_ws</target.uri>
   </wire>
@@ -230,5 +233,9 @@
   <wire>
     <source.uri>BP_UpdateLineDisApp/UpdateLineDISAPPROVED</source.uri>
     <target.uri>UpdateLineDISAPPROVED</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ProcessClient</source.uri>
+    <target.uri>GrnWorkflowProcess/References.Externals.ProcessClient.service</target.uri>
   </wire>
 </composite>

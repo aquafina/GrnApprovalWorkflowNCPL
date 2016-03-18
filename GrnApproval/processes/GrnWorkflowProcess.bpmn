@@ -34,14 +34,14 @@
                     <ns5:Conversation id="CONVERSATION151782740323" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELProcessUpdateProcessLineFlag.Bpelprocessupdateprocesslineflag_client"/>
                     </ns5:Conversation>
-                    <ns5:Conversation id="CONVERSATION156372071522" type="use_interface">
-                        <ns5:UseInterfaceConversationDefinition reference="References.Externals.BusinessEvent"/>
-                    </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION156457007741" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_UpdateLineApproved.Bp_updatelineapproved_client_ws"/>
                     </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION156460330533" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_UpdateLineDisApp.Bp_updatelinedisapp_client_ws2"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION156631460007" type="use_interface">
+                        <ns5:UseInterfaceConversationDefinition reference="References.Externals.ProcessClient"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -59,7 +59,7 @@
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
                             <ns5:Position x="0" y="0"/>
-                            <ns5:Size width="399" height="0"/>
+                            <ns5:Size width="394" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -71,7 +71,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="219" y="79"/>
+                        <ns5:Position x="366" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -132,7 +132,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="435" y="75"/>
+                        <ns5:Position x="550" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -790,7 +790,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="76" y="81"/>
+                        <ns5:Position x="100" y="80"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="catchAllErrors"/>
@@ -801,16 +801,16 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION156372071522">
-                        <ns5:UseInterfaceConversationalDefinition operation="dequeue"/>
+                    <ns5:Conversational conversation="CONVERSATION156631460007">
+                        <ns5:UseInterfaceConversationalDefinition operation="startProcess"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
                 </ns5:OracleExtensions>
             </extensionElements>
-            <dataOutput name="wfeventt" id="wfeventt">
+            <dataOutput name="singleString" id="singleString">
                 <extensionElements>
                     <ns5:OracleExtensions>
-                        <ns5:TypeRef namespace="http://xmlns.oracle.com/xdb/APPS/BusinessEvent" element="WF_EVENT_T" isArray="false"/>
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/singleString" element="singleString" isArray="false"/>
                     </ns5:OracleExtensions>
                 </extensionElements>
             </dataOutput>
@@ -818,7 +818,7 @@
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <sourceRef>wfeventt</sourceRef>
+                <sourceRef>singleString</sourceRef>
                 <targetRef>DOShipmentHeaderData</targetRef>
                 <assignment>
                     <extensionElements>
@@ -826,7 +826,7 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">number(bpmn:getDataOutput('wfeventt')/PARAMETER_LIST/PARAMETER_LIST_ITEM[1]/VALUE)
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">number(bpmn:getDataOutput('singleString'))
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="xpath"/>
@@ -843,10 +843,10 @@
                 </assignment>
             </dataOutputAssociation>
             <outputSet id="EVT15107785706398_uniqueOutputSet">
-                <dataOutputRefs>wfeventt</dataOutputRefs>
+                <dataOutputRefs>singleString</dataOutputRefs>
             </outputSet>
-            <messageEventDefinition messageRef="References.Externals.BusinessEvent">
-                <operationRef>dequeue</operationRef>
+            <messageEventDefinition messageRef="References.Externals.ProcessClient">
+                <operationRef>startProcess</operationRef>
             </messageEventDefinition>
         </startEvent>
         <endEvent name="End" id="EVT15107785706483">
@@ -866,6 +866,39 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
+        <intermediateCatchEvent name="Wait" id="EVT15663361834868">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="220" y="80"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <timerEventDefinition>
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:OptionalTimerEventFeatures>
+                            <ns5:useCalendar>false</ns5:useCalendar>
+                            <ns5:outOfCalendarPolicy>NO_RESCHEDULE</ns5:outOfCalendarPolicy>
+                            <ns5:rescheduleRestrictionsPolicy>EACH_ENTRY_AS_DIFFERENT_EVENT</ns5:rescheduleRestrictionsPolicy>
+                        </ns5:OptionalTimerEventFeatures>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+                <timeCycle xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'PT15S'
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:Expression mode="xpath"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </timeCycle>
+            </timerEventDefinition>
+        </intermediateCatchEvent>
         <exclusiveGateway gatewayDirection="Unspecified" name="IsReceiptReadyForApproval" id="GTW15109006511018">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -894,7 +927,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </exclusiveGateway>
-        <sequenceFlow sourceRef="EVT15107785706398" targetRef="ACT1510859787598" name="sf10" id="sf10">
+        <sequenceFlow sourceRef="EVT15107785706398" targetRef="EVT15663361834868" name="sf10" id="sf10">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1059,6 +1092,18 @@
             </extensionElements>
         </sequenceFlow>
         <sequenceFlow sourceRef="ACT15178271507468" targetRef="ACT15115580161186" name="sf65" id="sf65">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="EVT15663361834868" targetRef="ACT1510859787598" name="sf24" id="sf24">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>

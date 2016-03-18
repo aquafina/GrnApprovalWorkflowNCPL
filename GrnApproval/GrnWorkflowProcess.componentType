@@ -4,9 +4,10 @@
                xmlns="http://xmlns.oracle.com/sca/1.0"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:ui="http://xmlns.oracle.com/soa/designer/">
-  <service name="References.Externals.BusinessEvent.service"
-           ui:wsdlLocation="BusinessEvent.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/apps/GrnApprovalWorkflow/GrnApproval/BusinessEvent#wsdl.interface(DEQUEUE_ptt)"/>
+  <service name="References.Externals.ProcessClient.service"
+           ui:wsdlLocation="ProcessClient.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
   </service>
   <reference name="Services.Externals.UpdBpmWfReadyFlag.reference"
              ui:wsdlLocation="UpdBpmWfReadyFlag.wsdl">
