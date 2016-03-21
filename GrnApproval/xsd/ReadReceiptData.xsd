@@ -10,6 +10,7 @@
    <xs:complexType name="ReadReceiptDataOutputCollection">
       <xs:sequence>
          <xs:element name="ReadReceiptDataOutput" type="ReadReceiptDataOutput" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="user_id" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="ReadReceiptDataOutput">

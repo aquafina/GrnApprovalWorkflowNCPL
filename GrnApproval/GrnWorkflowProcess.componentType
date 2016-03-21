@@ -42,4 +42,9 @@
              ui:wsdlLocation="BP_UpdateLineDisApp.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp#wsdl.interface(BP_UpdateLineDisApp)"/>
   </reference>
+  <reference name="Services.BPEL.BPEmail.Email_client.reference"
+             ui:wsdlLocation="BPEmail.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmail)"
+                    callbackInterface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmailCallback)"/>
+  </reference>
 </componentType>
