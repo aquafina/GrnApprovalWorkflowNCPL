@@ -309,10 +309,11 @@
                                   columns="#{bindings.user_id.hints.displayWidth}"
                                   maximumLength="#{bindings.user_id.hints.precision}"
                                   shortDesc="#{bindings.user_id.hints.tooltip}"
-                                  id="it52">
+                                  id="it52" visible="false">
                       <f:validator binding="#{bindings.user_id.validator}"/>
                     </af:inputText>
-                    <af:outputText value="#{UserWLProfile.userID}" id="ot26"/>
+                    <af:outputText value="#{UserWLProfile.userID}" id="ot26"
+                                   visible="false"/>
                   </af:group>
                 </f:facet>
                 <f:facet name="menuBar"/>
@@ -1021,7 +1022,7 @@
                   <af:showDetailHeader size="2" id="histHd"
                                        text="#{resources.HISTORY}"
                                        disclosureListener="#{pageFlowScope.aleComponentBean.toggle}"
-                                       disclosed="false">
+                                       disclosed="false" rendered="false">
                     <f:facet name="info"/>
                     <f:facet name="legend"/>
                     <f:facet name="menuBar"/>
@@ -1042,7 +1043,7 @@
                 <f:facet name="true">
                   <af:showDetailHeader size="2" id="decompHd"
                                        text="#{resources.SUB_TASKS}"
-                                       disclosed="false">
+                                       disclosed="false" rendered="false">
                     <af:panelGroupLayout layout="vertical" id="pgl20">
                       <wlc:taskDecompose initParam="#{pageFlowScope.ADFHumanTaskBean.subTaskComp}"
                                          id="th1"/>
@@ -1056,7 +1057,8 @@
                     <af:showDetailHeader size="2" text="#{resources.COMMENTS}"
                                          disclosed="#{actionAvailable.discloseCommentsAttach}"
                                          contentStyle="padding: 5px;"
-                                         partialTriggers="cmtDlg" id="sdh1">
+                                         partialTriggers="cmtDlg" id="sdh1"
+                                         rendered="false">
                       <f:facet name="info"/>
                       <f:facet name="legend"/>
                       <f:facet name="menuBar"/>
