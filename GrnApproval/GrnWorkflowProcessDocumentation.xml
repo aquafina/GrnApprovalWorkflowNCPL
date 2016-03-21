@@ -117,6 +117,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15696881881265">
+                <labels>
+                    <label locale="en">EmailApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15697051343970">
+                <labels>
+                    <label locale="en">EmailApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -154,6 +170,8 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf42"/>
+            <topicDocumentation name="sf28"/>
+            <topicDocumentation name="sf29"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

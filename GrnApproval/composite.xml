@@ -41,6 +41,10 @@
           location="UpdateLineDISAPPROVED.wsdl" importType="wsdl"/>
   <import namespace="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient"
           location="ProcessClient.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail"
+          location="BPEmail.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+          location="NotificationService.wsdl" importType="wsdl"/>
   <service name="ProcessClient" ui:wsdlLocation="ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
@@ -86,6 +90,11 @@
   <component name="BP_UpdateLineDisApp" version="1.1">
     <implementation.bpel src="BP_UpdateLineDisApp.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BPEmail" version="1.1">
+    <implementation.bpel src="BPEmail.bpel"/>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
@@ -182,6 +191,12 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="NotificationService1"
+             ui:wsdlLocation="NotificationService.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+    <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
+                  location="NotificationService.wsdl"/>
+  </reference>
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.UpdBpmWfReadyFlag.reference</source.uri>
     <target.uri>UpdBpmWfReadyFlag</target.uri>
@@ -237,5 +252,13 @@
   <wire>
     <source.uri>ProcessClient</source.uri>
     <target.uri>GrnWorkflowProcess/References.Externals.ProcessClient.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPEmail.Email_client.reference</source.uri>
+    <target.uri>BPEmail/email_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BPEmail/NotificationService1</source.uri>
+    <target.uri>NotificationService1</target.uri>
   </wire>
 </composite>

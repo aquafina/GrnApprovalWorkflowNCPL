@@ -10,8 +10,7 @@
    <xs:complexType name="ReadReceiptDataOutputCollection">
       <xs:sequence>
          <xs:element name="ReadReceiptDataOutput" type="ReadReceiptDataOutput" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="user_id" type="xs:string" maxOccurs="1"
-                     minOccurs="0"/>
+         <xs:element name="user_id" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="ReadReceiptDataOutput">
@@ -21,6 +20,7 @@
          <xs:element name="ORGANIZATION_NAME" type="xs:string" nillable="true"/>
          <xs:element name="ATTRIBUTE3" type="xs:string" nillable="true"/>
          <xs:element name="USER_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="EMAIL_ADDRESS" type="xs:string" nillable="true"/>
          <xs:element name="TRANSACTION_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="SHIPMENT_HEADER_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="DC_NO" type="xs:string" nillable="true"/>

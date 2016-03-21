@@ -39,6 +39,11 @@
    <value n="BPELProcessUpdFlag_CaseDisapproved_ProcessName" v="BPELProcessUpdFlag_CaseDisapproved"/>
    <value n="BPELProcessUpdFlag_CaseDisapproved_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BPELProcessUpdFlag_CaseDisapproved_wsdl" v="BPELProcessUpdFlag_CaseDisapproved.wsdl"/>
+   <url n="BPEmail_bpelFileURL" path="BPEmail.bpel"/>
+   <value n="BPEmail_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail"/>
+   <value n="BPEmail_ProcessName" v="BPEmail"/>
+   <value n="BPEmail_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPEmail_wsdl" v="BPEmail.wsdl"/>
    <hash n="component-versions">
       <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
@@ -100,7 +105,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BP_UpdateLineDisApp"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -126,6 +131,7 @@
       <list n="technologyScope">
          <string v="BPM"/>
          <string v="SOA"/>
+         <string v="XML"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -420,6 +426,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BP_UpdateLineDisApp"/>
-   <value n="Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="ProcessName" v="BPEmail"/>
+   <value n="Template" v="BPEL_ASYNC_PROCESS"/>
 </jpr:project>
