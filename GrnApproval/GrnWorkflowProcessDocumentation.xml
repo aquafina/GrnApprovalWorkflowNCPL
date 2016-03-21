@@ -85,6 +85,14 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
+            <topicDocumentation name="EVT15663361834868">
+                <labels>
+                    <label locale="en">Wait</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="GTW15109006511018">
                 <labels>
                     <label locale="en">IsReceiptReadyForApproval</label>
@@ -101,9 +109,9 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="EVT15663361834868">
+            <topicDocumentation name="GTW15695094150567">
                 <labels>
-                    <label locale="en">Wait</label>
+                    <label locale="en">RecordsExists</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -137,6 +145,15 @@
             <topicDocumentation name="sf38"/>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf24"/>
+            <topicDocumentation name="sf40">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf42"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
