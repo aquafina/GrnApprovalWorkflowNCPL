@@ -74,7 +74,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="80" x="366"/>
+                        <ns5:Position y="81" x="366"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -346,6 +346,7 @@
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
                     </ns5:FeatureSet>
                     <ns5:HumanTask humanTaskReference="HumanTasks.GrnApproverTask"/>
                     <ns5:LogHandlers/>
@@ -629,7 +630,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="80" x="2076"/>
+                        <ns5:Position y="78" x="2076"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1193,7 +1194,7 @@
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
                         <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
                         <ns5:StringFeature value="STRAIGHT" name="routing"/>
-                        <ns5:StringFeature value="" name="userName"/>
+                        <ns5:StringFeature value="WF is Ready" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -1216,6 +1217,7 @@
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
                         <ns5:StringFeature value="1477,229" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="WF is not ready" name="userName"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1342,11 +1344,13 @@
         <sequenceFlow targetRef="ACT15115580161186" sourceRef="GTW15695094150567" name="sf40" id="sf40">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions y="79" x="1333"/>
+                    </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="1333,79" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
                     </ns5:FeatureSet>
