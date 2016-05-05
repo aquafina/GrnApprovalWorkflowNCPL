@@ -7,7 +7,7 @@
   <Attribute Name="user_id" Type="java.lang.String">
     <Properties>
       <CustomProperties>
-        <Property Name="minOccurs" Value="0"/>
+        <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="User Id"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>

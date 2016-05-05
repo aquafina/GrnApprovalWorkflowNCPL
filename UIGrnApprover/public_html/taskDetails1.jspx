@@ -1000,6 +1000,14 @@
                         <f:validator binding="#{row.bindings.NOTE_TO_RECEIVER.validator}"/>
                       </af:inputText>
                     </af:column>
+                    <af:column id="c44">
+                      <af:panelLabelAndMessage label="#{bindings.ReadReceiptDataOutput.hints.ORG.label}"
+                                               id="plam1">
+                        <af:outputText value="#{row.ORG}" id="ot27"/>
+                      </af:panelLabelAndMessage>
+                      <af:outputText value="#{row.DEPARTMENT}" id="ot28"/>
+                      <af:outputText value="#{row.ORG_ID}" id="ot29"/>
+                    </af:column>
                   </af:table>
                   <af:panelGroupLayout id="pgl23" halign="right"
                                        layout="vertical" valign="top">

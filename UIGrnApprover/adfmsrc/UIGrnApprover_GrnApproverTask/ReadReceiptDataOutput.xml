@@ -26,7 +26,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
-        <Property Name="nextSibling" Value="TRANSACTION_ID"/>
+        <Property Name="nextSibling" Value="EMAIL_ADDRESS"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="USERNAME"/>
@@ -620,7 +620,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
-        <Property Name="nextSibling" Value="NOTE_TO_RECEIVER"/>
+        <Property Name="nextSibling" Value="DEPARTMENT"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="SHIPMENTLINEID"/>
@@ -656,7 +656,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
-        <Property Name="nextSibling" Value="ATTRIBUTE3"/>
+        <Property Name="nextSibling" Value="ORG_ID"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="ORGANIZATIONNAME"/>
@@ -732,6 +732,78 @@
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="true"/>
         <Property Name="originalName" Value="ATTRIBUTE3"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="ORG_ID" Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="ORG"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="ORGID"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="ORG_ID"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="ORG" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="ATTRIBUTE3"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="ORG"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="ORG"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="EMAIL_ADDRESS" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="TRANSACTION_ID"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="EMAILADDRESS"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="EMAIL_ADDRESS"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="DEPARTMENT" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
+        <Property Name="nextSibling" Value="NOTE_TO_RECEIVER"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="DEPARTMENT"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="DEPARTMENT"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
         <Property Name="type" Value="java.lang.String"/>

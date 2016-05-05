@@ -4,16 +4,16 @@
     <ns1:updateExistingObjects>true</ns1:updateExistingObjects>
     <ns1:organizationalUnits/>
     <ns1:applicationRoles>
-        <ns1:applicationRole id="GrnApproval.ProcessOwner" isProcessRole="false">
+        <ns1:applicationRole isProcessRole="false" id="GrnApproval.ProcessOwner">
             <ns5:name>GrnApproval.ProcessOwner</ns5:name>
-            <ns1:processRole id="ProcessOwner" name="Process Owner"/>
+            <ns1:processRole name="Process Owner" id="ProcessOwner"/>
         </ns1:applicationRole>
-        <ns1:applicationRole id="GrnApproval.Role" isProcessRole="true">
+        <ns1:applicationRole isProcessRole="true" id="GrnApproval.Role">
             <ns5:name>GrnApproval.Role</ns5:name>
             <ns1:member type="USER">
-                <ns1:name>ejazahmed</ns1:name>
+                <ns1:name>m.ahmad</ns1:name>
             </ns1:member>
-            <ns1:processRole id="Role" name="GrnApprovers"/>
+            <ns1:processRole name="GrnApprovers" id="Role"/>
         </ns1:applicationRole>
     </ns1:applicationRoles>
     <ns1:applicationRoleOrgUnitCalendarAssociations/>

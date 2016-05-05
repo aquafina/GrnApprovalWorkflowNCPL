@@ -18,6 +18,8 @@
          <xs:element name="SEGMENT3" type="xs:string" nillable="true"/>
          <xs:element name="GRNNo" type="xs:decimal" nillable="true"/>
          <xs:element name="ORGANIZATION_NAME" type="xs:string" nillable="true"/>
+         <xs:element name="ORG_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="ORG" type="xs:string" nillable="true"/>
          <xs:element name="ATTRIBUTE3" type="xs:string" nillable="true"/>
          <xs:element name="USER_NAME" type="xs:string" nillable="true"/>
          <xs:element name="EMAIL_ADDRESS" type="xs:string" nillable="true"/>
@@ -54,6 +56,7 @@
          <xs:element name="DEPT" type="xs:string" nillable="true"/>
          <xs:element name="COMMENTS" type="xs:string" nillable="true"/>
          <xs:element name="SHIPMENT_LINE_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="DEPARTMENT" type="xs:string" nillable="true"/>
          <xs:element name="NOTE_TO_RECEIVER" type="xs:string" nillable="true"/>
          <xs:element name="QUANTITY_ACCEPT" type="xs:decimal" nillable="true"/>
          <xs:element name="QUANTITY_REJECT" type="xs:decimal" nillable="true"/>

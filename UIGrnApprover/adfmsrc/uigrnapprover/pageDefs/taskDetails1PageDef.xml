@@ -325,6 +325,9 @@
           <Item Value="SEGMENT3"/>
           <Item Value="QUANTITY_REJECT"/>
           <Item Value="QUANTITY_ACCEPT"/>
+          <Item Value="ORG"/>
+          <Item Value="DEPARTMENT"/>
+          <Item Value="ORG_ID"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
