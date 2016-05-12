@@ -88,6 +88,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT16119655093963">
+                <labels>
+                    <label locale="en">GET_APPROVER_BY_OU</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -128,6 +136,46 @@
             <topicDocumentation name="GTW15695094150567">
                 <labels>
                     <label locale="en">RecordsExists</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW16100581898983">
+                <labels>
+                    <label locale="en">IsNCL</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW16100592064439">
+                <labels>
+                    <label locale="en">IsNCPL</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW16100609778495">
+                <labels>
+                    <label locale="en">IsHTD</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW16100654428498">
+                <labels>
+                    <label locale="en">IsSpinning</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16126980960251">
+                <labels>
+                    <label locale="en">GET_APPROVER_BY_ORG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -179,6 +227,65 @@
             <topicDocumentation name="sf42"/>
             <topicDocumentation name="sf28"/>
             <topicDocumentation name="sf29"/>
+            <topicDocumentation name="sf30">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf32">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf35">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf37"/>
+            <topicDocumentation name="sf39">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf45">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf47">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf49">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf46"/>
+            <topicDocumentation name="sf48"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

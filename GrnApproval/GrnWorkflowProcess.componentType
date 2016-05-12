@@ -47,4 +47,8 @@
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmail)"
                     callbackInterface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmailCallback)"/>
   </reference>
+  <reference name="Services.Externals.GetEntityApprover.reference"
+             ui:wsdlLocation="GetEntityApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
+  </reference>
 </componentType>
