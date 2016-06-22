@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?oracleBPM version="11.1.1.7.0.2.22" fileRevision="20120217"?>
+<?oracleBPM version="11.1.1.7.0.1.61" fileRevision="20120217"?>
 <processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
     <component name="GrnWorkflowProcess">
         <topicDocumentations>
@@ -50,7 +50,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT1511783642045">
                 <labels>
-                    <label locale="en">UpdateLineApprovalFlag_CaseApproved</label>
+                    <label locale="en">UpdateLineApprovalFlag_CaseDisApproved</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -91,6 +91,14 @@
             <topicDocumentation name="ACT16119655093963">
                 <labels>
                     <label locale="en">GET_APPROVER_BY_OU</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16126980960251">
+                <labels>
+                    <label locale="en">GET_APPROVER_BY_ORG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -168,14 +176,6 @@
             <topicDocumentation name="GTW16100654428498">
                 <labels>
                     <label locale="en">IsSpinning</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT16126980960251">
-                <labels>
-                    <label locale="en">GET_APPROVER_BY_ORG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>

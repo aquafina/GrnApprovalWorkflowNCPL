@@ -309,7 +309,7 @@
                                   columns="#{bindings.user_id.hints.displayWidth}"
                                   maximumLength="#{bindings.user_id.hints.precision}"
                                   shortDesc="#{bindings.user_id.hints.tooltip}"
-                                  id="it52" visible="false">
+                                  id="it52" visible="true">
                       <f:validator binding="#{bindings.user_id.validator}"/>
                     </af:inputText>
                     <af:outputText value="#{UserWLProfile.userID}" id="ot26"
