@@ -4,10 +4,10 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="bpelprocessupdflag_casedisapproved_client" x="0" y="231" side="left"/>
-      <partnerlink name="UpdFlagCaseDisapproved" x="970" y="278" side="right"/>
+      <partnerlink name="bpel_resetlineprocessedflag_client" x="0" y="231" side="left"/>
+      <partnerlink name="ResetLineProcessedFlag" x="584" y="278" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1099,444" show_swimlanes="true">
+   <graph_layout viewport="0,2,714,331" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
    </graph_layout>

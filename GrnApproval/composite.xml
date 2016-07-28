@@ -19,8 +19,6 @@
   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
           location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
           importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved"
-          location="BPELProcessUpdFlag_CaseDisapproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved"
           location="UpdFlagCaseDisapproved.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/SaveApprover"
@@ -49,6 +47,10 @@
           location="GetEntityApprover.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected"
           location="CheckIfInspected.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ResetLineProcessedFlag"
+          location="ResetLineProcessedFlag.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"
+          location="BPEL_ResetLineProcessedFlag.wsdl" importType="wsdl"/>
   <service name="ProcessClient" ui:wsdlLocation="ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
@@ -66,12 +68,6 @@
   </component>
   <component name="GrnApproverTask">
     <implementation.workflow src="GrnApproverTask.task"/>
-  </component>
-  <component name="BPELProcessUpdFlag_CaseDisapproved" version="1.1">
-    <implementation.bpel src="BPELProcessUpdFlag_CaseDisapproved.bpel"/>
-    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
-    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
-              many="false">async.persist</property>
   </component>
   <component name="BPELProcessSaveApprover" version="1.1">
     <implementation.bpel src="BPELProcessSaveApprover.bpel"/>
@@ -99,6 +95,11 @@
   </component>
   <component name="BPEmail" version="1.1">
     <implementation.bpel src="BPEmail.bpel"/>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BPEL_ResetLineProcessedFlag" version="1.1">
+    <implementation.bpel src="BPEL_ResetLineProcessedFlag.bpel"/>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
@@ -223,6 +224,18 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="ResetLineProcessedFlag"
+             ui:wsdlLocation="ResetLineProcessedFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ResetLineProcessedFlag#wsdl.interface(ResetLineProcessedFlag_ptt)"/>
+    <binding.jca config="ResetLineProcessedFlag_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.UpdBpmWfReadyFlag.reference</source.uri>
     <target.uri>UpdBpmWfReadyFlag</target.uri>
@@ -238,10 +251,6 @@
   <wire>
     <source.uri>GrnWorkflowProcess/HumanTasks.GrnApproverTask.reference</source.uri>
     <target.uri>GrnApproverTask/TaskService</target.uri>
-  </wire>
-  <wire>
-    <source.uri>BPELProcessUpdFlag_CaseDisapproved/UpdFlagCaseDisapproved</source.uri>
-    <target.uri>UpdFlagCaseDisapproved</target.uri>
   </wire>
   <wire>
     <source.uri>BPELProcessSaveApprover/SaveApprover</source.uri>
@@ -294,5 +303,13 @@
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.CheckIfInspected.reference</source.uri>
     <target.uri>CheckIfInspected</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPEL_ResetLineProcessedFlag.Bpel_resetlineprocessedflag_client.reference</source.uri>
+    <target.uri>BPEL_ResetLineProcessedFlag/bpel_resetlineprocessedflag_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BPEL_ResetLineProcessedFlag/ResetLineProcessedFlag</source.uri>
+    <target.uri>ResetLineProcessedFlag</target.uri>
   </wire>
 </composite>

@@ -3,13 +3,13 @@
   <!-- SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY. -->
   <mapSources>
     <source type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag.wsdl"/>
+      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdateProcessLineFlag.wsdl"/>
       <rootElement name="ReadReceiptDataOutputCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
     </source>
   </mapSources>
   <mapTargets>
     <target type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/GrnApprovalWorkflow/GrnApproval/UpdateLineProcessedFlag.wsdl"/>
+      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/UpdateLineProcessedFlag.wsdl"/>
       <rootElement name="RcvShipmentLinesCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateLineProcessedFlag"/>
     </target>
   </mapTargets>

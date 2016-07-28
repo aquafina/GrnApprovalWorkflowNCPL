@@ -3,7 +3,7 @@
   <connection-factory location="eis/DB/apps" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="CheckIfInspected_ptt" operation="CheckIfInspected">
     <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value="select  CASE WHEN  (SELECT count(*)          from rcv_transactions RCV2          where RCV2.shipment_header_id = #SHID and          transaction_type = 'ACCEPT')=(SELECT count(*)          from rcv_transactions RCV3          where RCV3.shipment_header_id = #SHID and          transaction_type = 'RECEIVE')     THEN 'Y'     ELSE 'N'      END AS IS_INSPECTED FROM DUAL"/>
+      <property name="SqlString" value="select  CASE WHEN  (SELECT count(*)          from rcv_transactions RCV2          where RCV2.shipment_header_id = #SHID and          transaction_type = 'ACCEPT'  and RCV2.attribute5 = 'APPROVE')=(SELECT count(*)          from rcv_transactions RCV3          where RCV3.shipment_header_id = #SHID and          transaction_type = 'RECEIVE')     THEN 'Y'     ELSE 'N'      END AS IS_INSPECTED FROM DUAL"/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
     <input/>

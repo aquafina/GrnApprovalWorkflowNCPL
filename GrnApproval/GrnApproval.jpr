@@ -10,6 +10,15 @@
    <value n="BP_UpdateLineDisApp_ProcessName" v="BP_UpdateLineDisApp"/>
    <value n="BP_UpdateLineDisApp_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BP_UpdateLineDisApp_wsdl" v="BP_UpdateLineDisApp.wsdl"/>
+   <url n="BPEL_ResetLineProcessedFlag_bpelFileURL" path="BPEL_ResetLineProcessedFlag.bpel"/>
+   <value n="BPEL_ResetLineProcessedFlag_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"/>
+   <value n="BPEL_ResetLineProcessedFlag_ProcessName" v="BPEL_ResetLineProcessedFlag"/>
+   <value n="BPEL_ResetLineProcessedFlag_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPEL_ResetLineProcessedFlag_wsdl" v="BPEL_ResetLineProcessedFlag.wsdl"/>
+   <value n="BPEL_ResetProcessedLineFlag_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetProcessedLineFlag"/>
+   <value n="BPEL_ResetProcessedLineFlag_ProcessName" v="BPEL_ResetProcessedLineFlag"/>
+   <value n="BPEL_ResetProcessedLineFlag_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPEL_ResetProcessedLineFlag_wsdl" v="BPEL_ResetProcessedLineFlag.wsdl"/>
    <value n="BPELProcess1_Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPELProcess1"/>
    <value n="BPELProcess1_ProcessName" v="BPELProcess1"/>
    <value n="BPELProcess1_Template" v="BPEL_SYNC_PROCESS"/>
@@ -105,7 +114,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -426,6 +435,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPEmail"/>
+   <value n="ProcessName" v="BPEL_ResetLineProcessedFlag"/>
    <value n="Template" v="BPEL_ASYNC_PROCESS"/>
 </jpr:project>

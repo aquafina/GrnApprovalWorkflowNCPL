@@ -3,13 +3,13 @@
   <!-- SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY. -->
   <mapSources>
     <source type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved.wsdl"/>
+      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/BPELProcessUpdFlag_CaseDisapproved.wsdl"/>
       <rootElement name="RcvShipmentHeadersCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders"/>
     </source>
   </mapSources>
   <mapTargets>
     <target type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved.wsdl"/>
+      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/UpdFlagCaseDisapproved.wsdl"/>
       <rootElement name="UpdFlagCaseDisapprovedInput" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/UpdFlagCaseDisapproved"/>
     </target>
   </mapTargets>
