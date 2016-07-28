@@ -2,13 +2,13 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:component[@name='BPELProcessUpdFlag_CaseDisapproved/bpelprocessupdflag_casedisapproved_client']</loc>
-      <line/>
-      <col/>
+      <loc>/ns:composite/ns:reference[@name='UpdFlagCaseDisapproved']</loc>
+      <line>141</line>
+      <col>60</col>
       <file>D:\Sarmad Data\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</file>
       <name>D:\Sarmad Data\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</name>
       <fix/>
-      <msg>The service "bpelprocessupdflag_casedisapproved_client" exposed by component "BPELProcessUpdFlag_CaseDisapproved" is not wired to/used by any other component.</msg>
+      <msg>Reference UpdFlagCaseDisapproved does not exist as wire target</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>

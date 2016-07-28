@@ -4,7 +4,7 @@
              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
              xmlns:client="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"
              xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"
-             xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/ResetLineProcessedFlag"
+             xmlns:ns2="http://xmlns.oracle.com/singleString"
              xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
 
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,7 +18,7 @@
 			<import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" schemaLocation="xsd/ReadReceiptData.xsd" />
 		</schema>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema">
-			<import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/ResetLineProcessedFlag" schemaLocation="xsd/ResetLineProcessedFlag_table.xsd" />
+			<import namespace="http://xmlns.oracle.com/singleString" schemaLocation="xsd/singleString.xsd" />
 		</schema>
 	</wsdl:types>
 
@@ -31,7 +31,7 @@
 	</wsdl:message>
 
 	<wsdl:message name="BPEL_ResetLineProcessedFlagResponseMessage">
-		<wsdl:part name="payload" element="ns2:RcvShipmentLinesCollection" />
+		<wsdl:part name="payload" element="ns2:singleString" />
 	</wsdl:message>
 
 
