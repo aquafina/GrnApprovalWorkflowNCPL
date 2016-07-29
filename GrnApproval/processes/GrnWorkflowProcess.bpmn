@@ -49,11 +49,11 @@
                     <ns5:Conversation id="CONVERSATION161196590253" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.GetEntityApprover"/>
                     </ns5:Conversation>
-                    <ns5:Conversation id="CONVERSATION166906203049" type="service_call">
-                        <ns5:ServiceCallConversationDefinition service="Services.Externals.CheckIfInspected"/>
-                    </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION168027499150" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPEL_ResetLineProcessedFlag.Bpel_resetlineprocessedflag_client"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION168182014964" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.Externals.CheckIfInspected"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -1252,7 +1252,7 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION166906203049">
+                    <ns5:Conversational conversation="CONVERSATION168182014964">
                         <ns5:ServiceCallConversationalDefinition operation="checkIfInspected"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
@@ -1820,7 +1820,7 @@
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
                         <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
                         <ns5:StringFeature value="STRAIGHT" name="routing"/>
-                        <ns5:StringFeature value="" name="userName"/>
+                        <ns5:StringFeature value="Yes" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -2031,7 +2031,7 @@
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
-            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:SET_OF_BOOKS_ID, 2021)  =  0)
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:SET_OF_BOOKS_ID, 2024)  =  0)
                 <extensionElements>
                     <ns5:OracleExtensions>
                         <ns5:Expression mode="simple"/>

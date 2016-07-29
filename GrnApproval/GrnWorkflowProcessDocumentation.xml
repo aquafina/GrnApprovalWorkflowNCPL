@@ -242,7 +242,7 @@
             <topicDocumentation name="sf24"/>
             <topicDocumentation name="sf40">
                 <labels>
-                    <label locale="en"></label>
+                    <label locale="en">Yes</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
