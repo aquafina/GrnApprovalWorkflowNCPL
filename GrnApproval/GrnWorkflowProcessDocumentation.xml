@@ -205,6 +205,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW16819649330178">
+                <labels>
+                    <label locale="en">isPerpetual</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -335,6 +343,15 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf58"/>
+            <topicDocumentation name="sf97">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf99"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
