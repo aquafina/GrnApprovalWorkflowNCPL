@@ -2,11 +2,11 @@
   
   <connection-factory location="eis/DB/applive" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="CheckIfInspected_ptt" operation="CheckIfInspected">
-    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
-      <property name="SqlString" value="SELECT CASE           WHEN (SELECT COUNT (*)                   FROM rcv_transactions RCV2                  WHERE     RCV2.shipment_header_id = #SHID                        AND transaction_type = 'ACCEPT'                        AND RCV2.attribute5 = 'APPROVE') =                   (SELECT COUNT (*)                      FROM rcv_transactions RCV3                     WHERE RCV3.shipment_header_id = #SHID                           AND transaction_type = 'RECEIVE')           THEN              'O'           ELSE              'P'        END           AS IS_INSPECTED   FROM DUAL"/>
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="APPS"/>
+      <property name="ProcedureName" value="GET_IS_INSPECTED_FLAG"/>
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
-    <input/>
     <output/>
   </endpoint-interaction>
 

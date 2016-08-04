@@ -1259,46 +1259,47 @@
                 </ns5:OracleExtensions>
             </extensionElements>
             <ioSpecification>
-                <dataInput name="checkIfInspectedInput" id="checkIfInspectedInput">
+                <dataInput name="inputParameters" id="inputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" element="CheckIfInspectedInput" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" element="InputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
-                <dataOutput name="checkIfInspectedOutputCollection" id="checkIfInspectedOutputCollection">
+                <dataOutput name="outputParameters" id="outputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" element="CheckIfInspectedOutputCollection" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" element="OutputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
                 <inputSet id="ACT1669060505516_uniqueInputSet">
-                    <dataInputRefs>checkIfInspectedInput</dataInputRefs>
+                    <dataInputRefs>inputParameters</dataInputRefs>
                 </inputSet>
                 <outputSet id="ACT1669060505516_uniqueOutputSet">
-                    <dataOutputRefs>checkIfInspectedOutputCollection</dataOutputRefs>
+                    <dataOutputRefs>outputParameters</dataOutputRefs>
                 </outputSet>
             </ioSpecification>
             <dataInputAssociation>
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <targetRef>checkIfInspectedInput</targetRef>
+                <sourceRef>DOShipmentHeaderData</sourceRef>
+                <targetRef>inputParameters</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">4902272
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">number(bpmn:getDataObject('DOShipmentHeaderData')/ns:RcvShipmentHeaders[1]/ns:shipmentHeaderId)
                         <extensionElements>
                             <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
+                                <ns5:Expression mode="xpath"/>
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('checkIfInspectedInput')/ns:SHID
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('inputParameters')/ns:SHID
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -1311,7 +1312,7 @@
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <sourceRef>checkIfInspectedOutputCollection</sourceRef>
+                <sourceRef>outputParameters</sourceRef>
                 <targetRef>DO_CheckIfInspected</targetRef>
                 <assignment>
                     <extensionElements>
@@ -1319,7 +1320,7 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('checkIfInspectedOutputCollection')/ns:CheckIfInspectedOutput[1]/ns:IS_INSPECTED
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('outputParameters')/ns:GET_IS_INSPECTED_FLAG
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>

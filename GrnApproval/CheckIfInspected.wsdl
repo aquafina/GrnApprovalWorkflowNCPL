@@ -1,5 +1,5 @@
 <?binding.jca CheckIfInspected_db.jca?>
-<wsdl:definitions name="CheckIfInspected" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
+<wsdl:definitions name="CheckIfInspected" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
     <plt:partnerLinkType name="CheckIfInspected_plt">
         <plt:role name="CheckIfInspected_role">
             <plt:portType name="tns:CheckIfInspected_ptt"/>
@@ -7,19 +7,19 @@
     </plt:partnerLinkType>
     <wsdl:types>
         <schema xmlns="http://www.w3.org/2001/XMLSchema">
-            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/CheckIfInspected" schemaLocation="xsd/CheckIfInspected.xsd"/>
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CheckIfInspected" schemaLocation="xsd/CheckIfInspected_sp.xsd"/>
         </schema>
     </wsdl:types>
-    <wsdl:message name="CheckIfInspectedInput_msg">
-        <wsdl:part name="CheckIfInspectedInput_msg" element="db:CheckIfInspectedInput"/>
+    <wsdl:message name="args_in_msg">
+        <wsdl:part name="InputParameters" element="db:InputParameters"/>
     </wsdl:message>
-    <wsdl:message name="CheckIfInspectedOutputCollection_msg">
-        <wsdl:part name="CheckIfInspectedOutputCollection" element="db:CheckIfInspectedOutputCollection"/>
+    <wsdl:message name="args_out_msg">
+        <wsdl:part name="OutputParameters" element="db:OutputParameters"/>
     </wsdl:message>
     <wsdl:portType name="CheckIfInspected_ptt">
         <wsdl:operation name="CheckIfInspected">
-            <wsdl:input message="tns:CheckIfInspectedInput_msg"/>
-            <wsdl:output message="tns:CheckIfInspectedOutputCollection_msg"/>
+            <wsdl:input message="tns:args_in_msg"/>
+            <wsdl:output message="tns:args_out_msg"/>
         </wsdl:operation>
     </wsdl:portType>
 </wsdl:definitions>
