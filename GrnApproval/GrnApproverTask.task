@@ -44,7 +44,8 @@
       </notification>
    </routingSlip>
    <workflowConfiguration features="ucm" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
-                          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEntityApprover">
+                          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEntityApprover"
+                          xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEntityApprover">
       <outcomes>
          <outcome>APPROVE</outcome>
          <outcome>REJECT</outcome>
@@ -57,7 +58,7 @@
                            updatable="true" external="false"/>
          <messageAttribute name="XxReceiptApproversCollection"
                            attributeType="ELEMENT"
-                           type="ns1:XxReceiptApproversCollection"
+                           type="ns2:XxReceiptApproversCollection"
                            updatable="false" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>

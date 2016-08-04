@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions fileRevision="20120217" version="11.1.1.7.0.1.61" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<definitions fileRevision="20120217" version="11.1.1.7.0.2.22" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <process processType="Public" isExecutable="true" name="GrnWorkflowProcess" id="GrnWorkflowProcess">
         <extensionElements>
             <ns5:OracleExtensions>
@@ -1238,7 +1238,7 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.Externals.CheckIfInspected" operationRef="checkIfInspected" isForCompensation="false" name="CheckIfInspected" id="ACT1669060505516">
+        <serviceTask implementation="Services.Externals.CheckIfInspected" operationRef="checkIfInspected" isForCompensation="false" name="ReadIsInspectedFlag" id="ACT1669060505516">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -1284,7 +1284,6 @@
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <sourceRef>DOShipmentHeaderData</sourceRef>
                 <targetRef>checkIfInspectedInput</targetRef>
                 <assignment>
                     <extensionElements>
@@ -1292,7 +1291,7 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/PollRcvShipmentHeaders" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DOShipmentHeaderData')/ns:RcvShipmentHeaders[1]/ns:shipmentHeaderId
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">4902272
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -1398,6 +1397,53 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
+        <scriptTask isForCompensation="false" name="ScriptTask" id="ACT16819746648469">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1815" y="400"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="" name="script"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification/>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <targetRef>approvers</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'Umar Saqqaf'
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('approvers')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
+            <script></script>
+        </scriptTask>
         <startEvent isInterrupting="false" name="Start" id="EVT15107785706398">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -2030,29 +2076,6 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="GTW16100592064439" targetRef="GTW16819649330178" name="sf54" id="sf54">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1529" y="593"/>
-                    </ns5:SequenceFlowAttributes>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1529,593" name="curve"/>
-                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
-                        <ns5:StringFeature value="Yes" name="userName"/>
-                        <ns5:IntegerFeature value="0" name="order"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:SET_OF_BOOKS_ID, 2024)  =  0)
-                <extensionElements>
-                    <ns5:OracleExtensions>
-                        <ns5:Expression mode="simple"/>
-                    </ns5:OracleExtensions>
-                </extensionElements>
-            </conditionExpression>
-        </sequenceFlow>
         <sequenceFlow sourceRef="ACT1669060505516" targetRef="GTW16697275931693" name="sf57" id="sf57">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -2067,15 +2090,15 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="GTW16697275931693" targetRef="ACT15115580161186" name="sf59" id="sf59">
+        <sequenceFlow sourceRef="GTW16697275931693" targetRef="ACT16819746648469" name="sf59" id="sf59">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1988" y="350"/>
+                        <ns5:Positions x="1822" y="471"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1988,350" name="curve"/>
+                        <ns5:StringFeature value="1822,471" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="Yes" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
@@ -2119,6 +2142,55 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
+        <sequenceFlow sourceRef="ACT16819746648469" targetRef="ACT15115580161186" name="sf100" id="sf100">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="GTW16819649330178" targetRef="EVT15107785706483" name="sf66" id="sf66">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="2446" y="480"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="2446,480" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="GTW16819649330178" targetRef="ACT15115580161186" name="sf69" id="sf69">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="1890" y="510"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="1890,510" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="ifOtherOrg" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">((dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:ORGID, 129)  =  0) or (dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:ORGID, 951)  =  0))
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="simple"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
+        </sequenceFlow>
         <sequenceFlow sourceRef="GTW16819649330178" targetRef="ACT1669060505516" name="sf97" id="sf97">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -2132,7 +2204,7 @@
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
-            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:ORG_ID, 109)  =  0)
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:ORGID, 109)  =  0)
                 <extensionElements>
                     <ns5:OracleExtensions>
                         <ns5:Expression mode="simple"/>
@@ -2140,19 +2212,28 @@
                 </extensionElements>
             </conditionExpression>
         </sequenceFlow>
-        <sequenceFlow sourceRef="GTW16819649330178" targetRef="ACT15115580161186" name="sf99" id="sf99">
+        <sequenceFlow sourceRef="GTW16100592064439" targetRef="GTW16819649330178" name="sf54" id="sf54">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1762" y="316"/>
+                        <ns5:Positions x="1529" y="593"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1762,316" name="curve"/>
+                        <ns5:StringFeature value="1529,593" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="Yes" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:dec="http://xmlns.oracle.com/bpm/decimal" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">(dec:compare(bpmn:getDataObject('DOReceiptData')/ns:ReadReceiptDataOutput[1]/ns:SET_OF_BOOKS_ID, 2024)  =  0)
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="simple"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
         </sequenceFlow>
         <dataObject name="DOShipmentHeaderData" id="DOShipmentHeaderData">
             <extensionElements>
