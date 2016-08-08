@@ -12,16 +12,6 @@
    </Fault>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:component[@name='BPEL_ResetLineProcessedFlag/bpel_resetlineprocessedflag_client']</loc>
-      <line/>
-      <col/>
-      <file>D:\Sarmad Data\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</file>
-      <name>D:\Sarmad Data\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</name>
-      <fix/>
-      <msg>The service "bpel_resetlineprocessedflag_client" exposed by component "BPEL_ResetLineProcessedFlag" is not wired to/used by any other component.</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc/>
       <line/>
       <col/>
