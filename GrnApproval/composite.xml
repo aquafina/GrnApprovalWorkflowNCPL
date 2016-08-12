@@ -304,4 +304,12 @@
     <source.uri>BPEL_ResetLineProcessedFlag/ResetLineProcessedFlag</source.uri>
     <target.uri>ResetLineProcessedFlag</target.uri>
   </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.BPEL.BPEL_ResetLineProcessedFlag.Bpel_resetlineprocessedflag_client.reference</source.uri>
+    <target.uri>BPEL_ResetLineProcessedFlag/bpel_resetlineprocessedflag_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.Externals.CheckIfInspected.reference</source.uri>
+    <target.uri>CheckIfInspected</target.uri>
+  </wire>
 </composite>

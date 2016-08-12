@@ -51,4 +51,13 @@
              ui:wsdlLocation="GetEntityApprover.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
   </reference>
+  <reference name="Services.BPEL.BPEL_ResetLineProcessedFlag.Bpel_resetlineprocessedflag_client.reference"
+             ui:wsdlLocation="BPEL_ResetLineProcessedFlag.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag#wsdl.interface(BPEL_ResetLineProcessedFlag)"
+                    callbackInterface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag#wsdl.interface(BPEL_ResetLineProcessedFlagCallback)"/>
+  </reference>
+  <reference name="Services.Externals.CheckIfInspected.reference"
+             ui:wsdlLocation="CheckIfInspected.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected#wsdl.interface(CheckIfInspected_ptt)"/>
+  </reference>
 </componentType>
