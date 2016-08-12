@@ -9,7 +9,7 @@
   </mapSources>
   <mapTargets>
     <target type="WSDL">
-      <schema location="../BP_UpdateLineDisApp.wsdl"/>
+      <schema location="../UpdateLineDISAPPROVED.wsdl"/>
       <rootElement name="RcvShipmentLinesCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateLineDISAPPROVED"/>
     </target>
   </mapTargets>
