@@ -9,7 +9,7 @@
    <element name="OutputParameters">
       <complexType>
          <sequence>
-            <element name="GET_IS_INSPECTED_FLAG" type="string" db:index="0" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="GETISINSPECTEDFLAG" type="string" db:index="0" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
          </sequence>
       </complexType>
    </element>
