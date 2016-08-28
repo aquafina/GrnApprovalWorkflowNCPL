@@ -60,4 +60,8 @@
              ui:wsdlLocation="CheckIfInspected.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected#wsdl.interface(CheckIfInspected_ptt)"/>
   </reference>
+  <reference name="Services.Externals.GetOrgFromZone.reference"
+             ui:wsdlLocation="GetOrgFromZone.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetOrgFromZone#wsdl.interface(GetOrgFromZone_ptt)"/>
+  </reference>
 </componentType>

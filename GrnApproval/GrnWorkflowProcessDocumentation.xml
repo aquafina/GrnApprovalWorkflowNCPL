@@ -128,6 +128,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT1707224245757">
+                <labels>
+                    <label locale="en">GetOrgFromZone</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT17072267670988">
+                <labels>
+                    <label locale="en">GetApproverFromOrg</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15107785706398">
                 <labels>
                     <label locale="en">Start</label>
@@ -216,6 +232,14 @@
             <topicDocumentation name="GTW16819649330178">
                 <labels>
                     <label locale="en">isPerpetual</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW17072227080141">
+                <labels>
+                    <label locale="en">isZone</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -369,6 +393,17 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="sf63"/>
+            <topicDocumentation name="sf67">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf70"/>
+            <topicDocumentation name="sf76"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
