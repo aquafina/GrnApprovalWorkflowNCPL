@@ -1,0 +1,13 @@
+<adapter-config name="GetOrgFromZone" adapter="Database Adapter" wsdlLocation="GetOrgFromZone.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/PROD" UIConnectionName="PROD" adapterRef=""/>
+  <endpoint-interaction portType="GetOrgFromZone_ptt" operation="GetOrgFromZone">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT pla.po_header_id,     pla.po_line_id, ood.organization_id, ood.organization_name,        prha.attribute5 organization_code   FROM po.po_requisition_headers_all prha,         po.po_requisition_lines_all prla,         po.po_req_distributions_all prda,         po.po_distributions_all pda,         po.po_lines_all pla,        org_organization_definitions ood  WHERE prha.requisition_header_id = prla.requisition_header_id    AND prla.requisition_line_id = prda.requisition_line_id    AND prda.distribution_id = pda.req_distribution_id(+)    AND pla.po_line_id = pda.po_line_id    AND prha.attribute5 = OOD.ORGANIZATION_CODE    AND pla.po_line_id = #po_line_id"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+    <input/>
+    <output/>
+  </endpoint-interaction>
+
+</adapter-config>
