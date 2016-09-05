@@ -245,6 +245,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW17149390964123">
+                <labels>
+                    <label locale="en">isWeaving</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf10"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf25"/>
@@ -404,6 +412,22 @@
             </topicDocumentation>
             <topicDocumentation name="sf70"/>
             <topicDocumentation name="sf76"/>
+            <topicDocumentation name="sf115">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf118">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
         </topicDocumentations>
     </component>
 </processDocumentation>
