@@ -3,7 +3,7 @@
    <xs:element name="ReadReceiptDataInput" type="ReadReceiptDataInput"/>
    <xs:complexType name="ReadReceiptDataInput">
       <xs:sequence>
-         <xs:element name="SHID" type="xs:decimal" nillable="true"/>
+         <xs:element name="SHID" type="xs:string" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
    <xs:element name="ReadReceiptDataOutputCollection" type="ReadReceiptDataOutputCollection"/>
