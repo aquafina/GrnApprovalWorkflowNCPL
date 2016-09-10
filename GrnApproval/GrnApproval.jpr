@@ -114,7 +114,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -435,6 +435,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPEL_ResetLineProcessedFlag"/>
+   <value n="ProcessName" v="BPEmail"/>
    <value n="Template" v="BPEL_ASYNC_PROCESS"/>
 </jpr:project>

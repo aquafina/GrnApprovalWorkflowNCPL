@@ -14,6 +14,8 @@
         <xsd:element name="emailAddress" type="xsd:string"/>
         <xsd:element name="EmailSubject" type="xsd:string"/>
         <xsd:element name="EmailBody" type="xsd:string"/>
+        <xsd:element name="EmailBody1" type="xsd:string"/>
+        <xsd:element name="EmailBody2" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>

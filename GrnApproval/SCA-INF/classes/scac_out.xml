@@ -5,8 +5,8 @@
       <loc>/ns:composite/ns:reference[@name='UpdFlagCaseDisapproved']</loc>
       <line>143</line>
       <col>60</col>
-      <file>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</file>
-      <name>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\GrnApprovalWorkflow\GrnApproval\composite.xml</name>
+      <file>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\GrnApprovalWorkflow-NCPL\GrnApproval\composite.xml</file>
+      <name>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\GrnApprovalWorkflow-NCPL\GrnApproval\composite.xml</name>
       <fix/>
       <msg>Reference UpdFlagCaseDisapproved does not exist as wire target</msg>
    </Fault>

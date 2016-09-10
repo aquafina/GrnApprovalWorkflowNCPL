@@ -1,6 +1,6 @@
 <adapter-config name="ResetLineProcessedFlag" adapter="Database Adapter" wsdlLocation="ResetLineProcessedFlag.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/PROD" UIConnectionName="PROD" adapterRef=""/>
+  <connection-factory location="eis/DB/applive" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="ResetLineProcessedFlag_ptt" operation="merge">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="ResetLineProcessedFlag.RcvShipmentLines"/>

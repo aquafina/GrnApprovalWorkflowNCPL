@@ -1,6 +1,6 @@
 <adapter-config name="CheckIfInspected" adapter="Database Adapter" wsdlLocation="CheckIfInspected.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/PROD" UIConnectionName="PROD" adapterRef=""/>
+  <connection-factory location="eis/DB/applive" UIConnectionName="apps" adapterRef=""/>
   <endpoint-interaction portType="CheckIfInspected_ptt" operation="CheckIfInspected">
     <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
       <property name="SchemaName" value="APPS"/>

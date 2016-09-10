@@ -3,13 +3,13 @@
   <!-- SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY. -->
   <mapSources>
     <source type="WSDL">
-      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag.wsdl"/>
+      <schema location="..//BPEL_ResetLineProcessedFlag.wsdl"/>
       <rootElement name="ReadReceiptDataOutputCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReadReceiptData"/>
     </source>
   </mapSources>
   <mapTargets>
     <target type="WSDL">
-      <schema location="../../../../../../Sarmad%20Data/GRNApproval/Paperless/GrnApprovalWorkflow/GrnApproval/ResetLineProcessedFlag.wsdl"/>
+      <schema location="../ResetLineProcessedFlag.wsdl"/>
       <rootElement name="RcvShipmentLinesCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/ResetLineProcessedFlag"/>
     </target>
   </mapTargets>
