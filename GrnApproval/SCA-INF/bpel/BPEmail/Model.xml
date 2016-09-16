@@ -61,7 +61,7 @@
                         <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns2:FromUserName"/>
                     </copy>
                     <copy>
-                        <from expression="string('usmanriaz@nishat.net')"/>
+                        <from expression="string('sarmad@nishat.net')"/>
                         <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns2:Bcc"/>
                     </copy>
                     <copy>
