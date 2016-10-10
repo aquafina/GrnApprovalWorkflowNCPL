@@ -43,8 +43,6 @@
           location="BPEmail.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
           location="NotificationService.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover"
-          location="GetEntityApprover.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ResetLineProcessedFlag"
           location="ResetLineProcessedFlag.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag"
@@ -53,6 +51,8 @@
           location="CheckIfInspected.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetOrgFromZone"
           location="GetOrgFromZone.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover"
+          location="GetEntityApprover.wsdl" importType="wsdl"/>
   <service name="ProcessClient" ui:wsdlLocation="ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
@@ -204,17 +204,6 @@
     <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
                   location="NotificationService.wsdl"/>
   </reference>
-  <reference name="GetEntityApprover" ui:wsdlLocation="GetEntityApprover.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
-    <binding.jca config="GetEntityApprover_db.jca"/>
-    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
-    <property name="jca.retry.interval" type="xs:int" many="false"
-              override="may">1</property>
-    <property name="jca.retry.backoff" type="xs:int" many="false"
-              override="may">2</property>
-    <property name="jca.retry.maxInterval" type="xs:string" many="false"
-              override="may">120</property>
-  </reference>
   <reference name="ResetLineProcessedFlag"
              ui:wsdlLocation="ResetLineProcessedFlag.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/ResetLineProcessedFlag#wsdl.interface(ResetLineProcessedFlag_ptt)"/>
@@ -241,6 +230,17 @@
   <reference name="GetOrgFromZone" ui:wsdlLocation="GetOrgFromZone.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetOrgFromZone#wsdl.interface(GetOrgFromZone_ptt)"/>
     <binding.jca config="GetOrgFromZone_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
+  <reference name="GetEntityApprover" ui:wsdlLocation="GetEntityApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
+    <binding.jca config="GetEntityApprover_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -310,10 +310,6 @@
     <target.uri>NotificationService1</target.uri>
   </wire>
   <wire>
-    <source.uri>GrnWorkflowProcess/Services.Externals.GetEntityApprover.reference</source.uri>
-    <target.uri>GetEntityApprover</target.uri>
-  </wire>
-  <wire>
     <source.uri>BPEL_ResetLineProcessedFlag/ResetLineProcessedFlag</source.uri>
     <target.uri>ResetLineProcessedFlag</target.uri>
   </wire>
@@ -328,5 +324,9 @@
   <wire>
     <source.uri>GrnWorkflowProcess/Services.Externals.CheckIfInspected.reference</source.uri>
     <target.uri>CheckIfInspected</target.uri>
+  </wire>
+  <wire>
+    <source.uri>GrnWorkflowProcess/Services.Externals.GetEntityApprover.reference</source.uri>
+    <target.uri>GetEntityApprover</target.uri>
   </wire>
 </composite>

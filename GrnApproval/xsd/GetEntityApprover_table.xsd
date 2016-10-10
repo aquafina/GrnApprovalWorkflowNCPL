@@ -23,6 +23,13 @@
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
+         <xs:element name="rcvTransactionPerson" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
       </xs:sequence>
    </xs:complexType>
    <xs:element name="GetEntityApproverSelect_entity_nameInputParameters" type="GetEntityApproverSelect_entity_name"/>

@@ -47,10 +47,6 @@
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmail)"
                     callbackInterface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEmail#wsdl.interface(BPEmailCallback)"/>
   </reference>
-  <reference name="Services.Externals.GetEntityApprover.reference"
-             ui:wsdlLocation="GetEntityApprover.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
-  </reference>
   <reference name="Services.BPEL.BPEL_ResetLineProcessedFlag.Bpel_resetlineprocessedflag_client.reference"
              ui:wsdlLocation="BPEL_ResetLineProcessedFlag.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/GrnApprovalWorkflow/GrnApproval/BPEL_ResetLineProcessedFlag#wsdl.interface(BPEL_ResetLineProcessedFlag)"
@@ -63,5 +59,9 @@
   <reference name="Services.Externals.CheckIfInspected.reference"
              ui:wsdlLocation="CheckIfInspected.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/CheckIfInspected#wsdl.interface(CheckIfInspected_ptt)"/>
+  </reference>
+  <reference name="Services.Externals.GetEntityApprover.reference"
+             ui:wsdlLocation="GetEntityApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetEntityApprover#wsdl.interface(GetEntityApprover_ptt)"/>
   </reference>
 </componentType>
