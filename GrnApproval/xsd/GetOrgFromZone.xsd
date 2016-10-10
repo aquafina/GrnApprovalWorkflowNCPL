@@ -3,7 +3,7 @@
    <xs:element name="GetOrgFromZoneInput" type="GetOrgFromZoneInput"/>
    <xs:complexType name="GetOrgFromZoneInput">
       <xs:sequence>
-         <xs:element name="po_line_id" type="xs:string" nillable="true"/>
+         <xs:element name="org_code" type="xs:string" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
    <xs:element name="GetOrgFromZoneOutputCollection" type="GetOrgFromZoneOutputCollection"/>
@@ -14,11 +14,9 @@
    </xs:complexType>
    <xs:complexType name="GetOrgFromZoneOutput">
       <xs:sequence>
-         <xs:element name="PO_HEADER_ID" type="xs:decimal" nillable="true"/>
-         <xs:element name="PO_LINE_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="ORGANIZATION_ID" type="xs:decimal" nillable="true"/>
          <xs:element name="ORGANIZATION_NAME" type="xs:string" nillable="true"/>
-         <xs:element name="organization_code" type="xs:string" nillable="true"/>
+         <xs:element name="ORGANIZATION_CODE" type="xs:string" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>
